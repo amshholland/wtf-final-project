@@ -13,43 +13,49 @@ export default interface IGTruckProfile {
     longitude: number;
     instagram_location_id: string;
     is_business: boolean;
-    feed: {
-        data: [
-            0?:
-            taken_at: number;
-            carousel_media: [
+    feed: {};
+}
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
-            1?:
-            taken_at: number;
-            carousel_media: [
+export default interface Feed {
+    data: [];
+}
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
-            2?:
-            taken_at: number;
-            carousel_media: [
+export default interface Data {
+    0?:
+    taken_at: number;
+    carousel_media: [
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
+    ];
+    image_versions2" {;
+candidates: [
+    1: {
+        url: string;
+    }
+];
+1 ?:
+    taken_at: number;
+carousel_media: [
+
+];
+image_versions2" {;
+candidates: [
+    1: {
+        url: string;
+    }
+];
+2 ?:
+    taken_at: number;
+carousel_media: [
+
+];
+image_versions2" {;
+candidates: [
+    1: {
+        url: string;
+    }
+]
 
             }
-        ];
+];
 };
 }
