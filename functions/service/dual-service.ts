@@ -1,4 +1,4 @@
-
+import axios from "axios";
 
 const apiKey: string = process.env.REACT_APP_RAPID_API_KEY || "";
 const hostKey: string = process.env.REACT_APP_RAPID_API_HOST || "";
