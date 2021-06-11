@@ -47,49 +47,11 @@ export interface ImageVersion {
 
 export interface Candidates {
     version: Version;
+    //We want the photo version at index 1 (width: 360px, height: 450px)
 }
 
 export interface Version {
-    
+    url:  string;
 }
 
 
-// export default interface Data {
-//     0?:
-//     taken_at: number;
-//     carousel_media: [
-
-//     ];
-//     image_versions2" {;
-// candidates: [
-//     1: {
-//         url: string;
-//     }
-// ];
-// 1 ?:
-//     taken_at: number;
-// carousel_media: [
-
-// ];
-// image_versions2" {;
-// candidates: [
-//     1: {
-//         url: string;
-//     }
-// ];
-// 2 ?:
-//     taken_at: number;
-// carousel_media: [
-
-// ];
-// image_versions2" {;
-// candidates: [
-//     1: {
-//         url: string;
-//     }
-// ]
-
-//             }
-// ];
-// };
-// }
