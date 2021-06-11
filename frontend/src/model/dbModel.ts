@@ -1,10 +1,10 @@
 export interface Truck {
     _id?: string,
     iGId: number,
+    instagramHandle: string,
     name: string,
     profilePhoto: string,
     profileDescription: string,
-    instagramHandle: string,
     lastRefresh: number,
     lastLocation: TruckLocation;
     locationHistory: TruckLocation[];

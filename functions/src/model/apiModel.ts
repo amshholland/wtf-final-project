@@ -7,8 +7,6 @@ export default interface IGTruckProfile {
     biography: string;
     external_url: string;
     contact_phone_number: number;
-    instagram_location_id: string;
-    is_business: boolean;
     feed: Feed;
 }
 
