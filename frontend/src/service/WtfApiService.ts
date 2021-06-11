@@ -1,6 +1,6 @@
 import IGTruckProfile from "../../../functions/src/model/apiModel";
 import axios from "axios";
-import dbItem from 'json!../public/truck.json';
+import { Truck } from "../model/dbModel";
 
 const apiKey: string = process.env.API_KEY || "";
 
@@ -9,10 +9,6 @@ if ( !baseUrl ) {
     console.error( "REACT_APP_API_URL environment variable not set." );
 }
 
-export function getTruckData(): Promise<IGTruckProfile[]> {
+export function getTruckData(): Promise<Truck[]> {
     return axios.get( baseUrl ).then( res => res.data );
-}
-
-export function createTruck( truckDB: TruckDB ): Promise<TruckDB> {
-    return axios.post( baseUrl, truckDB ).then( res => res.data );
 }
