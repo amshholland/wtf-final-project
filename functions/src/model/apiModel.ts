@@ -22,7 +22,7 @@ export interface Data {
 
 export interface Post {
     taken_at: number;
-    carousel_media?: Carousel[];  
+    carousel_media?: Carousel[];
     location: Location;
 }
 
@@ -40,7 +40,7 @@ export interface Carousel {
 }
 
 export interface ImageVersion {
-    candidates: Candidates; 
+    candidates: Candidates;
 }
 
 export interface Candidates {
@@ -49,5 +49,5 @@ export interface Candidates {
 }
 
 export interface Version {
-    url:  string;
+    url: string;
 }
