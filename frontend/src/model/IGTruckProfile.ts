@@ -7,47 +7,47 @@ export default interface IGTruckProfile {
     biography: string;
     external_url: string;
     contact_phone_number: number;
-    latitude: number;
-    longitude: number;
     instagram_location_id: string;
     is_business: boolean;
-    feed: {
-        data: [
-            0:
-            taken_at: number;
-            carousel_media: [
+    feed: Feed;
+}
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
-            1:
-            taken_at: number;
-            carousel_media: [
+export interface Feed {
+    data: Data[];
+}
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
-            2:
-            taken_at: number;
-            carousel_media: [
+export interface Data {
+    post: Post;
+}
 
-            ];
-            image_versions2" {
-            candidates: [
-                1: {
-                    url: string;
-                }
-            ]
+export interface Post {
+    taken_at: number;
+    carousel_media?: Carousel[];  
+    location: Location;
+}
 
-            }
-        ];
-};
+export interface Location {
+    name: string;
+    short_name: string;
+    lat: number;
+    lng: number;
+    address: string;
+    city: string;
+}
+
+export interface Carousel {
+    image_versions2: ImageVersion;
+}
+
+export interface ImageVersion {
+    candidates: Candidates; 
+}
+
+export interface Candidates {
+    version: Version;
+    //We want the photo version at index 1 (width: 360px, height: 450px)
+}
+
+export interface Version {
+    url:  string;
 }
