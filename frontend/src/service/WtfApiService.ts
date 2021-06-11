@@ -1,4 +1,3 @@
-import IGTruckProfile from "../../../functions/src/model/apiModel";
 import axios from "axios";
 import { Truck } from "../model/dbModel";
 
