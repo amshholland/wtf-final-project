@@ -6,7 +6,7 @@ export interface Truck {
     name: string,
     profilePhoto: string,
     profileDescription: string,
-    instagramHandle: string,
+    iGHandle: string,
     lastRefresh: number,
     lastLocation: TruckLocation;
     locationHistory: TruckLocation[];
@@ -18,4 +18,10 @@ export interface TruckLocation {
     timestamp: number,
     lat: number,
     lng: number;
+    address: string;
+    city: string;
+}
+
+export interface TruckPhoto {
+    imageSrc: string; // = Version.url[1]
 }
