@@ -16,12 +16,17 @@ export interface Feed {
 
 export interface Data {
     post: Post;
+    caption: Caption;
 }
 
 export interface Post {
     taken_at: number;
     carousel_media?: Carousel[];
     location: Location;
+}
+
+export interface Caption {
+    text: string;
 }
 
 export interface Location {
