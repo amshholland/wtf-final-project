@@ -19,6 +19,7 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             const apiTruck = await readTruck( dbTruck.instagramHandle );
             console.log( `handle ${ dbTruck.instagramHandle }` );
             console.log( `IGTruckProfile: ${ apiTruck.full_name }` );
+            console.log( `location: ${ apiTruck.feed.data[ 0 ].post.caption.text }` );
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
             const truckLocations: TruckLocation[] = apiTruck.feed.data.map( apiPost => {
