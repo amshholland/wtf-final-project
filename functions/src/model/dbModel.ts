@@ -6,7 +6,7 @@ export interface Truck {
     name: string;
     profilePhoto: string;
     profileDescription: string;
-    iGHandle: string;
+    instagramHandle: string;
     lastRefresh: number;
     lastLocation: TruckLocation;
     locationHistory: TruckLocation[];

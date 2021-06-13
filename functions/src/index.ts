@@ -1,19 +1,11 @@
 import * as functions from "firebase-functions";
 
-import { Carousel, ImageVersion } from './model/apiModel';
 import { Truck, TruckLocation } from "./model/dbModel";
 
 import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
 export { default as wtf } from "./routes/wtfRoutes";
-
-
-
-
-
-
-
 
 // exports.scheduledFunction = functions.pubsub.schedule('every 30 minutes').onRun((context) => {
 exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
@@ -24,13 +16,13 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         const trucksFromDb = await client.db().collection<Truck>( 'trucks' ).find().limit( 1 ).toArray();
         for ( let dbTruck of trucksFromDb ) {
             //get matching truck from API
-            const apiTruck = await readTruck( dbTruck.iGHandle );
-
-            console.log( apiTruck );
+            const apiTruck = await readTruck( dbTruck.instagramHandle );
+            console.log( `handle ${ dbTruck.instagramHandle }` );
+            console.log( `IGTruckProfile: ${ apiTruck.full_name }` );
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
             const truckLocations: TruckLocation[] = apiTruck.feed.data.map( apiPost => {
-
+                console.log( `apiPost: ${ apiPost }` );
                 const truckLocation: TruckLocation = {
                     locationName: apiPost.post.location.name,
                     photo: '', //TODO this shit later
@@ -47,8 +39,8 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         }
 
         res.send( "done" );
-    } catch ( error ) {
-        console.log( error );
+    } catch ( err ) {
+        console.log( err );
         res.send( "failed" );
     }
 } );
