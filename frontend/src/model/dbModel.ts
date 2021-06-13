@@ -20,7 +20,3 @@ export interface TruckLocation {
     address: string;
     city: string;
 }
-
-// export interface PostCaption {
-//     caption: string;
-// }
