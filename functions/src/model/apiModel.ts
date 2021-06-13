@@ -16,13 +16,15 @@ export interface Feed {
 
 export interface Data {
     post: Post;
-    caption: Caption;
 }
 
 export interface Post {
     taken_at: number;
+    media_type: number;
     carousel_media?: Carousel[];
     location: Location;
+    caption: Caption;
+    image_versions2?: ImageVersion;
 }
 
 export interface Caption {
@@ -43,12 +45,11 @@ export interface Carousel {
 }
 
 export interface ImageVersion {
-    candidates: Candidates;
+    candidates: Candidates[];
 }
 
 export interface Candidates {
-    version: Version;
-    //We want the photo version at index 1 (width: 360px, height: 450px)
+    version: Version; //We want the photo version at index 1 (width: 360px, height: 450px)
 }
 
 export interface Version {
