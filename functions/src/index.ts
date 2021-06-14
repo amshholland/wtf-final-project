@@ -1,7 +1,5 @@
 import * as functions from "firebase-functions";
-
 import { Truck, TruckLocation } from "./model/dbModel";
-
 import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
@@ -50,5 +48,3 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         res.send( "failed" );
     }
 } );
-
-// comment to push for Patrick
