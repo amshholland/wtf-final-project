@@ -21,34 +21,43 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             console.log( `IGTruckProfile: ${ apiTruck.full_name }` );
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
-            const truckLocations: TruckLocation[] = apiTruck.feed.data.map( apiPost => {
+            const truckLocations: TruckLocation = apiTruck.feed.data.filter( apiPost => {
+
+                if ( apiPost.location === undefined ) {
+                    return false;
+                }
+
+                return true;
+            } ).map( apiPost => {
                 const truckLocation: TruckLocation = {
-                    locationName: '',
-                    photo: '', //TODO this shit later
+                    locationName: apiPost.location.name || 'undefined',
                     timestamp: apiPost.taken_at,
-                    lat: apiPost.location.lat,
-                    lng: apiPost.location.lng,
-                    address: apiPost.location.address,
-                    city: apiPost.location.city,
+                    lat: apiPost.location.lat || 0,
+                    lng: apiPost.location.lng || 0,
+                    address: apiPost.location.address || 'undefined',
+                    city: apiPost.location.city || 'undefined'
                 };
-
-                console.log( `apiPost: ${ apiPost.taken_at }` );
-                console.log( `Location Name: ${ apiPost.location.name }` );
-                console.log( `Location Name: ${ apiPost.location.lat }` );
-                console.log( `Location Name: ${ apiPost.location.lng }` );
-                console.log( `Location Name: ${ apiPost.location.address }` );
-                console.log( `Location Name: ${ apiPost.location.city }` );
-
+                console.log( truckLocation );
                 return truckLocation;
-
             } );
-            //replace truck in database
-        }
 
-        res.send( "done" );
-    } catch ( err ) {
-        console.log( err );
-        res.send( "failed" );
+            // console.log( `truckLocation: ${ truckLocation }` );
+
+            // console.log( `apiPost: ${ apiPost.taken_at }` );
+            // console.log( `Location Name: ${ apiPost.location.name }` );
+            // console.log( `Location Name: ${ apiPost.location.lat }` );
+            // console.log( `Location Name: ${ apiPost.location.lng }` );
+            // console.log( `Location Name: ${ apiPost.location.address }` );
+            // console.log( `Location Name: ${ apiPost.location.city }` );
+
+        }
+        //replace truck in database
     }
+
+res.send( "done" );
+} catch ( err ) {
+    console.log( err );
+    res.send( "failed" );
+}
 } );
 
