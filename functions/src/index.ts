@@ -22,18 +22,25 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
             const truckLocations: TruckLocation[] = apiTruck.feed.data.map( apiPost => {
-                console.log( `apiPost: ${ apiPost }` );
                 const truckLocation: TruckLocation = {
-                    locationName: apiPost.post.location.name,
+                    locationName: '',
                     photo: '', //TODO this shit later
-                    timestamp: apiPost.post.taken_at,
-                    lat: apiPost.post.location.lat,
-                    lng: apiPost.post.location.lng,
-                    address: apiPost.post.location.address,
-                    city: apiPost.post.location.city,
+                    timestamp: apiPost.taken_at,
+                    lat: apiPost.location.lat,
+                    lng: apiPost.location.lng,
+                    address: apiPost.location.address,
+                    city: apiPost.location.city,
                 };
-                console.log( truckLocations );
+
+                console.log( `apiPost: ${ apiPost.taken_at }` );
+                console.log( `Location Name: ${ apiPost.location.name }` );
+                console.log( `Location Name: ${ apiPost.location.lat }` );
+                console.log( `Location Name: ${ apiPost.location.lng }` );
+                console.log( `Location Name: ${ apiPost.location.address }` );
+                console.log( `Location Name: ${ apiPost.location.city }` );
+
                 return truckLocation;
+
             } );
             //replace truck in database
         }

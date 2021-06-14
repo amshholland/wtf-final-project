@@ -15,10 +15,6 @@ export interface Feed {
 }
 
 export interface Data {
-    post: Post;
-}
-
-export interface Post {
     taken_at: number;
     media_type: number;
     carousel_media?: Carousel[];
