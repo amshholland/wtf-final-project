@@ -12,3 +12,5 @@ import "firebase/auth";
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  // trying to commit again
