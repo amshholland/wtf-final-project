@@ -50,5 +50,3 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         res.send( "failed" );
     }
 } );
-
-// comment to push for Patrick
