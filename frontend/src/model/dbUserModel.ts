@@ -1,8 +1,7 @@
-export interface User {
+export default interface User {
     _id?: string;
-    firstName: string;
-    lastName: string;
-    email: string;
+    name: string | undefined | null;
+    email: string | undefined | null;
     phoneNumber: string;
     city: string;
 }
