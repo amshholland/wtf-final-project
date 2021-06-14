@@ -9,7 +9,6 @@ export interface Truck {
     instagramHandle: string;
     lastRefresh: number;
     lastLocation: TruckLocation;
-    locationHistory: TruckLocation[];
     caption: string;
 }
 

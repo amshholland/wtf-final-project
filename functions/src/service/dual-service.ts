@@ -1,6 +1,6 @@
 import * as functions from "firebase-functions";
 
-import IGTruckProfile from "../model/apiModel";
+import IGTruckProfile from "../model/truckApiModel";
 import axios from "axios";
 
 const key = functions.config().RapidAPI.key;

@@ -1,5 +1,5 @@
+import { Truck } from "../model/truckDbModel";
 import axios from "axios";
-import { Truck } from "../model/dbModel";
 
 const apiKey: string = process.env.API_KEY || "";
 
