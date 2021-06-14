@@ -7,9 +7,7 @@ export default interface IGTruckProfile {
     biography: string;
     external_url: string;
     contact_phone_number: number;
-    feed: {
-        [ key: string ]: Feed; // object
-    };
+    feed: Feed;
 }
 
 export interface Feed {
