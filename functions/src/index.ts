@@ -40,24 +40,14 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                 console.log( truckLocation );
                 return truckLocation;
             } );
-
-            // console.log( `truckLocation: ${ truckLocation }` );
-
-            // console.log( `apiPost: ${ apiPost.taken_at }` );
-            // console.log( `Location Name: ${ apiPost.location.name }` );
-            // console.log( `Location Name: ${ apiPost.location.lat }` );
-            // console.log( `Location Name: ${ apiPost.location.lng }` );
-            // console.log( `Location Name: ${ apiPost.location.address }` );
-            // console.log( `Location Name: ${ apiPost.location.city }` );
-
         }
-        //replace truck in database
-    }
 
-res.send( "done" );
-} catch ( err ) {
-    console.log( err );
-    res.send( "failed" );
-}
+        //replace truck in database
+
+        res.send( "done" );
+    } catch ( err ) {
+        console.log( err );
+        res.send( "failed" );
+    }
 } );
 
