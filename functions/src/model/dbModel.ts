@@ -14,12 +14,16 @@ export interface Truck {
 
 export interface TruckLocation {
     locationName: string;
-    photo: string; // = Version.url[1]
-    carouselPhoto?: string;
+    photo?: string; // = Version.url[1]
+    carouselPhoto?: CarouselPhotos[];
     timestamp: number;
     lat: number;
     lng: number;
     address: string;
     city: string;
     caption: string;
+}
+
+export interface CarouselPhotos {
+    photo: string;
 }

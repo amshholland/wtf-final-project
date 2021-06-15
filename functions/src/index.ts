@@ -35,7 +35,6 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     postPhoto = apiPost.image_versions2.candidates[ 1 ].url;
                     console.log( `single image: ${ postPhoto }` );
                 } else {
-                    console.log( `carousel image` );
                     apiPost.carousel_media?.map( media => {
                         postPhoto = media.image_versions2.candidates[ 1 ].url;
                         console.log( `carousel images: ${ postPhoto }` );
@@ -53,10 +52,8 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     caption: apiPost.caption.text || ''
                 };
 
-                // console.log( truckLocation );
                 return truckLocation;
             } );
-
             dbTruck.lastRefresh = Date.now();
         }
 
