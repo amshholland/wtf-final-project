@@ -1,14 +1,18 @@
 export interface Truck {
-    _id?: string;
+    _id?: Id;
     iGId: number;
     name: string;
     profilePhoto: string;
     profileDescription: string;
     instagramHandle: string;
-    lastRefresh: number;
-    lastLocation: TruckLocation;
-    locationHistory: TruckLocation[];
-    caption: string;
+    // lastRefresh: number;
+    // lastLocation: TruckLocation;
+    // locationHistory: TruckLocation[];
+    // caption: string;
+}
+
+export interface Id {
+    $oid: string;
 }
 
 export interface TruckLocation {

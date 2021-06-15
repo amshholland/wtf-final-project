@@ -1,7 +1,9 @@
 import axios from "axios";
 import { Truck } from "../model/dbModel";
+import trucks from "../components/mongo-clone.json";
 
 const apiKey: string = process.env.API_KEY || "";
+const nodeEnvironment: string = process.env.NODE_ENV || "development";
 
 const baseUrl = process.env.REACT_APP_API_URL || "";
 if ( !baseUrl ) {
@@ -9,5 +11,9 @@ if ( !baseUrl ) {
 }
 
 export function getTruckData(): Promise<Truck[]> {
+    console.log(nodeEnvironment);
+    if (nodeEnvironment === "development") {
+        return Promise.resolve(trucks);
+    }
     return axios.get( baseUrl ).then( res => res.data );
 }

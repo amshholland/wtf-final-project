@@ -5,34 +5,47 @@ import "./FoodTruckList.css";
 import { getTruckData } from "../service/WtfApiService";
 
 function FoodTruckList() {
+  const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
+  const [foodTrucksLoaded, setFoodTrucksLoaded] = useState(false);
 
-    const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
-    const [foodTrucksLoaded, setFoodTrucksLoaded] = useState(false);
+  useEffect(() => {
+    loadTrucks();
+  }, []);
 
-    useEffect(() => {
-        loadTrucks();
-    }, []);
+  function loadTrucks() {
+    getTruckData().then((trucksFromApi) => {
+      console.log(trucksFromApi);
+      setFoodTrucks(trucksFromApi);
+      setFoodTrucksLoaded(true);
+    });
+  }
 
-    function loadTrucks() {
-        getTruckData().then(trucksFromApi => {
-            setFoodTrucks(trucksFromApi);
-            setFoodTrucksLoaded(true);
-        });
-    }
-
-    return (
-        <div className="FoodTruckList">
-            <h1>Food Trucks</h1>
-            {!foodTrucksLoaded ? 
+  return (
+    <div className="FoodTruckList">
+      <header>
+        <h1>Food Trucks</h1>
+      </header>
+      {/* {!foodTrucksLoaded ? 
                 <p>Loading...</p> : 
                 foodTrucks.length === 0 ? 
                 <p>No Food Trucks available.</p> :
-                // foodTrucks.map(eachTruck =>   //NOT WORKING because foodTrucks is coming back as HTML code
-                //     <FoodTruckCard key={eachTruck._id} truck={eachTruck}/>)
-                <p>{foodTrucks}</p>
-            }
-        </div>
-    )
+                foodTrucks.map(eachTruck =>   //NOT WORKING because foodTrucks is coming back as HTML code
+                    <FoodTruckCard key={eachTruck._id} truck={eachTruck}/>)
+                // <p>{foodTrucks}</p>
+            } */}
+      {!foodTrucksLoaded ? (
+        <p>Loading...</p>
+      ) : foodTrucks.length === 0 ? (
+        <p>No Food Trucks available.</p>
+      ) : (
+        <ul>
+          {foodTrucks.map((truckInList) => (
+            <li id="truckNameInList">{truckInList.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
 
 export default FoodTruckList;
