@@ -16,7 +16,9 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         const trucksFromDb = await client.db().collection<Truck>( 'trucks' ).find().limit( 1 ).toArray();
         for ( let dbTruck of trucksFromDb ) {
             //get matching truck from API
-            const apiTruck = await readTruck( dbTruck.instagramHandle );
+            // const apiTruck = await readTruck( dbTruck.instagramHandle );
+            const apiTruck = await readTruck( 'amshholland' );
+
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
             apiTruck.feed.data.filter( function ( apivalue, apikey ) {
@@ -29,18 +31,14 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             } ).map( apiPost => {
 
                 let postPhoto: string = '';
-
-                if ( apiPost.carousel_media_count === undefined ) {
-                    apiPost.image_versions2?.candidates.map( candidate => {
-                        postPhoto = candidate.version.url;
-                        console.log( postPhoto );
-                    } );
+                if ( apiPost.carousel_media === undefined ) {
+                    postPhoto = apiPost.image_versions2.candidates[ 1 ].url;
+                    console.log( `single image: ${ postPhoto }` );
                 } else {
+                    console.log( `carousel image` );
                     apiPost.carousel_media?.map( media => {
-                        media.image_versions2.candidates.map( candidate => {
-                            postPhoto = candidate.version.url;
-                            console.log( postPhoto );
-                        } );
+                        postPhoto = media.image_versions2.candidates[ 1 ].url;
+                        console.log( `carousel images: ${ postPhoto }` );
                     } );
                 }
 
@@ -55,7 +53,6 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     caption: apiPost.caption.text || ''
                 };
 
-                console.log( postPhoto );
                 // console.log( truckLocation );
                 return truckLocation;
             } );
@@ -71,4 +68,4 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         console.log( err );
         res.send( "failed" );
     }
-} );
+} );;

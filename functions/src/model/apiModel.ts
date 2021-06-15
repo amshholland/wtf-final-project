@@ -20,7 +20,7 @@ export interface Data {
     carousel_media?: Carousel[];
     location: Location;
     caption: Caption;
-    image_versions2?: ImageVersion;
+    image_versions2: ImageVersion;
 }
 
 export interface Caption {
@@ -45,9 +45,5 @@ export interface ImageVersion {
 }
 
 export interface Candidates {
-    version: Version; //We want the photo version at index 1 (width: 360px, height: 450px)
-}
-
-export interface Version {
     url: string;
 }
