@@ -11,6 +11,7 @@ if ( !baseUrl ) {
 }
 
 export function getTruckData(): Promise<Truck[]> {
+    console.log(baseUrl);
     console.log(nodeEnvironment);
     if (nodeEnvironment === "development") { //for offline development
         return Promise.resolve(trucks);

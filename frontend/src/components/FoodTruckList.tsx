@@ -14,7 +14,6 @@ function FoodTruckList() {
 
   function loadTrucks() {
     getTruckData().then((trucksFromApi) => {
-      console.log(trucksFromApi);
       setFoodTrucks(trucksFromApi);
       setFoodTrucksLoaded(true);
     });

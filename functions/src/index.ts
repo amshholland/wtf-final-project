@@ -48,8 +48,4 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         console.log( err );
         res.send( "failed" );
     }
-<<<<<<< HEAD
 } );
-=======
-} );
->>>>>>> e375436965a729213e9207b241c621a4e4536b9b

@@ -32,6 +32,12 @@
     text-align: center;
 }
 
+.FoodTruckList #truckNameInList:hover { 
+    transition: all 200ms;
+    background-color: #f0d898;
+    
+}
+
 .FoodTruckList ul {
     padding: 0;
     position: relative;
