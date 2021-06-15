@@ -10,16 +10,16 @@ export interface Truck {
     lastRefresh: number;
     lastLocation: TruckLocation;
     locationHistory: TruckLocation[];
-    caption: string;
 }
 
 export interface TruckLocation {
     locationName: string;
-    photo?: string; // = Version.url[1]
+    photo: string; // = Version.url[1]
     carouselPhoto?: string;
     timestamp: number;
     lat: number;
     lng: number;
     address: string;
     city: string;
+    caption: string;
 }

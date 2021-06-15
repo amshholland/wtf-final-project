@@ -11,12 +11,12 @@ export default interface IGTruckProfile {
 }
 
 export interface Feed {
-    post: Post[];
+    data: Data[];
 }
 
-export interface Post {
+export interface Data {
     taken_at: number;
-    media_type: number;
+    carousel_media_count?: number;
     carousel_media?: Carousel[];
     location: Location;
     caption: Caption;
