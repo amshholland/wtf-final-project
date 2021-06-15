@@ -19,9 +19,9 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             console.log( `IGTruckProfile: ${ apiTruck.full_name }` );
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
-            const truckLocations: TruckLocation = apiTruck.feed.data.filter( apiPost => {
+            apiTruck.feed.post.filter( function ( apivalue, apikey ) {
 
-                if ( apiPost.location === undefined ) {
+                if ( apivalue.location === undefined ) {
                     return false;
                 }
 
@@ -35,6 +35,7 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     address: apiPost.location.address || 'undefined',
                     city: apiPost.location.city || 'undefined'
                 };
+
                 console.log( truckLocation );
                 return truckLocation;
             } );
@@ -47,4 +48,8 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         console.log( err );
         res.send( "failed" );
     }
+<<<<<<< HEAD
 } );
+=======
+} );
+>>>>>>> e375436965a729213e9207b241c621a4e4536b9b
