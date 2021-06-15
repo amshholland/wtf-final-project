@@ -31,7 +31,7 @@ function FoodTruckList() {
       ) : (
         <ul>
           {foodTrucks.map((truckInList) => (
-            <li id="truckNameInList">{truckInList.name}</li>
+            <li id="truckNameInList"><p id="name">{truckInList.name}</p><p id="igHandle">{`@${truckInList.instagramHandle}`}</p></li>
           ))}
         </ul>
       )}

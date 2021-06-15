@@ -43,3 +43,11 @@
     position: relative;
 }
 
+.FoodTruckList #name {
+    margin: 5px;
+}
+.FoodTruckList #igHandle {
+    margin: 5px;
+    font-size: .75em;
+}
+
