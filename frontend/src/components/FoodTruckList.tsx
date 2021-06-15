@@ -25,14 +25,6 @@ function FoodTruckList() {
       <header>
         <h1>Food Trucks</h1>
       </header>
-      {/* {!foodTrucksLoaded ? 
-                <p>Loading...</p> : 
-                foodTrucks.length === 0 ? 
-                <p>No Food Trucks available.</p> :
-                foodTrucks.map(eachTruck =>   //NOT WORKING because foodTrucks is coming back as HTML code
-                    <FoodTruckCard key={eachTruck._id} truck={eachTruck}/>)
-                // <p>{foodTrucks}</p>
-            } */}
       {!foodTrucksLoaded ? (
         <p>Loading...</p>
       ) : foodTrucks.length === 0 ? (
