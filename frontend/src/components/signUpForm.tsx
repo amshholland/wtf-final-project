@@ -39,13 +39,11 @@ function SignUpForm({ onSubmit }: Props) {
         <form className="dbUserForm" onSubmit={handleSubmit}>
             <h2>Sign Up for WTF Truck</h2>
             <p className="formName">
-                <label htmlFor="dbUserFormFirstName">First Name:</label>
-                <input id="dbUserFormFirstName" value={firstName} onChange={e => setFirstName(e.target.value)} required />
-            </p>
-            <p className="formName">
-                <label htmlFor="dbUserFormLastName">Last Name:</label>
-                <input id="dbUserFormLastName" value={lastName} onChange={e => setLastName(e.target.value)} required />
-            </p>
+                <label htmlFor="dbUserFormName">Name:</label>
+                { user && 
+                <p>{user?.displayName}</p>
+                }            
+                </p>
             <p className="formEmail">
                 <label htmlFor="dbUserEmail">Email:</label>
                 { user && 
@@ -59,6 +57,9 @@ function SignUpForm({ onSubmit }: Props) {
             <p className="formCity">
                 <label htmlFor="dbUserFormCity">Home City:</label>
                 <input id="dbUserFormCity" value={city} onChange={e => setCity(e.target.value)} required />
+            </p>
+            <p className="formSubmit">
+                <button type="submit">Sign Up</button>
             </p>
         </form>
     )
