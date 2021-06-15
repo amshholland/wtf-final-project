@@ -6,7 +6,7 @@ import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
 export { default as wtf } from "./routes/wtfRoutes";
- 
+
 // exports.scheduledFunction = functions.pubsub.schedule('every 30 minutes').onRun((context) => {
 exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
     console.log( 'This will be run every 30 minutes!' );
@@ -21,12 +21,12 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             console.log( `IGTruckProfile: ${ apiTruck.full_name }` );
             //update database truck with info from API
             //TODO filter our results first to omit posts with no location ****
-            apiTruck.feed.data.filter( function ( apivalue, apikey ) {
- 
+            apiTruck.feed.post.filter( function ( apivalue, apikey ) {
+
                 if ( apivalue.location === undefined ) {
                     return false;
                 }
- 
+
                 return true;
             } ).map( apiPost => {
                 const truckLocation: TruckLocation = {
@@ -37,14 +37,14 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     address: apiPost.location.address || 'undefined',
                     city: apiPost.location.city || 'undefined'
                 };
- 
+
                 console.log( truckLocation );
                 return truckLocation;
             } );
         }
- 
+
         //replace truck in database
- 
+
         res.send( "done" );
     } catch ( err ) {
         console.log( err );
