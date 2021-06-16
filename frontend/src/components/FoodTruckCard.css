@@ -1,0 +1,45 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    height: 95%;
+    border: 2px #133840 solid;
+    border-radius: 2px;
+    padding-bottom: 0;
+}
+
+.modal-dialog {
+    height: 80vh;
+}
+
+.modal-header {
+    display: flex;
+    align-content: flex-end;
+}
+
+.modal-title {
+    flex: 2;
+    text-align: center;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mymodal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    width: 95%;
+    height: 90%;
+}
