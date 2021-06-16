@@ -12,18 +12,17 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
     // console.log( 'This will be run every 30 minutes!' );
     try {
         // Get trucks from database that need to be updated
+        // Connecting to MongoDB
         const client = await getClient();
         const collection = client.db().collection<Truck>( 'trucks' );
         const trucksFromDb = await collection.find().toArray();
-        const trucksToDb = '';
 
+        // Iterate through each truck
         for ( let dbTruck of trucksFromDb ) {
             // Use trucks from DB to search 3rd party API by IG handle
             const apiTruck = await readTruck( dbTruck.instagramHandle );
-            let newTruckData = dbTruck;
 
-            // Update database truck with info from API
-            // Filter our results first to omit posts with no location ****
+            // Filter our results first to omit posts with no location
             const locationHistory = apiTruck.feed.data.filter( function ( apivalue, apikey ) {
 
                 if ( apivalue.location === undefined ) {
@@ -62,18 +61,16 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
 
                 // Use all data pulled from DB, update lastLocation and locationHistory(push) with truck location
                 // In the future, when locationHistory is used, consider using timestamp or post ID to determine whether to push to locationHistory
-                console.log( trucksToDb );
-
                 return truckLocation;
             } );
-            newTruckData.lastLocation = locationHistory[ 0 ];
-            newTruckData.locationHistory = locationHistory;
-            newTruckData = dbTruck;
-            newTruckData.lastRefresh = Date.now();
-            console.log( newTruckData );
-            // dbTruck = filter
-            // newTruckData = replacement
-            collection.replaceOne( { _id: dbTruck._id }, newTruckData );
+
+            dbTruck.lastLocation = locationHistory[ 0 ];
+            dbTruck.locationHistory = locationHistory;
+            dbTruck.lastRefresh = Date.now();
+
+            // dbTruck._id = filter
+            // dbTruck = replacement
+            collection.replaceOne( { _id: dbTruck._id }, dbTruck );
         }
         res.send( "done" );
     } catch ( err ) {
