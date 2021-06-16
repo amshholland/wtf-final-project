@@ -8,7 +8,18 @@
     "name": "The Drunken Rooster Food Truck",
     "profilePhoto": "https://cdn.botdef.com/img/DxiOhz90WWXEzZ9KpEHtaCwNYV-jlPSP3fCf7L6gp5qs5xrlarn0WBtrN8xJqYUCuMWbQDjY_eWUfqLcAydLiJ08rld0G8IgiblBaWYpoywxDkIJQH6f7FyCiczy4at-b8oKnd8X0MWkpW302HI72DlAlKn6Uc_6wcnoe7nOwzuDpPlhQmmZafHp2JX1r4gIOWxeNNSinGUh95wt96gx3o1N4U-D75m3FV5sXNkqe1HIMu0nKpm0kCqMMT25W-BFepDzDucl9pjDOWEFJooNWxwPjfWkrHLRKUGRDFFgv2SuzPu5NzM1yLQA63ZyyqO9OHc_xobgeWmnNm2Fq3_ZQg",
     "profileDescription": "The Drunken Rooster Food Truck can be found all around the Metro Detroit Area.",
-    "instagramHandle": "the_drunken_rooster"
+    "instagramHandle": "the_drunken_rooster",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -18,7 +29,18 @@
     "name": "Spice Rack",
     "profilePhoto": "https: //cdn.botdef.com/img/9MqZYTJnuj0VDh04R20HQWFZkwVuo5OdpLHUznwxCXPNze_kac9ae1Ycqj9Brx0v1_bhWczOtuGcncO8nN2J90rl7wIEofP9Nn19ytQrvWa2QTHc0OBoxvvPxxZXsner3W0TPEOC2-0GYhBFKP3v8b5f40j1iFn51tlCo-eacmKaA-r-8SvBUiNSSqCRo24zBdDNw9Ui5-HQWV1-wXlUKg1AtA6Kk8WRggsbMfSCPraU_d3PZwo5P9q2jS0Y26NUicd9sZTQMl3Axj0_2xc9FlxdgEHPg5BSDFjJyVb6Tgc-zo9z3uu0CfioV7SFoF5oDbrmILSwBmyuLmxP6ENhul_w2RXgMDDFppxuR_bS07I",
     "profileDescription": "Book a personal chef for any occasion, we provide catering services for private or corporate events for an affordable price quote contact us today.",
-    "instagramHandle": "the_spicerack_"
+    "instagramHandle": "the_spicerack_",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -28,7 +50,18 @@
     "name": "The Elephant Shack",
     "profilePhoto": "https: //cdn.botdef.com/img/ixgXJ8TJ-uOuLeQL9dwVWF9Utvd2y7NOz79G0MJTS41HLDhv8yl2POZV65gYx1bCu3kp4U7y4TPrdFVkBnuJV7ta2qlLQWI3t_ki92qP7DeXqC32yWoCz6s3SfoVDELYFULGsmy8qPifnR-AaI4U-LHDsC87Z-2J_hGDuMGII3bdPRtnZXgagwkRqRoQH2CjE0eKDyR5scsOHvKdzswWH1CvnZMDi9yuR8aDCTIsJrNan38fo3KK3gVXW1jByzNiiXGDoTdr_TaxcgKWSmnzO_IuhdJAAp0N3nAei6yXZ7yPyKdwDZMD9MNGpIHFGOX1f3ENYQxKJOFnGVSSZrtMWQ4bp-HSoj11tzXsvqnyHK4",
     "profileDescription": "Food truck serving up international street food Parked permanently @easternmarketbrewing",
-    "instagramHandle": "elephantshack"
+    "instagramHandle": "elephantshack",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -38,7 +71,18 @@
     "name": "Detroit 75 Kitchen",
     "profilePhoto": "https://cdn.botdef.com/img/BIgU01SyOvo9PR9457VTKQBMaRYnTeMLHotPYYEsk04z3sx7yXY_WxewqwppWe32bbSL66cxeCmqvZU9znpjzVjVeIlETHxAkSUM385GgIQZEjV5NzKCYh5xL8HX67eM-u8wMWBOX_DoerXsspnPWR58BDPcmcscK1vRJ4r9-DTauWE3jRSo0KvYiMs6hBkB9p-XGq4EUGlVvW7QaG1T6L-IwbmFVCoOI_DdcJPsLx_qMI6Cw1Bz2ejcIkdcdyPfNoQpLtlGaGR4kkjdJplF0fR4SXLFkkoyoblo15nT1gWduN4tE3whG1U0WKcEO96qKi8-YsXlA4FuzKWzENYk0wzUrs1jqufkFiWald9Pf4M",
     "profileDescription": "▪️World Class Eating Experience in Detroit ▪️Top 3 Food Truck in U.S by @usweekly ▪️4800 W. Fort St. Detroit, MI" ,
-    "instagramHandle": "detroit75kitchen"
+    "instagramHandle": "detroit75kitchen",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -48,7 +92,18 @@
     "name": "The Lobster Food Truck",
     "profilePhoto": "https://cdn.botdef.com/img/HRekcvsd8gaQBbc7JlBEfPF0SnaVtv2OvRKo7y23XasiRfvtxZfRPECZW-WyzOcmqbvCM255ZUbXAvM20k_qBBF9HXOaE69PWyPdl1ZBs1cGzZ5mc3wmwO8_9t-Ddxfg1hRAk1eMUSW5Qtc6itYzI8v4fMHY7m4eKFgEMRTJoWEsWuiAvZjKL1YoTPFrKJXSdXd3XTGgMSNOCxUPLtZhYgonQrUwH1wafpK3WSAMJ2ldxDkU1EtfJgZXizVJAqa46Iru1qK71I8Zlrdp5Gsab0vBguXosXjMvjGvvpS2MwhIRivfcwAkGWHmom6HuDviXT55J95VFfALdoAyJX4lb-JBM2uGiA1kNrpVWodHMBo",
     "profileDescription": "The #Best FoodTruck to hit #Detroit 📍Locations coming soon 🔴⚫️ Open Tuesday - Saturday (closed Sun & Mon) Locations/Times are on our Website.",
-    "instagramHandle": "thelobsterfoodtruck"
+    "instagramHandle": "thelobsterfoodtruck",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -58,7 +113,18 @@
     "name": "Los Dos Amigos",
     "profilePhoto": "https://cdn.botdef.com/img/g32z31n9_BouGiEuWB_N7_sam_kZ6zKQ0XS3QLeFUj-9qwxLdOZ1YpempY9Hk0_NC6f006cQgxMOKv4sT73OJByNFg1ux10L9VRbvgidsnaWw2U1e9oH3LD5HWUS03iGAl9mmjcpyFKPw-quktxzYWNpmYl-f7VR57HbLlaW9fXBT537VqXpl1OKfQjZOLsbhcEupOnP3G_K0FYsJtkLRNQYveXlmEhr6RgGsAqBSG0exCTedJ3EnQ7HN4mRp54MEWOiRYP1m3k-gJlq5L6CAFo7pAetjp_gEdpZS7ifyYxQLxztpnsPlQZpoz9fpifAFznAa7RhQA9r0VsTwM_aBhW_2eoa5heF8OFEh-YPWng",
     "profileDescription": "SW Detroit staple since 1999. 🏆 Award winning Al Pastor 📍7115 Parkwood Detroit, MI 48210 We cater! 📱(313)218-3360 📧 losdosamigostacotruck@gmail.com",
-    "instagramHandle": "losdosamigostacotruck"
+    "instagramHandle": "losdosamigostacotruck",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -68,7 +134,18 @@
     "name": "Durdens Catering",
     "profilePhoto": "https://cdn.botdef.com/img/VRN2qGsAzeGRt0JbKdhTioyiUQuO8pl43P-uQDIYpfhWBVSVM3NgaYKjHslZCMRRi3A5MEYtwqWGAlSQLB9T32l2ZHdrlacgwaruTDlRuepw8RfuJ0Hece6h-U9riVhGYLLiBCs37HkDTn_avOI4poEhna4xsZofC_XzuAbyK5FzfPwk7_4nx1cCRK1OcS8KMnCpjIIn8Z7E8LSyjoL38LPI69E3pXl0G-hNg8fKrh7HqdiO7_4pXqJCkOV9unJmd1akFvc8L5IQzaILC-rgTb24FiFKIGnbz2YrT-YJZeyFfDHYp0wAhlk-ugPdRp9gbR72bDPhnF3lUp3JJLGTSNrr5sG8ZRLPfdGb-JKu-Zo",
     "profileDescription": "Home of the Spicy Yung Gripper Chicken Sandwich by @durdenscatering #DurdenEmpire",
-    "instagramHandle": "thegripperfoodtruck"
+    "instagramHandle": "thegripperfoodtruck",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -78,7 +155,18 @@
     "name": "Detroit's Original Seafood Truck",
     "profilePhoto": "https://cdn.botdef.com/img/CcHKE04ho7pK4kSbyoja_fBysTX7Hi7e_ue33dOPy3y3Lo0mUwVoBEdU_GiEqf790hXZ7JhkDluL5CsIq29lscHLpga-lJgiidr6Dx_JG-Oxe-NxbZVdOFMeJ0lX13Du1fHlObx8Z0xxJPlroMxkKsS15nkO5Z-8lcYKSk2NEdTv0Qi6yj91iieKwoZ8uNgRug1nasQKborGg3JvosBW85c-1QA5CqBvLp18SHP2J6hvsD1Tex3m-XfNMGPn5AMSPLmmwkQ0gi4RjgVI8g66s4tudPLyAWZRfIa9x4i3Y-xog0kLWzsXSRWN-8Z0u9yafRW820FkSHMNd9C3S_olgP5f37CgMbiuJXOA-M7RZiM",
     "profileDescription": "Your Favorite Foodtruck's Favorite Foodtruck!🥇Fried Crab Legs and Lobster Tails.🦀🦞🍤🔥💧#love #sea #food 313-285-0948",
-    "instagramHandle": "detroitoriginalseafoodtruck"
+    "instagramHandle": "detroitoriginalseafoodtruck",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
@@ -89,7 +177,18 @@
     "profilePhoto": "https://cdn.botdef.com/img/6xcxnNmUSIK0sAci3eve_QSZr-KflRi1uE6UAqEzAQI--AC0s1qUHFKlOuEbJnyy3Vgu0u5mVFnaiZS9MXYSsy34IhvCa1VdwzAKqlK30eOQGlfoOJViKhySZUKW9PWLGPs0OijcoXub1kuKjp10T3necCoqpmWeWO_iquflWnE8uaN3fbQadGldYUduTqqVfEEu6VU6iY_cjv42Mv3zh5Ga8pSBvW8rzLC_1xPkuyRwcomN8UV-B_r-Oys8NpJM3p4LOHlC9qRIW2pp4QGYEdWGXrQq9SXqbEqiqclZuJxjVS9ULsK7EsO81NDXuVthHz25c9ZxmmBrW4AVP4bEwKIawkzNn6M--zuKpAzFnUw"
 ,
     "profileDescription": "Hometown favorites with an Indian twist. Carry out from Ferndale, weekend delivery, cater your next event, find us on a shelf near you!",
-    "instagramHandle": "thenudeli"
+    "instagramHandle": "thenudeli",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   }
 ]
 }

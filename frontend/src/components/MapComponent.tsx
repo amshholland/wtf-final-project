@@ -1,8 +1,9 @@
 import './MapComponent.css';
-import {GoogleMap, InfoWindow, withGoogleMap, withScriptjs} from "react-google-maps";
+import {GoogleMap, withGoogleMap, withScriptjs } from "react-google-maps";
 import { useState, useEffect, ReactElement } from 'react';
 import Marker from 'react-google-maps/lib/components/Marker';
 import * as trucksData from '../components/mongo-clone.json';
+import { Truck, TruckLocation } from '../model/dbModel';
 
 interface Props {
     googleMapURL: string;
@@ -14,13 +15,9 @@ interface Props {
 //TODO: how to get info about location from db to put into map marker
 
 function MapComponent({ googleMapURL, loadingElement, containerElement, mapElement }: Props) {
-     return (
-         <div className="MapComponent">
-                 {function Map() {
-                    const [selectedTruckPin, setSelectedTruckPin] = useState(null);
-
-                    useEffect(() => {
-                        const listener = (e) => {
+    const [selectedTruckPin, setSelectedTruckPin] = useState<any>(null);
+    useEffect(() => {
+                        const listener = (e: { key: string; }) => {
                             if (e.key === "Escape") {
                                 setSelectedTruckPin(null);
                             }
@@ -33,31 +30,31 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                     }, [])
 
 
-                return <GoogleMap 
+                return ( <GoogleMap 
                 defaultZoom={10} 
                 defaultCenter={{lat: 42.3314, lng: 83.0458}}
-                defaultOptions={{ styles: mapStyles }}
+                // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
                 >
                     {trucksData.trucks.map(truck => (
                         <Marker
                         key={truck.iGId}
                         position={{
-                            lat: truck.lastLocation.lat,
-                            lng: truck.lastLocation.lng
+                            lat: truck.lastLocation?.lat,
+                            lng: truck.lastLocation?.lng
                         }}
                         onClick={() => {
                             setSelectedTruckPin(truck);
                         }}
-                        icon={{
-                            url: "truck img/avatar from database?",
-                            scaledSize: new window.google.maps.Size(25, 25)
-                        }}
+                        // icon={{
+                        //     url: "truck img/avatar from database?",
+                        //     scaledSize: new window.google.maps.Size(25, 25)
+                        // }}
                         />
                     ))}
 
                     {// unsure if this infowindow serves same purpose as our card component
                     }
-                    {selectedTruckPin && (
+                    {/* {selectedTruckPin && (
                         <InfoWindow
                         onCloseClick={() => {
                             setSelectedTruckPin(null);
@@ -72,12 +69,9 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                                 <p>{selectedTruckPin.profileDescription}</p>
                             </div>
                         </InfoWindow>
-                    )}
+                    )} */}
                 </GoogleMap>
-                }}
-         </div>
-     );
-}
+                )};
 
 const WrappedMap = withScriptjs(withGoogleMap(MapComponent));
 
