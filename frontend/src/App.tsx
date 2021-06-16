@@ -2,14 +2,13 @@ import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 import "./App.css";
 import FoodTruckCard from "./components/FoodTruckCard";
 import FoodTruckList from "./components/FoodTruckList";
+import Header from "./components/Header";
 import WrappedMap from "./components/MapComponent";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Where's The Food Trucks?</h1>
-      </header>
+      <Header />
       <BrowserRouter>
         <Switch>
           <Route path="/list">
