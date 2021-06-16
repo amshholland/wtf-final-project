@@ -1,43 +1,5 @@
-<<<<<<< HEAD
-import "./MapComponent.css";
-import { GoogleMap, withGoogleMap, withScriptjs } from "react-google-maps";
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-
-function MapComponent() {
-  const history = useHistory();
-  history.push("/map");
-  
-  return (
-    <div className="MapComponent">
-      {function Map() {
-        const [selectedTruckPin, setSelectedTruckPin] = useState(null);
-
-        useEffect(() => {
-          const listener = (e) => {
-            if (e.key === "Escape") {
-              setSelectedTruckPin(null);
-            }
-          };
-          window.addEventListener("keydown", listener);
-
-          return () => {
-            window.removeEventListener("keydown", listener);
-          };
-        }, []);
-
-        return (
-          <GoogleMap
-            defaultZoom={10}
-            defaultCenter={{ lat: 42.3314, lng: 83.0458 }}
-          />
-        );
-      }}
-    </div>
-  );
-=======
-import './Map.css';
-import {GoogleMap, withGoogleMap, withScriptjs} from "react-google-maps";
+import './MapComponent.css';
+import {GoogleMap, InfoWindow, withGoogleMap, withScriptjs} from "react-google-maps";
 import { useState, useEffect, ReactElement } from 'react';
 import Marker from 'react-google-maps/lib/components/Marker';
 import * as trucksData from '../components/mongo-clone.json';
@@ -115,14 +77,10 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                 }}
          </div>
      );
->>>>>>> 301f8c5d779abf85653c730965f37b252919edfb
 }
 
 const WrappedMap = withScriptjs(withGoogleMap(MapComponent));
 
-<<<<<<< HEAD
-export default MapComponent;
-=======
 export default WrappedMap;
 
 
@@ -131,4 +89,3 @@ export default WrappedMap;
 // loadingElement={<div style={{ height: "100%"}} />};
 // containerElement={<div style={{ height: "100%"}} />};
 // mapElement={<div style={{ height: "100%"}} />};
->>>>>>> 301f8c5d779abf85653c730965f37b252919edfb
