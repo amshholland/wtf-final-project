@@ -47,6 +47,7 @@ function FoodTruckList() {
           ))}
         </ul>
       )}
+      <Link to="/"><button>Map View</button></Link>
     </div>
   );
 }

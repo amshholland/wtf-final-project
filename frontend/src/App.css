@@ -3,3 +3,8 @@
     background-color: #4f6d78;
     height: 100vh;
 }
+
+.App .map {
+    height: 500px;
+    margin: 15px;
+}

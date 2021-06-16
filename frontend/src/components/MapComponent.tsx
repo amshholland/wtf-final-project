@@ -7,8 +7,10 @@ import {
 } from "react-google-maps";
 import { useState, useEffect, ReactElement } from "react";
 import Marker from "react-google-maps/lib/components/Marker";
-import * as trucksData from "../components/mongo-clone.json";
+import * as foodTrucks from "../components/mongo-clone.json";
 import { Truck, TruckLocation } from "../model/dbModel";
+import { Link } from "react-router-dom";
+import { getTruckData } from "../service/WtfApiService";
 
 interface Props {
   googleMapURL: string;
@@ -25,7 +27,21 @@ function MapComponent({
   containerElement,
   mapElement,
 }: Props) {
+
+  useEffect(() => {
+    loadTrucks();
+  }, []);
+
+  function loadTrucks() {
+    getTruckData().then((trucksFromApi) => {
+      setFoodTrucks(trucksFromApi);
+    });
+  }
+
   const [selectedTruckPin, setSelectedTruckPin] = useState<any>(undefined);
+  const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
+
+
   useEffect(() => {
     const listener = (e: { key: string }) => {
       if (e.key === "Escape") {
@@ -40,48 +56,52 @@ function MapComponent({
   }, []);
 
   return (
-    <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{ lat: 42.3314, lng: -83.0458 }}
-      // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
-    >
-      {trucksData.trucks.map((truck) => (
-        <Marker
-          key={truck.iGId}
-          position={{
-            lat: truck.lastLocation.lat,
-            lng: truck.lastLocation.lng,
-          }}
-          onClick={() => {
-            setSelectedTruckPin(truck);
-          }}
-          icon={{
-            url: truck.profilePhoto,
-            // scaledSize: new window.google.maps.Size(25, 25)
-          }}
-        />
-      ))}
+    <div className="mapComponent">
+      <GoogleMap
+        defaultZoom={10}
+        defaultCenter={{ lat: 42.3314, lng: -83.0458 }}
+        // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
+      >
+        {foodTrucks.map((truck) => (
+          <Marker
+            key={truck.iGId}
+            position={{
+              lat: truck.lastLocation.lat,
+              lng: truck.lastLocation.lng,
+            }}
+            onClick={() => {
+              setSelectedTruckPin(truck);
+            }}
+            icon={{
+              url: truck.profilePhoto,
+              // scaledSize: new window.google.maps.Size(25, 25)
+            }}
+          />
+        ))}
 
-      {
-        // unsure if this infowindow serves same purpose as our card component
-      }
-      {selectedTruckPin && (
-        <InfoWindow
-          onCloseClick={() => {
-            setSelectedTruckPin(null);
-          }}
-          position={{
-            lat: selectedTruckPin.lastLocation.lat,
-            lng: selectedTruckPin.lastLocation.lng,
-          }}
-        >
-          <div>
-            <h2>{selectedTruckPin.name}</h2>
-            <p>{selectedTruckPin.profileDescription}</p>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
+        {
+          // unsure if this infowindow serves same purpose as our card component
+        }
+        {selectedTruckPin && (
+          <InfoWindow
+            onCloseClick={() => {
+              setSelectedTruckPin(null);
+            }}
+            position={{
+              lat: selectedTruckPin.lastLocation.lat,
+              lng: selectedTruckPin.lastLocation.lng,
+            }}
+          >
+            <div>
+              <h2>{selectedTruckPin.name}</h2>
+              <p>{selectedTruckPin.profileDescription}</p>
+            </div>
+          </InfoWindow>
+        )}
+      </GoogleMap>
+
+      <Link to="/list"><button>List View</button></Link>
+    </div>
   );
 }
 
