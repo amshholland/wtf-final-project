@@ -1,4 +1,5 @@
-[
+{
+"trucks": [
   {
     "_id": {
       "$oid": "60c3d08bcd77e942ae207fd4"
@@ -91,3 +92,4 @@
     "instagramHandle": "thenudeli"
   }
 ]
+}

@@ -11,16 +11,19 @@ export { default as wtf } from "./routes/wtfRoutes";
 exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
     console.log( 'This will be run every 30 minutes!' );
     try {
-        //step 1: get trucks from database that need to be updated
+        // Get trucks from database that need to be updated
         const client = await getClient();
-        const trucksFromDb = await client.db().collection<Truck>( 'trucks' ).find().limit( 1 ).toArray();
-        for ( let dbTruck of trucksFromDb ) {
-            //get matching truck from API
-            // const apiTruck = await readTruck( dbTruck.instagramHandle );
-            const apiTruck = await readTruck( 'amshholland' );
+        const collection = client.db().collection<Truck>( 'trucks' );
+        const trucksFromDb = await collection.find().limit( 1 ).toArray();
+        // Insert into WTFTrucks DB
+        const trucksToDb = await collection.updateOne;
 
-            //update database truck with info from API
-            //TODO filter our results first to omit posts with no location ****
+        for ( let dbTruck of trucksFromDb ) {
+            // Use trucks from DB to search 3rd party API by IG handle
+            const apiTruck = await readTruck( dbTruck.instagramHandle );
+
+            // Update database truck with info from API
+            // Filter our results first to omit posts with no location ****
             apiTruck.feed.data.filter( function ( apivalue, apikey ) {
 
                 if ( apivalue.location === undefined ) {
@@ -36,10 +39,15 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     console.log( `single image: ${ postPhoto }` );
                 } else {
                     apiPost.carousel_media?.map( media => {
+                        // Check to see if media type is different than a photo
+                        // If so, do not include in results
+                        if ( media.media_type !== 1 ) {
+                            return false;
+                        }
                         postPhoto = media.image_versions2.candidates[ 1 ].url;
-                        console.log( `carousel images: ${ postPhoto }` );
+                        return true;
                     } );
-                }
+                };
 
                 const truckLocation: TruckLocation = {
                     locationName: apiPost.location.name || '',
@@ -52,17 +60,19 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     caption: apiPost.caption.text || ''
                 };
 
+                // Use all data pulled from DB, update lastLocation and locationHistory(push) with truck location
+                // In the future, when locationHistory is used, consider using timestamp or post ID to determine whether to push to locationHistory
+                collection.replaceOne( dbTruck, truckLocation, function ( err, res ) {
+                    if ( err ) throw err;
+                    console.log( "1 document updated" );
+                } );
                 return truckLocation;
             } );
             dbTruck.lastRefresh = Date.now();
         }
-
-
-        //replace truck in database
-
         res.send( "done" );
     } catch ( err ) {
         console.log( err );
         res.send( "failed" );
     }
-} );;
+} );
