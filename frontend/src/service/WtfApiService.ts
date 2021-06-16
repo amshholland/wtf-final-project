@@ -15,3 +15,8 @@ export function getTruckData(): Promise<Truck[]> {
     // }
     return axios.get( baseUrl ).then( res => res.data );
 }
+
+//TODO: get this collection in db and correctly call it when list is mounted FROM favorites link
+// export function getFavorites(): Promise<Favorite[]> {
+//     return axios.get( baseUrl ).then( res => res.data );
+// }
