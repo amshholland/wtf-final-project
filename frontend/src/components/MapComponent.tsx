@@ -1,4 +1,4 @@
-import './Map.css';
+import './MapComponent.css';
 import {GoogleMap, withGoogleMap, withScriptjs} from "react-google-maps";
 import { useState, useEffect, ReactElement } from 'react';
 import Marker from 'react-google-maps/lib/components/Marker';
@@ -20,7 +20,7 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                     const [selectedTruckPin, setSelectedTruckPin] = useState(null);
 
                     useEffect(() => {
-                        const listener = (e) => {
+                        const listener = (e: { key: string; }) => {
                             if (e.key === "Escape") {
                                 setSelectedTruckPin(null);
                             }
@@ -36,14 +36,14 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                 return <GoogleMap 
                 defaultZoom={10} 
                 defaultCenter={{lat: 42.3314, lng: 83.0458}}
-                defaultOptions={{ styles: mapStyles }}
+                // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
                 >
                     {trucksData.trucks.map(truck => (
                         <Marker
                         key={truck.iGId}
                         position={{
-                            lat: truck.lastLocation.lat,
-                            lng: truck.lastLocation.lng
+                            lat: truck?.lastLocation?.lat,
+                            lng: truck?.lastLocation?.lng
                         }}
                         onClick={() => {
                             setSelectedTruckPin(truck);
@@ -57,7 +57,7 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
 
                     {// unsure if this infowindow serves same purpose as our card component
                     }
-                    {selectedTruckPin && (
+                    {/* {selectedTruckPin && (
                         <InfoWindow
                         onCloseClick={() => {
                             setSelectedTruckPin(null);
@@ -72,7 +72,7 @@ function MapComponent({ googleMapURL, loadingElement, containerElement, mapEleme
                                 <p>{selectedTruckPin.profileDescription}</p>
                             </div>
                         </InfoWindow>
-                    )}
+                    )} */}
                 </GoogleMap>
                 }}
          </div>

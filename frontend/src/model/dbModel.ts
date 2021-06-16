@@ -5,10 +5,10 @@ export interface Truck {
     profilePhoto: string;
     profileDescription: string;
     instagramHandle: string;
-    // lastRefresh: number;
-    // lastLocation: TruckLocation;
-    // locationHistory: TruckLocation[];
-    // caption: string;
+    lastRefresh: number;
+    lastLocation: TruckLocation;
+    locationHistory: TruckLocation[];
+    caption: string;
 }
 
 export interface Id {

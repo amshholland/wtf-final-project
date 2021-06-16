@@ -8,7 +8,18 @@
     "name": "The Drunken Rooster Food Truck",
     "profilePhoto": "https://cdn.botdef.com/img/DxiOhz90WWXEzZ9KpEHtaCwNYV-jlPSP3fCf7L6gp5qs5xrlarn0WBtrN8xJqYUCuMWbQDjY_eWUfqLcAydLiJ08rld0G8IgiblBaWYpoywxDkIJQH6f7FyCiczy4at-b8oKnd8X0MWkpW302HI72DlAlKn6Uc_6wcnoe7nOwzuDpPlhQmmZafHp2JX1r4gIOWxeNNSinGUh95wt96gx3o1N4U-D75m3FV5sXNkqe1HIMu0nKpm0kCqMMT25W-BFepDzDucl9pjDOWEFJooNWxwPjfWkrHLRKUGRDFFgv2SuzPu5NzM1yLQA63ZyyqO9OHc_xobgeWmnNm2Fq3_ZQg",
     "profileDescription": "The Drunken Rooster Food Truck can be found all around the Metro Detroit Area.",
-    "instagramHandle": "the_drunken_rooster"
+    "instagramHandle": "the_drunken_rooster",
+    "lastLocation": {
+      "locationName": "Example Place",
+      "photo?": "placeholder",
+      "carouselPhoto?": "placeholder",
+      "timestamp": 12345,
+      "lat": 42.341830,
+      "lng": -83.059930,
+      "address": "500 Temple St, Detroit, MI 48201",
+      "city": "Detroit",
+      "caption": "We are posted up at the Masonic Temple in Detroit for today."
+    }
   },
   {
     "_id": {
