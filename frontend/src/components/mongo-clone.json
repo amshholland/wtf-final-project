@@ -1,194 +1,535 @@
-{
-"trucks": [
+[
   {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd4"
-    },
+    "_id": "60c3d08bcd77e942ae207fd4",
     "iGId": 2257940171,
     "name": "The Drunken Rooster Food Truck",
     "profilePhoto": "https://cdn.botdef.com/img/DxiOhz90WWXEzZ9KpEHtaCwNYV-jlPSP3fCf7L6gp5qs5xrlarn0WBtrN8xJqYUCuMWbQDjY_eWUfqLcAydLiJ08rld0G8IgiblBaWYpoywxDkIJQH6f7FyCiczy4at-b8oKnd8X0MWkpW302HI72DlAlKn6Uc_6wcnoe7nOwzuDpPlhQmmZafHp2JX1r4gIOWxeNNSinGUh95wt96gx3o1N4U-D75m3FV5sXNkqe1HIMu0nKpm0kCqMMT25W-BFepDzDucl9pjDOWEFJooNWxwPjfWkrHLRKUGRDFFgv2SuzPu5NzM1yLQA63ZyyqO9OHc_xobgeWmnNm2Fq3_ZQg",
     "profileDescription": "The Drunken Rooster Food Truck can be found all around the Metro Detroit Area.",
     "instagramHandle": "the_drunken_rooster",
     "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
+      "locationName": "Detroit Kickball Association",
+      "photo": "",
+      "timestamp": 1503852102,
+      "lat": 42.35808288,
+      "lng": -83.04668175,
+      "address": "DKA Rocks Kickball Fields",
+      "city": "Detroit, Michigan",
+      "caption": "Alley cat races (scavenger hunts on bike) and pickup kickball! We're here serving the goodness! Come have some fun! #detroitkickball #bikeandmurder #midnightmarauders #cashprizes #raffle #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+    },
+    "lastRefresh": 1623854911214,
+    "locationHistory": [
+      {
+        "locationName": "Detroit Kickball Association",
+        "photo": "",
+        "timestamp": 1503852102,
+        "lat": 42.35808288,
+        "lng": -83.04668175,
+        "address": "DKA Rocks Kickball Fields",
+        "city": "Detroit, Michigan",
+        "caption": "Alley cat races (scavenger hunts on bike) and pickup kickball! We're here serving the goodness! Come have some fun! #detroitkickball #bikeandmurder #midnightmarauders #cashprizes #raffle #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Redford Theatre",
+        "photo": "",
+        "timestamp": 1501955021,
+        "lat": 42.417258805107,
+        "lng": "-83.257212814727",
+        "address": "17360 Lahser Rd",
+        "city": "Detroit, MI",
+        "caption": "We are in front of The Redford Theatre today serving food for @sidewalkdetroit come on down for the performing arts and grab a taco and some loaded fries! #thedrunkenrooster #makefoodnotwar #foodtruck #numnums #detroit #sidewalk"
+      },
+      {
+        "locationName": "Dodge Park, Sterling Heights MI",
+        "photo": "",
+        "timestamp": 1498755066,
+        "lat": 42.592565259041,
+        "lng": "-83.011579021869",
+        "address": "40620 Utica Rd",
+        "city": "Sterling Heights, MI",
+        "caption": "We are here at the Dodge Park Farmers Market, located at Dodge park and Utica. Serving food from 3-8pm today! #thedrunkenrooster #makefoodnotwar #foodtruck #numnums"
+      },
+      {
+        "locationName": "Downtown Detroit",
+        "photo": "",
+        "timestamp": 1498489208,
+        "lat": 42.333261,
+        "lng": -83.048415,
+        "address": "",
+        "city": "",
+        "caption": "We are in front of the Spirt Of Detroit this week for lunch! Come on down! Serving from 11-2. #thedrunkenrooster #makefoodnotwar #foodtruck #numnums #detroit"
+      },
+      {
+        "locationName": "Downtown Detroit Partnership",
+        "photo": "",
+        "timestamp": 1498228221,
+        "lat": 42.331953281047,
+        "lng": "-83.046712485756",
+        "address": "1253 Woodward Ave",
+        "city": "Detroit, Michigan",
+        "caption": "We are back at Campus Martius serving lunch today! Serving from 11-2. #thedrunkenrooster #makefoodnotwar #numnums #foodtruck #detroit"
+      },
+      {
+        "locationName": "Ford Field",
+        "photo": "",
+        "timestamp": 1498139526,
+        "lat": 42.339894782834,
+        "lng": "-83.045396361341",
+        "address": "2000 Brush St",
+        "city": "Detroit, MI",
+        "caption": "We are here at Ford Field serving lunch from 11:00-2:00! #thedrunkenrooster #makefoodnotwar #foodtruck #numnums"
+      },
+      {
+        "locationName": "Downtown Detroit Partnership",
+        "photo": "",
+        "timestamp": 1498059430,
+        "lat": 42.331953281047,
+        "lng": "-83.046712485756",
+        "address": "1253 Woodward Ave",
+        "city": "Detroit, Michigan",
+        "caption": "Come on down and get your taco fix! Serving from now until 2:00 pm. #thedrunkenrooster #makefoodnotwar #foodtruck #numnums"
+      },
+      {
+        "locationName": "Dearborn Farmers & Artisans Market",
+        "photo": "",
+        "timestamp": 1497621591,
+        "lat": 42.305999755859,
+        "lng": "-83.246612548828",
+        "address": "1034 Monroe St. Dearborn MI 48124",
+        "city": "Dearborn, Michigan",
+        "caption": "Loving this hot pepper honey that @jayheyhoney is selling at the market! I can't wait to use it for a dish on the truck! Come on out and today and try a little from both of us! #thedrunkenrooster #makefoodnotwar #foodtruck #numnums"
+      },
+      {
+        "locationName": "Downtown Detroit Partnership",
+        "photo": "",
+        "timestamp": 1497450261,
+        "lat": 42.331953281047,
+        "lng": "-83.046712485756",
+        "address": "1253 Woodward Ave",
+        "city": "Detroit, Michigan",
+        "caption": "We are downtown serving lunch today in Cadillac Square. Come grab some tacos! #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Detroit Music Weekend",
+        "photo": "",
+        "timestamp": 1497130157,
+        "lat": 42.337142902857,
+        "lng": "-83.045813581714",
+        "address": "350 Madison Ave",
+        "city": "",
+        "caption": "We are serving food till midnight! See you there! #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Dearborn Farmers & Artisans Market",
+        "photo": "",
+        "timestamp": 1495804306,
+        "lat": 42.305999755859,
+        "lng": "-83.246612548828",
+        "address": "1034 Monroe St. Dearborn MI 48124",
+        "city": "Dearborn, Michigan",
+        "caption": "We are here at the Dearborn Farmers Market until 2pm! Come grab a taco! #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Brew Detroit",
+        "photo": "",
+        "timestamp": 1495388065,
+        "lat": 42.327434964705,
+        "lng": "-83.061131027505",
+        "address": "1401 Abbott St",
+        "city": "Detroit, Michigan",
+        "caption": "We are here serving food for the Detroit Legends Run! Come grab a bite! #thedrunkenrooster #makefoodnotwar #foodtruck #numnums"
+      },
+      {
+        "locationName": "Dearborn Farmers & Artisans Market",
+        "photo": "",
+        "timestamp": 1495026318,
+        "lat": 42.305999755859,
+        "lng": "-83.246612548828",
+        "address": "1034 Monroe St. Dearborn MI 48124",
+        "city": "Dearborn, Michigan",
+        "caption": "We will be serving food this Friday at the Dearborn farmers market. Come on down and grab some lunch with us! #thedrunkenrooster #foodtruck #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Downtown Detroit",
+        "photo": "",
+        "timestamp": 1494605016,
+        "lat": 42.333261,
+        "lng": -83.048415,
+        "address": "",
+        "city": "",
+        "caption": "We are downtown at the M1 rail grand opening! We are right in front of the Chase building and Shake Shack off of Woodward! Come on down and grab a bite to eat! Serving until 10pm. #thedrunkenrooster #makefoodnotwar #numnums"
+      },
+      {
+        "locationName": "Fox 2 News",
+        "photo": "",
+        "timestamp": 1492014868,
+        "lat": 42.460333351693,
+        "lng": -83.21260608071,
+        "address": "16550 W 9 Mile Rd",
+        "city": "Detroit, Michigan",
+        "caption": "#thedrunkenrooster #makefoodnotwar #foodtruck"
+      },
+      {
+        "locationName": "Arab American National Museum",
+        "photo": "",
+        "timestamp": 1491065693,
+        "lat": 42.322237472354,
+        "lng": "-83.176533028111",
+        "address": "13624 Michigan Ave",
+        "city": "Dearborn, MI",
+        "caption": "Come get your taco on and show some support at an awesome event! Hope to see you there! #thedrunkenrooster #makefoodnotwar"
+      }
+    ]
   },
   {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd5"
-    },
+    "_id": "60c3d08bcd77e942ae207fd5",
     "iGId": 26073414884,
-    "name": "Spice Rack",
+    "name": "Brian B./ Yorel H",
     "profilePhoto": "https: //cdn.botdef.com/img/9MqZYTJnuj0VDh04R20HQWFZkwVuo5OdpLHUznwxCXPNze_kac9ae1Ycqj9Brx0v1_bhWczOtuGcncO8nN2J90rl7wIEofP9Nn19ytQrvWa2QTHc0OBoxvvPxxZXsner3W0TPEOC2-0GYhBFKP3v8b5f40j1iFn51tlCo-eacmKaA-r-8SvBUiNSSqCRo24zBdDNw9Ui5-HQWV1-wXlUKg1AtA6Kk8WRggsbMfSCPraU_d3PZwo5P9q2jS0Y26NUicd9sZTQMl3Axj0_2xc9FlxdgEHPg5BSDFjJyVb6Tgc-zo9z3uu0CfioV7SFoF5oDbrmILSwBmyuLmxP6ENhul_w2RXgMDDFppxuR_bS07I",
     "profileDescription": "Book a personal chef for any occasion, we provide catering services for private or corporate events for an affordable price quote contact us today.",
     "instagramHandle": "the_spicerack_",
     "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
+      "locationName": "Burn Rubber Sneaker Boutique",
+      "photo": "",
+      "timestamp": 1623758273,
+      "lat": 42.49335,
+      "lng": -83.14392,
+      "address": "512 N. Main St.",
+      "city": "Royal Oak, Michigan",
+      "caption": "#TacoTuesday pull up today @burnrubberdetroit get your taco fix. 12-5pm #FoodTruck #Tacos #TheSpiceIsRight"
+    },
+    "lastRefresh": 1623854916630,
+    "locationHistory": [
+      {
+        "locationName": "Burn Rubber Sneaker Boutique",
+        "photo": "",
+        "timestamp": 1623758273,
+        "lat": 42.49335,
+        "lng": -83.14392,
+        "address": "512 N. Main St.",
+        "city": "Royal Oak, Michigan",
+        "caption": "#TacoTuesday pull up today @burnrubberdetroit get your taco fix. 12-5pm #FoodTruck #Tacos #TheSpiceIsRight"
+      },
+      {
+        "locationName": "Burn Rubber Sneaker Boutique",
+        "photo": "",
+        "timestamp": 1623171140,
+        "lat": 42.49335,
+        "lng": -83.14392,
+        "address": "512 N. Main St.",
+        "city": "Royal Oak, Michigan",
+        "caption": "Chicken Shrimp Beef #Loaded #Nachos #TacoTuesday #delicious #TheSpiceIsRight #WeChef #SomethingSpicy we out here each and every Tuesday! #Tacos #Nachos #Fries"
+      },
+      {
+        "locationName": "Keyworth Stadium",
+        "photo": "",
+        "timestamp": 1623084112,
+        "lat": 42.3924,
+        "lng": -83.0489,
+        "address": "",
+        "city": "",
+        "caption": "Proof is in the progress....."
+      },
+      {
+        "locationName": "Simply Social Detroit",
+        "photo": "",
+        "timestamp": 1622951317,
+        "lat": 42.39434,
+        "lng": -83.0442,
+        "address": "3901 Christopher Street, Suite D-2",
+        "city": "Detroit, Michigan",
+        "caption": "Tomorrow at 12pm pull to one of Detroit’s dopest event space @simplysocialdetroit food by us!"
+      },
+      {
+        "locationName": "Keyworth Stadium",
+        "photo": "",
+        "timestamp": 1622928741,
+        "lat": 42.3924,
+        "lng": -83.0489,
+        "address": "",
+        "city": "",
+        "caption": "Loaded #Fries.. pull up on me!"
+      },
+      {
+        "locationName": "Detroit, Michigan",
+        "photo": "",
+        "timestamp": 1621863352,
+        "lat": 42.3368,
+        "lng": -83.0507,
+        "address": "",
+        "city": "",
+        "caption": "This week, where we will be #FoodTruck #DetroitFoodTruck tap in with us!"
+      },
+      {
+        "locationName": "Detroit, Michigan",
+        "photo": "",
+        "timestamp": 1620423610,
+        "lat": 42.3368,
+        "lng": -83.0507,
+        "address": "",
+        "city": "",
+        "caption": "5/8 12-4 @detroitjuicebarbershop"
+      },
+      {
+        "locationName": "Packard Proving Grounds",
+        "photo": "",
+        "timestamp": 1620160180,
+        "lat": 42.661732496891,
+        "lng": "-83.035129308701",
+        "address": "",
+        "city": "Shelby Charter Township, Michigan",
+        "caption": "Pull up on the truck tomorrow 4-7 @packardprovinggrounds #ShelbyCarShow #CincoDeMayo #Tacos"
+      },
+      {
+        "locationName": "Burn Rubber Sneaker Boutique",
+        "photo": "",
+        "timestamp": 1618847152,
+        "lat": 42.49335,
+        "lng": -83.14392,
+        "address": "512 N. Main St.",
+        "city": "Royal Oak, Michigan",
+        "caption": "TACO TUESDAY!!!! #420 meet me @burnrubberdetroit 12-4! Pull up!"
+      },
+      {
+        "locationName": "Simply Social Detroit",
+        "photo": "",
+        "timestamp": 1618778636,
+        "lat": 42.39434,
+        "lng": -83.0442,
+        "address": "3901 Christopher Street, Suite D-2",
+        "city": "Detroit, Michigan",
+        "caption": "Dope event in the books. Thanks @travon_81 @danyo_boone @bigblackballinazzb for having us! #Brunch #TheSpiceIsRight #SomethingSpicy #WeChef"
+      },
+      {
+        "locationName": "Sterling Heights, Michigan",
+        "photo": "",
+        "timestamp": 1618710071,
+        "lat": 42.553989,
+        "lng": -83.029049,
+        "address": "",
+        "city": "",
+        "caption": "#Brunch for the #Huckeberrys went great! #Book Us #ChickenandWaffles #ShrimpAndGrits #Fruit #Love #SomethingSpicy #TheSpiceIsRight #WeChef"
+      },
+      {
+        "locationName": "Detroit, Michigan",
+        "photo": "",
+        "timestamp": 1618580718,
+        "lat": 42.3368,
+        "lng": -83.0507,
+        "address": "",
+        "city": "",
+        "caption": "Saturday April 17th 11-4 @detroitjuicebarbershop"
+      },
+      {
+        "locationName": "Detroit, Michigan",
+        "photo": "",
+        "timestamp": 1618073563,
+        "lat": 42.3368,
+        "lng": -83.0507,
+        "address": "",
+        "city": "",
+        "caption": "Chicken X Steak Alfredo Fries.... #delicious"
+      },
+      {
+        "locationName": "Detroit JUICE Barbershop",
+        "photo": "",
+        "timestamp": 1616593167,
+        "lat": 42.371028666667,
+        "lng": "-83.278683866667",
+        "address": "18325 w McNichols ",
+        "city": "Detroit, Michigan",
+        "caption": "This Friday 11-5 or sellout @detroitjuicebarbershop #Foodtruck #DetroitFood"
+      }
+    ]
   },
   {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
+    "_id": "60c3d08bcd77e942ae207fd6",
     "iGId": 4829488973,
     "name": "The Elephant Shack",
     "profilePhoto": "https: //cdn.botdef.com/img/ixgXJ8TJ-uOuLeQL9dwVWF9Utvd2y7NOz79G0MJTS41HLDhv8yl2POZV65gYx1bCu3kp4U7y4TPrdFVkBnuJV7ta2qlLQWI3t_ki92qP7DeXqC32yWoCz6s3SfoVDELYFULGsmy8qPifnR-AaI4U-LHDsC87Z-2J_hGDuMGII3bdPRtnZXgagwkRqRoQH2CjE0eKDyR5scsOHvKdzswWH1CvnZMDi9yuR8aDCTIsJrNan38fo3KK3gVXW1jByzNiiXGDoTdr_TaxcgKWSmnzO_IuhdJAAp0N3nAei6yXZ7yPyKdwDZMD9MNGpIHFGOX1f3ENYQxKJOFnGVSSZrtMWQ4bp-HSoj11tzXsvqnyHK4",
     "profileDescription": "Food truck serving up international street food Parked permanently @easternmarketbrewing",
     "instagramHandle": "elephantshack",
     "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
+      "locationName": "Eastern Market Brewing Co",
+      "photo": "",
+      "timestamp": 1559667897,
+      "lat": 42.34668,
+      "lng": -83.03882,
+      "address": "2515 Riopelle",
+      "city": "Detroit, Michigan",
+      "caption": "New summer hours = new hours for the @ElephantShack. Chef Garrett will be taking our cold food game to the next level with new dips, chips, and more so bar snacks will always be available! We’ll also be serving up international street food every Saturday and Sunday from 2-8pm."
     },
-    "iGId": 1513452475,
-    "name": "Detroit 75 Kitchen",
-    "profilePhoto": "https://cdn.botdef.com/img/BIgU01SyOvo9PR9457VTKQBMaRYnTeMLHotPYYEsk04z3sx7yXY_WxewqwppWe32bbSL66cxeCmqvZU9znpjzVjVeIlETHxAkSUM385GgIQZEjV5NzKCYh5xL8HX67eM-u8wMWBOX_DoerXsspnPWR58BDPcmcscK1vRJ4r9-DTauWE3jRSo0KvYiMs6hBkB9p-XGq4EUGlVvW7QaG1T6L-IwbmFVCoOI_DdcJPsLx_qMI6Cw1Bz2ejcIkdcdyPfNoQpLtlGaGR4kkjdJplF0fR4SXLFkkoyoblo15nT1gWduN4tE3whG1U0WKcEO96qKi8-YsXlA4FuzKWzENYk0wzUrs1jqufkFiWald9Pf4M",
-    "profileDescription": "▪️World Class Eating Experience in Detroit ▪️Top 3 Food Truck in U.S by @usweekly ▪️4800 W. Fort St. Detroit, MI" ,
-    "instagramHandle": "detroit75kitchen",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
-    "iGId": 8438809437,
-    "name": "The Lobster Food Truck",
-    "profilePhoto": "https://cdn.botdef.com/img/HRekcvsd8gaQBbc7JlBEfPF0SnaVtv2OvRKo7y23XasiRfvtxZfRPECZW-WyzOcmqbvCM255ZUbXAvM20k_qBBF9HXOaE69PWyPdl1ZBs1cGzZ5mc3wmwO8_9t-Ddxfg1hRAk1eMUSW5Qtc6itYzI8v4fMHY7m4eKFgEMRTJoWEsWuiAvZjKL1YoTPFrKJXSdXd3XTGgMSNOCxUPLtZhYgonQrUwH1wafpK3WSAMJ2ldxDkU1EtfJgZXizVJAqa46Iru1qK71I8Zlrdp5Gsab0vBguXosXjMvjGvvpS2MwhIRivfcwAkGWHmom6HuDviXT55J95VFfALdoAyJX4lb-JBM2uGiA1kNrpVWodHMBo",
-    "profileDescription": "The #Best FoodTruck to hit #Detroit 📍Locations coming soon 🔴⚫️ Open Tuesday - Saturday (closed Sun & Mon) Locations/Times are on our Website.",
-    "instagramHandle": "thelobsterfoodtruck",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
-    "iGId": 359434094,
-    "name": "Los Dos Amigos",
-    "profilePhoto": "https://cdn.botdef.com/img/g32z31n9_BouGiEuWB_N7_sam_kZ6zKQ0XS3QLeFUj-9qwxLdOZ1YpempY9Hk0_NC6f006cQgxMOKv4sT73OJByNFg1ux10L9VRbvgidsnaWw2U1e9oH3LD5HWUS03iGAl9mmjcpyFKPw-quktxzYWNpmYl-f7VR57HbLlaW9fXBT537VqXpl1OKfQjZOLsbhcEupOnP3G_K0FYsJtkLRNQYveXlmEhr6RgGsAqBSG0exCTedJ3EnQ7HN4mRp54MEWOiRYP1m3k-gJlq5L6CAFo7pAetjp_gEdpZS7ifyYxQLxztpnsPlQZpoz9fpifAFznAa7RhQA9r0VsTwM_aBhW_2eoa5heF8OFEh-YPWng",
-    "profileDescription": "SW Detroit staple since 1999. 🏆 Award winning Al Pastor 📍7115 Parkwood Detroit, MI 48210 We cater! 📱(313)218-3360 📧 losdosamigostacotruck@gmail.com",
-    "instagramHandle": "losdosamigostacotruck",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
-    "iGId": 27170718322,
-    "name": "Durdens Catering",
-    "profilePhoto": "https://cdn.botdef.com/img/VRN2qGsAzeGRt0JbKdhTioyiUQuO8pl43P-uQDIYpfhWBVSVM3NgaYKjHslZCMRRi3A5MEYtwqWGAlSQLB9T32l2ZHdrlacgwaruTDlRuepw8RfuJ0Hece6h-U9riVhGYLLiBCs37HkDTn_avOI4poEhna4xsZofC_XzuAbyK5FzfPwk7_4nx1cCRK1OcS8KMnCpjIIn8Z7E8LSyjoL38LPI69E3pXl0G-hNg8fKrh7HqdiO7_4pXqJCkOV9unJmd1akFvc8L5IQzaILC-rgTb24FiFKIGnbz2YrT-YJZeyFfDHYp0wAhlk-ugPdRp9gbR72bDPhnF3lUp3JJLGTSNrr5sG8ZRLPfdGb-JKu-Zo",
-    "profileDescription": "Home of the Spicy Yung Gripper Chicken Sandwich by @durdenscatering #DurdenEmpire",
-    "instagramHandle": "thegripperfoodtruck",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
-    "iGId": 1963349211,
-    "name": "Detroit's Original Seafood Truck",
-    "profilePhoto": "https://cdn.botdef.com/img/CcHKE04ho7pK4kSbyoja_fBysTX7Hi7e_ue33dOPy3y3Lo0mUwVoBEdU_GiEqf790hXZ7JhkDluL5CsIq29lscHLpga-lJgiidr6Dx_JG-Oxe-NxbZVdOFMeJ0lX13Du1fHlObx8Z0xxJPlroMxkKsS15nkO5Z-8lcYKSk2NEdTv0Qi6yj91iieKwoZ8uNgRug1nasQKborGg3JvosBW85c-1QA5CqBvLp18SHP2J6hvsD1Tex3m-XfNMGPn5AMSPLmmwkQ0gi4RjgVI8g66s4tudPLyAWZRfIa9x4i3Y-xog0kLWzsXSRWN-8Z0u9yafRW820FkSHMNd9C3S_olgP5f37CgMbiuJXOA-M7RZiM",
-    "profileDescription": "Your Favorite Foodtruck's Favorite Foodtruck!🥇Fried Crab Legs and Lobster Tails.🦀🦞🍤🔥💧#love #sea #food 313-285-0948",
-    "instagramHandle": "detroitoriginalseafoodtruck",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
-  },
-  {
-    "_id": {
-      "$oid": "60c3d08bcd77e942ae207fd6"
-    },
-    "iGId": 3219469004,
-    "name": "Nu Deli",
-    "profilePhoto": "https://cdn.botdef.com/img/6xcxnNmUSIK0sAci3eve_QSZr-KflRi1uE6UAqEzAQI--AC0s1qUHFKlOuEbJnyy3Vgu0u5mVFnaiZS9MXYSsy34IhvCa1VdwzAKqlK30eOQGlfoOJViKhySZUKW9PWLGPs0OijcoXub1kuKjp10T3necCoqpmWeWO_iquflWnE8uaN3fbQadGldYUduTqqVfEEu6VU6iY_cjv42Mv3zh5Ga8pSBvW8rzLC_1xPkuyRwcomN8UV-B_r-Oys8NpJM3p4LOHlC9qRIW2pp4QGYEdWGXrQq9SXqbEqiqclZuJxjVS9ULsK7EsO81NDXuVthHz25c9ZxmmBrW4AVP4bEwKIawkzNn6M--zuKpAzFnUw"
-,
-    "profileDescription": "Hometown favorites with an Indian twist. Carry out from Ferndale, weekend delivery, cater your next event, find us on a shelf near you!",
-    "instagramHandle": "thenudeli",
-    "lastLocation": {
-      "locationName": "Example Place",
-      "photo?": "placeholder",
-      "carouselPhoto?": "placeholder",
-      "timestamp": 12345,
-      "lat": 42.341830,
-      "lng": -83.059930,
-      "address": "500 Temple St, Detroit, MI 48201",
-      "city": "Detroit",
-      "caption": "We are posted up at the Masonic Temple in Detroit for today."
-    }
+    "lastRefresh": 1623854920930,
+    "locationHistory": [
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1559667897,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "New summer hours = new hours for the @ElephantShack. Chef Garrett will be taking our cold food game to the next level with new dips, chips, and more so bar snacks will always be available! We’ll also be serving up international street food every Saturday and Sunday from 2-8pm."
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1559145799,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Wingin' it for dinner tonight? We've got you covered with 50¢ 🍗🍗🍗 from 5-9pm. #wingwednesday #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558802418,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "🍤 + 🌮 + 🍺 = Saturday goals. #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558713784,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Get that #FridayFeeling with 🌮🌮🌮 and 🍺. You deserve it. #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558627285,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Order up! Slingin' tacos + nachos from 5-9pm. #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558202574,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "THIS COULD BE YOU. 🌮 🌮 🌮 5-9pm! #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558113752,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "🌮 Elephant Shack presents...taco time! 🌮⠀\n👀 this week's specials in our story. #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1558023580,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Little known fact 👆🏽\n.\n.\n.\n#easternmarketbrewingco #detroiteats"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1557424322,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "This week’s taco menu! Open at 4pm. #easternmarketbrewingco 🌮 🌮 🌮 🌮"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1557163620,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "We’ve got a BIG announcement. Starting tomorrow (just in time for Taco Tuesday!) we will be open five days a week, from 4pm to 8pm Tuesday through Saturday. Shout out to all the @easternmarketbrewing Elephant Parade members that sent feedback. We heard you loud and clear. From here on out we’ll have consistent days, consistent hours, and most important, a consistent menu item. TACOS. See below for some @elephantshack history. 👇\n—\nThis 1974 Chevy box truck was originally a California taco truck and moved to Michigan to become the first licensed food truck in the state. We’ve decided to take it back to its roots and will be serving up tacos five days a week. Follow us for daily menu updates. 📸: @hungryindetroit #easternmarketbrewingco"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1556989129,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "🌮🌮🌮 ‘til we run out! #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1555186027,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "The shack is open for business. Stop by @easternmarketbrewing until 8pm for global street food, including these Vietnamese Spring Rolls. #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1553888316,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Fresh, homemade falafel coming in 🔥 from your neighborhood Elephant Shack. Food @ 4. #falafelfriday #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1553722492,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "What’s your flavor? Classic Buffalo, Coconut Curry, Honey Sambal, or all three? Wings till 8! 🍗 #wingwednesday #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1553370779,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "The sun finally came out! Food from 4-8 tonight. Peep full menu on stories! 🐘 #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1553280443,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "Falafel Friday menu lookin’ straight 🔥 Food until 8! #elephantshack"
+      },
+      {
+        "locationName": "Eastern Market Brewing Co",
+        "photo": "",
+        "timestamp": 1553115405,
+        "lat": 42.34668,
+        "lng": -83.03882,
+        "address": "2515 Riopelle",
+        "city": "Detroit, Michigan",
+        "caption": "You know what goes great with #wingwednesday? NACHOS! Wings & snacks until 8! 🍗🧀🐘 #elephantshack"
+      }
+    ]
   }
 ]
-}
