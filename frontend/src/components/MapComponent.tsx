@@ -42,7 +42,7 @@ function MapComponent({
   return (
     <GoogleMap
       defaultZoom={10}
-      defaultCenter={{ lat: 42.3314, lng: 83.0458 }}
+      defaultCenter={{ lat: 42.3314, lng: -83.0458 }}
       // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
     >
       {trucksData.trucks.map((truck) => (
@@ -57,7 +57,7 @@ function MapComponent({
           }}
           icon={{
             url: truck.profilePhoto,
-            scaledSize: new window.google.maps.Size(25, 25)
+            // scaledSize: new window.google.maps.Size(25, 25)
           }}
         />
       ))}
