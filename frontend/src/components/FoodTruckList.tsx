@@ -3,8 +3,14 @@ import { Truck } from "../model/dbModel";
 import FoodTruckCard from "./FoodTruckCard";
 import "./FoodTruckList.css";
 import { getTruckData } from "../service/WtfApiService";
+import { Link, useHistory, useParams } from "react-router-dom";
+
+
 
 function FoodTruckList() {
+  const history = useHistory();
+  history.push("/list");
+
   const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
   const [foodTrucksLoaded, setFoodTrucksLoaded] = useState(false);
 
@@ -32,7 +38,12 @@ function FoodTruckList() {
       ) : (
         <ul>
           {foodTrucks.map((truckInList) => (
-            <li id="truckNameInList"><p id="name">{truckInList.name}</p><p id="igHandle">{`@${truckInList.instagramHandle}`}</p></li>
+            <Link to="/card">
+              <li id="truckNameInList">
+                <p id="name">{truckInList.name}</p>
+                <p id="igHandle">{`@${truckInList.instagramHandle}`}</p>
+              </li>
+            </Link>
           ))}
         </ul>
       )}

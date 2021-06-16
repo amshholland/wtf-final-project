@@ -1,3 +1,4 @@
+import { useHistory, useParams } from 'react-router-dom';
 import { Truck } from '../model/dbModel';
 import './FoodTruckCard.css';
 
@@ -5,7 +6,15 @@ interface Props {
         truck: Truck;
     }
 
+    interface RouteParams {
+        id: string;
+      }
+      
+      const {id} = useParams<RouteParams>();
+
 function FoodTruckCard({truck}: Props) {
+    const history = useHistory();
+    history.push("/card");
     
 
     return (
