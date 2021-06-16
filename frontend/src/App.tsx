@@ -7,6 +7,9 @@ import WrappedMap from "./components/MapComponent";
 function App() {
   return (
     <div className="App">
+      <header>
+        <h1>Where's The Food Trucks?</h1>
+      </header>
       <BrowserRouter>
         <Switch>
           <Route path="/list">
