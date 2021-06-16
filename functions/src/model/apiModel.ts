@@ -38,6 +38,7 @@ export interface Location {
 
 export interface Carousel {
     image_versions2: ImageVersion;
+    media_type: number;
 }
 
 export interface ImageVersion {
