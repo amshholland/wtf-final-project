@@ -16,6 +16,7 @@ function FoodTruckList() {
     getTruckData().then((trucksFromApi) => {
       setFoodTrucks(trucksFromApi);
       setFoodTrucksLoaded(true);
+      console.log(getTruckData());
     });
   }
 
@@ -25,7 +26,7 @@ function FoodTruckList() {
         <h1>Food Trucks</h1>
       </header>
       {!foodTrucksLoaded ? (
-        <p>Loading...</p>
+        <p id="loading">Loading...</p>
       ) : foodTrucks.length === 0 ? (
         <p>No Food Trucks available.</p>
       ) : (
