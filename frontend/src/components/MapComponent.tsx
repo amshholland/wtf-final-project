@@ -7,10 +7,10 @@ import {
 } from "react-google-maps";
 import { useState, useEffect, ReactElement } from "react";
 import Marker from "react-google-maps/lib/components/Marker";
-import * as foodTrucks from "../components/mongo-clone.json";
 import { Truck, TruckLocation } from "../model/dbModel";
 import { Link } from "react-router-dom";
 import { getTruckData } from "../service/WtfApiService";
+import mapStyles from './snazzy-map-style';
 
 interface Props {
   googleMapURL: string;
@@ -60,7 +60,7 @@ function MapComponent({
       <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: 42.3314, lng: -83.0458 }}
-        // defaultOptions={{ styles: mapStyles }} add a style js file from snazzy maps
+        defaultOptions={{ styles: mapStyles }}
       >
         {foodTrucks.map((truck) => (
           <Marker
