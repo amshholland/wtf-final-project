@@ -34,19 +34,19 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
 
                 // Determine whether post is a carousel of images or a single image
                 let postPhoto: string = '';
-                // if ( apiPost.carousel_media === undefined ) {
-                //     postPhoto = apiPost.image_versions2.candidates[ 1 ].url;
-                // } else {
-                //     apiPost.carousel_media?.map( media => {
-                //         // Check to see if media type is different than a photo
-                //         // If so, do not include in results
-                //         if ( media.media_type !== 1 ) {
-                //             return false;
-                //         }
-                //         postPhoto = media.image_versions2.candidates[ 1 ].url;
-                //         return true;
-                //     } );
-                // };
+                if ( apiPost.carousel_media === undefined ) {
+                    postPhoto = apiPost.image_versions2.candidates[ 0 ].url;
+                } else {
+                    apiPost.carousel_media?.map( media => {
+                        // Check to see if media type is different than a photo
+                        // If so, do not include in results
+                        if ( media.media_type !== 1 ) {
+                            return false;
+                        }
+                        postPhoto = media.image_versions2.candidates[ 1 ].url;
+                        return true;
+                    } );
+                };
 
                 const truckLocation: TruckLocation = {
                     locationName: apiPost.location.name || '',
@@ -63,13 +63,13 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                 // In the future, when locationHistory is used, consider using timestamp or post ID to determine whether to push to locationHistory
                 return truckLocation;
             } );
-
+            dbTruck.lastRefresh = Date.now();
             dbTruck.lastLocation = locationHistory[ 0 ];
             dbTruck.locationHistory = locationHistory;
-            dbTruck.lastRefresh = Date.now();
 
             // dbTruck._id = filter
             // dbTruck = replacement
+            console.log( dbTruck );
             collection.replaceOne( { _id: dbTruck._id }, dbTruck );
         }
         res.send( "done" );
