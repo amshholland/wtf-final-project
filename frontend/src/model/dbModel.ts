@@ -1,5 +1,5 @@
 export interface Truck {
-    _id?: Id;
+    _id?: string;
     iGId: number;
     name: string;
     profilePhoto: string;
@@ -8,21 +8,20 @@ export interface Truck {
     lastRefresh: number;
     lastLocation: TruckLocation;
     locationHistory: TruckLocation[];
-    caption: string;
-}
-
-export interface Id {
-    $oid: string;
 }
 
 export interface TruckLocation {
     locationName: string;
     photo?: string; // = Version.url[1]
-    carouselPhoto?: string;
+    carouselPhoto?: CarouselPhotos[];
     timestamp: number;
     lat: number;
     lng: number;
     address: string;
     city: string;
     caption: string;
+}
+
+export interface CarouselPhotos {
+    photo: string;
 }

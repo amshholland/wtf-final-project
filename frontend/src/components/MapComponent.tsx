@@ -15,11 +15,11 @@ interface Props {
 //TODO: how to get info about location from db to put into map marker
 
 function MapComponent({ googleMapURL, loadingElement, containerElement, mapElement }: Props) {
-    const [selectedTruckPin, setSelectedTruckPin] = useState<any>(null);
+    const [selectedTruckPin, setSelectedTruckPin] = useState<any>(undefined);
     useEffect(() => {
                         const listener = (e: { key: string; }) => {
                             if (e.key === "Escape") {
-                                setSelectedTruckPin(null);
+                                setSelectedTruckPin(undefined);
                             }
                         };
                         window.addEventListener("keydown", listener);
