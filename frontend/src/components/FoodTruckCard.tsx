@@ -1,36 +1,48 @@
-import { useHistory, useParams } from 'react-router-dom';
-import { Truck } from '../model/dbModel';
 import './FoodTruckCard.css';
 
+import { Button, Modal } from 'react-bootstrap';
+import { useHistory, useParams } from 'react-router-dom';
+
+import { Truck } from '../model/dbModel';
+
 interface Props {
-        truck: Truck;
-    }
-
-    interface RouteParams {
-        id: string;
-      }
-      
-      const {id} = useParams<RouteParams>();
-
-function FoodTruckCard({truck}: Props) {
-    const history = useHistory();
-    history.push("/card");
-    
-
-    return (
-        <div className="FoodTruckCard">
-            <h1>{truck.name}</h1>
-            <h3>{truck.instagramHandle}</h3>
-            <div className="img">
-                most recent instagram photo here.
-            </div>
-            <section>
-                description here
-            </section>
-            <a href="#">View on map</a>
-            <a href="#">Add to favorites</a>
-        </div>
-    )
+    truck: Truck;
+    handleClose: () => void;
 }
 
-export default FoodTruckCard;
+function FoodTruckCard( { truck, handleClose }: Props ) {
+
+
+
+    return (
+        <Modal.Dialog className="FoodTruckCard">
+
+            <Modal.Header>
+                <Modal.Title>{ truck.name }</Modal.Title>
+                <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
+            </Modal.Header>
+
+            <Modal.Body>
+                <div className="cardImgDiv">
+                    <img className="cardImg" src='#' />
+                </div>
+                <p>@{ truck.instagramHandle }</p>
+
+                <section>
+                    { truck.profileDescription }
+                </section>
+
+                <div className="iGPosts">
+                    POST DETAILS
+                </div>
+            </Modal.Body>
+            <Modal.Footer>
+                <a href="#">View on map</a>
+                <a href="#">Add to favorites</a>
+                <Button onClick={ handleClose }>Close</Button>
+            </Modal.Footer>
+        </Modal.Dialog >
+    );
+}
+
+export default FoodTruckCard;;

@@ -19,7 +19,7 @@
     background-color: #4f6d78;
 }
 
-.FoodTruckList #truckNameInList {
+.FoodTruckList .truck {
     color: black; 
     background-color: white;
     font-size: 1.1em;
