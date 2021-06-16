@@ -55,3 +55,7 @@
 .FoodTruckList #loading {
     color: white;
 }
+
+.FoodTruckList #timestamp {
+    font-size: .5em;
+}

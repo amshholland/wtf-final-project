@@ -13,15 +13,16 @@ function Header() {
         <h1>Where's The Food Trucks?</h1>
       </div>
       <div className="GoogleAuth">
-        {!user && (
-          <button onClick={signInWithGoogle}>Sign in with Google</button>
-        )}
-        {user && <button onClick={signOut}>Sign out</button>}
         {user && (
           <div className="GoogleUserPhoto">
             {!!user.photoURL && (
               <img src={user.photoURL} alt="google profile picture"></img>
             )}
+        {!user && (
+          <button onClick={signInWithGoogle}>Sign in with Google</button>
+        )}
+        {user && <button onClick={signOut}>Sign out</button>}
+        
           </div>
         )}
       </div>
