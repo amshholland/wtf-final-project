@@ -71,21 +71,20 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
 
                 return truckLocation;
             } );
-            dbTruck = {
-                iGId: apiTruck.pk,
-                name: apiTruck.full_name,
-                profilePhoto: apiTruck.profile_pic_url,
-                profileDescription: apiTruck.biography,
-                instagramHandle: dbTruck.instagramHandle,
-                lastRefresh: Date.now(),
-                lastLocation: locationHistory[ 0 ],
-                locationHistory: locationHistory
-            };
+
+                dbTruck.iGId = apiTruck.pk;
+                dbTruck.name = apiTruck.full_name;
+                dbTruck.profilePhoto = apiTruck.profile_pic_url;
+                dbTruck.profileDescription = apiTruck.biography;
+                dbTruck.instagramHandle = dbTruck.instagramHandle;
+                dbTruck.lastRefresh = Date.now();
+                dbTruck.lastLocation = locationHistory[ 0 ];
+                dbTruck.locationHistory = locationHistory;
 
             // In replaceOne: {_id: dbTruck._id} acts as a filter 
             // dbTruck acts as the replacement
             console.log( dbTruck );
-            collection.replaceOne( { _id: dbTruck._id }, dbTruck );
+            console.log(await collection.replaceOne( { _id: dbTruck._id }, dbTruck ));
         }
         res.send( "done" );
     } catch ( err ) {
