@@ -73,10 +73,10 @@ function MapComponent({
             onClick={() => {
               setSelectedTruckPin(truck);
             }}
-            icon={{
-              url: truck.profilePhoto
-              // scaledSize: new window.google.maps.Size(25, 25)
-            }}
+            // icon={{
+            //   url: truck.profilePhoto
+            //   // scaledSize: new window.google.maps.Size(25, 25)
+            // }}
           />
           </div>
         ))}
