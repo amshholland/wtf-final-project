@@ -4,7 +4,9 @@ import { Button, Modal } from 'react-bootstrap';
 
 import { Favorite } from '../model/dbFavModel';
 import { FavoriteButton } from './FavoriteButton';
+import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
+import { useContext } from 'react';
 
 interface Props {
     truck: Truck;
@@ -12,6 +14,11 @@ interface Props {
 }
 
 function FoodTruckCard( { truck, handleClose }: Props ) {
+
+    const { favorites } = useContext( FavoriteContext );
+    // For each truck, search through favorite array to find same id
+    // array.some -- looks for certain callback 
+
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
         let timeDiffSeconds = currentTimestamp - timestamp;
@@ -59,7 +66,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             </Modal.Body>
             <Modal.Footer>
                 <a href="#">View on map</a>
-                <FavoriteButton />
+                <FavoriteButton truck={ truck } />
                 <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>
         </Modal.Dialog >

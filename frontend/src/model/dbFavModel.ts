@@ -1,7 +1,10 @@
-import { Truck } from "./dbModel";
 import firebase from "../firebaseConfig";
 
-export interface Favorite {
+export interface Favorites {
     _id: firebase.User;
-    favoritedTrucks: Truck[];
+    favoritedTrucks: Favorite[];
+}
+
+export interface Favorite {
+    truckId: string;
 }

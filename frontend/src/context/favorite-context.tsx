@@ -1,38 +1,35 @@
 import { ReactNode, createContext, useState } from 'react';
 
-import { Truck } from '../model/dbModel';
+import { Favorite } from '../model/dbFavModel';
 
-interface truckContextValue {
-    trucks: Truck[];
-    addTruck: ( truck: Truck ) => void;
-    removeTruck: ( index: number ) => void;
+interface FavoriteContextValue {
+    favorites: Favorite[];
+    addFavorite: ( favorite: Favorite ) => void;
+    removeFavorite: ( id: string ) => void;
 }
 
-const defaultValue: truckContextValue = {
-    trucks: [],
-    addTruck: () => { },
-    removeTruck: () => { }
+const defaultValue: FavoriteContextValue = {
+    favorites: [],
+    addFavorite: () => { },
+    removeFavorite: () => { }
 };
 
-export const truckContext = createContext( defaultValue );
+export const FavoriteContext = createContext( defaultValue );
 
-export function truckContextProvider( { children }: { children: ReactNode; } ) {
-    const [ trucks, setTrucks ] = useState<Truck[]>( [] );
+export function FavoriteContextProvider( { children }: { children: ReactNode; } ) {
+    const [ favorites, setFavorites ] = useState<Favorite[]>( [] );
 
-    function addTruck( truck: Truck ): void {
-        setTrucks( prev => [ ...prev, truck ] );
+    function addFavorite( favorite: Favorite ): void {
+        setFavorites( prev => [ ...prev, favorite ] );
     }
 
-    function removeTruck( index: number ): void {
-        setTrucks( prevTrucks => [
-            ...prevTrucks.slice( 0, index ),
-            ...prevTrucks.slice( index + 1 )
-        ] );
+    function removeFavorite( id: string ): void {
+
     }
 
     return (
-        <truckContext.Provider value={ { trucks, addTruck, removeTruck } }>
+        <FavoriteContext.Provider value={ { favorites, addFavorite, removeFavorite } }>
             { children }
-        </truckContext.Provider>
+        </FavoriteContext.Provider>
     );
 }

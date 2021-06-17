@@ -17,7 +17,7 @@ export function getTruckData(): Promise<Truck[]> {
 }
 
 //TODO: get this collection in db and correctly call it when list is mounted FROM favorites link
-export function postFavorite(): Promise<Favorite> {
+export function postFavorite( favorite: Favorite ): Promise<Favorite> {
     return axios.post( baseUrl ).then( res => res.data );
 }
 

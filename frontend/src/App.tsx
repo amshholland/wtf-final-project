@@ -2,17 +2,17 @@ import "./App.css";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
+import { FavoriteContextProvider } from "./context/favorite-context";
 import FoodTruckCard from "./components/FoodTruckCard";
 import FoodTruckList from "./components/FoodTruckList";
 import Header from "./components/Header";
 import WrappedMap from "./components/MapComponent";
-import { truckContextProvider } from "./context/favorite-context";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <truckContextProvider>
+        <FavoriteContextProvider>
           <Header />
           <Switch>
             <Route path="/list">
@@ -29,7 +29,7 @@ function App() {
               </div>
             </Route>
           </Switch>
-        </truckContextProvider>
+        </FavoriteContextProvider>
       </Router>
     </div>
   );

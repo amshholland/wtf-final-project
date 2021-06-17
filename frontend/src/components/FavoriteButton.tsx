@@ -1,35 +1,29 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useContext, useState } from "react";
 
 import { Button } from 'react-bootstrap';
 import { Favorite } from "../model/dbFavModel";
+import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from "../model/dbModel";
-import { postFavorite } from '../service/WtfApiService';
 
 interface Props {
     truck: Truck;
-    handleClose: () => void;
 }
 
-export function FavoriteButton( { truck, handleClose }: Props ) {
-    const [ favorites, setFavorites ] = useState<Favorite[]>();
+export function FavoriteButton( { truck }: Props ) {
+    const { addFavorite } = useContext( FavoriteContext );
 
-    const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
-    const [ removeTruck, favoritedTruck ] = useState<Truck | null>( null );
+    function handleButtonClick(): void {
+        let favorite = {
+            truckId: truck._id!
+        };
 
-    const addFavorite = ( foodTruck ) => {
-        postFavorite();
-    };
-
-    function handleButtonClick( e: ChangeEvent ): void {
-        setFoodTruck( e.target.value );
-        addFavorite( foodTruck );
+        addFavorite( favorite );
     }
 
+
     return (
-        <form>
-            <button className="Favorite" onClick={ handleButtonClick } onChange={ handleButtonClick } >
-                Add to Favorites
-            </button>
-        </form>
+        <button className="Favorite" onClick={ () => handleButtonClick() }>
+            Add to Favorites
+        </button>
     );
 }
