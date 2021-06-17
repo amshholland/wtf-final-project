@@ -1,8 +1,8 @@
 import './FoodTruckCard.css';
 
 import { Button, Modal } from 'react-bootstrap';
-import { useHistory, useParams } from 'react-router-dom';
 
+import { Favorite } from '../model/dbFavModel';
 import { Truck } from '../model/dbModel';
 
 interface Props {
@@ -11,13 +11,13 @@ interface Props {
 }
 
 function FoodTruckCard( { truck, handleClose }: Props ) {
-
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
         let timeDiffSeconds = currentTimestamp - timestamp;
         let hours = ( timeDiffSeconds / 60 ) / 60;
         return Math.round( hours );
     }
+
 
     return (
         <Modal.Dialog className="FoodTruckCard">
@@ -53,7 +53,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             </Modal.Body>
             <Modal.Footer>
                 <a href="#">View on map</a>
-                <a href="#">Add to favorites</a>
+                <Button>Add to Favorites</Button>
                 <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>
         </Modal.Dialog >
