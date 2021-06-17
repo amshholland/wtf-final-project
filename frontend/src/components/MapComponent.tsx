@@ -56,14 +56,14 @@ function MapComponent({
   }, []);
 
   return (
-    <div className="mapComponent">
+    <div className="MapComponent">
       <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: 42.3314, lng: -83.0458 }}
         defaultOptions={{ styles: mapStyles }}
       >
         {foodTrucks.map((truck) => (
-          <div className="marker">
+          // <div className="marker">
           <Marker 
             key={truck.iGId}
             position={{
@@ -78,7 +78,7 @@ function MapComponent({
               // scaledSize: new window.google.maps.Size(25, 25)
             }}
           />
-          </div>
+          // </div>
         ))}
 
         {

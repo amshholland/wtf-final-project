@@ -1,7 +1,5 @@
 import './FoodTruckCard.css';
-
 import { Button, Modal } from 'react-bootstrap';
-
 import { Favorite } from '../model/dbFavModel';
 import { Truck } from '../model/dbModel';
 

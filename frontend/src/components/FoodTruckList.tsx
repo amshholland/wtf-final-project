@@ -24,7 +24,7 @@ function FoodTruckList() {
     loadTrucks();
     // else
     // loadFavorites();
-  }, [] );
+  }, []);
 
   function loadTrucks() {
     getTruckData().then( ( trucksFromApi ) => {
@@ -73,7 +73,7 @@ function FoodTruckList() {
             <div key={ truckInList._id } className="truck">
               <p id="name">{ truckInList.name }</p> {/* NOT WORKING */ }
               <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
-              <p id="timestamp">{ `${ timeSinceLastPhoto( truckInList ) } hours ago` }</p>
+              <p id="timestamp">{ `updated ${ timeSinceLastPhoto( truckInList ) } hours ago` }</p>
               <button onClick={ () => openModal( truckInList ) }>
                 More Details
               </button>

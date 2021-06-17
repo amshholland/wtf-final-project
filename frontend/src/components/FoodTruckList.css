@@ -69,3 +69,8 @@
 .FoodTruckList #mapViewBottom {
     margin-bottom: 15px;
 }
+
+.FoodTruckList #timestamp {
+    color:rgb(93, 93, 93);
+    font-style: italic;
+}
