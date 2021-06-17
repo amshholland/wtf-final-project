@@ -14,8 +14,12 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
         let timeDiffSeconds = currentTimestamp - timestamp;
-        let hours = ( timeDiffSeconds / 60 ) / 60;
-        return Math.round( hours );
+        let hours = Math.round( timeDiffSeconds / 60 ) / 60;
+        let days = Math.round( hours / 24 );
+        if ( hours > 24 ) {
+            return `${ days } days ago`;
+        }
+        return `${ hours } hours ago`;
     }
 
 
@@ -35,12 +39,13 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                     { truck.profileDescription }
                 </section>
 
+                <h3>Last Seen:</h3>
                 {/* Display last 3 posts */ }
                 <div className="iGPosts">
-                    <h3>Last Seen:</h3>
+
                     { truck.locationHistory.slice( 0, 3 ).map( ( post ) => (
                         <div className="post">
-                            <p id="timestamp">{ `${ timeSinceLastPhoto( post.timestamp ) } hours ago` }</p>
+                            <p id="timestamp">{ timeSinceLastPhoto( post.timestamp ) }</p>
                             <p>{ post.locationName }</p>
                             <p>{ post.address }</p>
                             <p>{ post.city }</p>

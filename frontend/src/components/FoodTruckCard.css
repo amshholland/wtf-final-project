@@ -28,6 +28,15 @@
     border-radius: 50%;
 }
 
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.iGPosts {
+    display: flex;
+}
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
