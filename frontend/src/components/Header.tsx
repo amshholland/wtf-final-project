@@ -10,7 +10,7 @@ function Header() {
   return (
     <header className="AppHeader">
       <div className="TitleDiv">
-        <h1>Where's The Food Trucks?</h1>
+        <img className="logo" src="logo-placeholder-png.png" alt="" />
       </div>
       <div className="GoogleAuth">
         {user && (

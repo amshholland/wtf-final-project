@@ -12,7 +12,7 @@
     background-color: #4f6d78;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .GoogleAuth button {
@@ -31,4 +31,11 @@
 
 .Greeting {
     text-align: center;
+}
+
+.AppHeader .logo {
+    margin: 10px;
+    height: 150px;
+    box-sizing: border-box;
+    background-color: blueviolet;
 }

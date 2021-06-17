@@ -63,7 +63,8 @@ function MapComponent({
         defaultOptions={{ styles: mapStyles }}
       >
         {foodTrucks.map((truck) => (
-          <Marker
+          <div className="marker">
+          <Marker 
             key={truck.iGId}
             position={{
               lat: truck.lastLocation.lat,
@@ -73,10 +74,11 @@ function MapComponent({
               setSelectedTruckPin(truck);
             }}
             icon={{
-              url: truck.profilePhoto,
+              url: truck.profilePhoto
               // scaledSize: new window.google.maps.Size(25, 25)
             }}
           />
+          </div>
         ))}
 
         {
