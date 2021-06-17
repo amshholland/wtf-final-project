@@ -22,16 +22,6 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
             // Use trucks from DB to search 3rd party API by IG handle
             const apiTruck = await readTruck( dbTruck.instagramHandle );
 
-            const newTruck: Truck = {
-                iGId: apiTruck.pk,
-                name: apiTruck.full_name,
-                profilePhoto: apiTruck.profile_pic_url,
-                profileDescription: apiTruck.biography,
-                instagramHandle: dbTruck.instagramHandle,
-                lastRefresh: Date.now()
-            };
-
-
             // Filter our results first to omit posts with no location
             const locationHistory = apiTruck.feed.data.filter( function ( apivalue, apikey ) {
 
@@ -76,17 +66,26 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     apiPost.location.lng,
                     apiPost.location.address,
                     apiPost.location.city,
-                    // apiPost.caption.text );
+                    // apiPost.caption.text 
+                );
 
                 return truckLocation;
             } );
-            newTruck.lastLocation = locationHistory[ 0 ];
-            newTruck.locationHistory = locationHistory;
+            dbTruck = {
+                iGId: apiTruck.pk,
+                name: apiTruck.full_name,
+                profilePhoto: apiTruck.profile_pic_url,
+                profileDescription: apiTruck.biography,
+                instagramHandle: dbTruck.instagramHandle,
+                lastRefresh: Date.now(),
+                lastLocation: locationHistory[ 0 ],
+                locationHistory: locationHistory
+            };
 
-            // dbTruck._id = filter 
-            // dbTruck = replacement
+            // In replaceOne: {_id: dbTruck._id} acts as a filter 
+            // dbTruck acts as the replacement
             console.log( dbTruck );
-            collection.replaceOne( { _id: dbTruck._id }, newTruck );
+            collection.replaceOne( { _id: dbTruck._id }, dbTruck );
         }
         res.send( "done" );
     } catch ( err ) {

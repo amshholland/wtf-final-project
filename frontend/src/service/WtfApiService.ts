@@ -1,6 +1,6 @@
-import axios from "axios";
+import { Favorite } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
-import trucks from "../components/mongo-clone.json";
+import axios from "axios";
 
 // const nodeEnvironment: string = process.env.NODE_ENV || "development";  //for offline development
 
@@ -17,6 +17,10 @@ export function getTruckData(): Promise<Truck[]> {
 }
 
 //TODO: get this collection in db and correctly call it when list is mounted FROM favorites link
-// export function getFavorites(): Promise<Favorite[]> {
-//     return axios.get( baseUrl ).then( res => res.data );
-// }
+export function createFavorite(): Promise<Favorite> {
+    return axios.post( baseUrl ).then( res => res.data );
+}
+
+export function getFavorites(): Promise<Favorite[]> {
+    return axios.get( baseUrl ).then( res => res.data );
+}

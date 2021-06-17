@@ -24,6 +24,10 @@
     text-align: center;
 }
 
+.profilePic {
+    border-radius: 50%;
+}
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
