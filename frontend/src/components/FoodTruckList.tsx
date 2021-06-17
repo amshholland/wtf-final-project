@@ -2,8 +2,9 @@ import "./FoodTruckList.css";
 
 import { Button, Modal } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
+import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
 import { Truck } from "../model/dbModel";
 import { getFavorites } from "../service/WtfApiService";

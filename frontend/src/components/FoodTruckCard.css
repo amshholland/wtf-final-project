@@ -19,6 +19,10 @@
     align-content: flex-end;
 }
 
+.star {
+    height: 25px;
+}
+
 .modal-title {
     flex: 2;
     text-align: center;
@@ -26,6 +30,7 @@
 
 .profilePic {
     border-radius: 50%;
+    height: 100px;
 }
 
 .modal-body {
@@ -33,8 +38,16 @@
     flex-direction: column;
 }
 
+.cardImg {
+    height: 25%;
+}
+
 .iGPosts {
     display: flex;
+}
+
+.postImg {
+    height: 100px;
 }
 
 .modal-footer {

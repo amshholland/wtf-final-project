@@ -29,12 +29,19 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
         }
         return `${ hours } hours ago`;
     }
-
+    // Filter our results first to omit posts with no location
+    const favorited = favorites.filter( function ( fav ) {
+        if ( fav.truckId === truck._id ) {
+            return true;
+        }
+        return false;
+    } );
 
     return (
         <Modal.Dialog className="FoodTruckCard">
 
             <Modal.Header>
+                { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> }
                 <Modal.Title><img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } /></Modal.Title>
                 <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
             </Modal.Header>
@@ -57,7 +64,9 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                             <p>{ post.locationName }</p>
                             <p>{ post.address }</p>
                             <p>{ post.city }</p>
-                            <img src={ post.photo } alt='TODO' />
+                            <div className="cardImg">
+                                <img className="postImg" src={ post.photo } />
+                            </div>
                             <p>{ post.caption }</p>
                         </div>
                     ) ) }
@@ -73,4 +82,4 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     );
 }
 
-export default FoodTruckCard;
+export default FoodTruckCard;;
