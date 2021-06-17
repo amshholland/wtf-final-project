@@ -1,6 +1,9 @@
 import './FoodTruckCard.css';
+
 import { Button, Modal } from 'react-bootstrap';
+
 import { Favorite } from '../model/dbFavModel';
+import { FavoriteButton } from './FavoriteButton';
 import { Truck } from '../model/dbModel';
 
 interface Props {
@@ -56,11 +59,11 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             </Modal.Body>
             <Modal.Footer>
                 <a href="#">View on map</a>
-                <Button>Add to Favorites</Button>
+                <FavoriteButton />
                 <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>
         </Modal.Dialog >
     );
 }
 
-export default FoodTruckCard;;;
+export default FoodTruckCard;
