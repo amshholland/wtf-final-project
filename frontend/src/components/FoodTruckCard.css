@@ -69,3 +69,7 @@
     width: 95%;
     height: 90%;
 }
+
+.FoodTruckCard .profilePic {
+    height: 50px;
+}
