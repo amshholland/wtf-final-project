@@ -13,6 +13,10 @@ function FoodTruckList() {
   const history = useHistory();
   history.push( "/list" );
 
+  const { favorites } = useContext( FavoriteContext );
+  // For each truck, search through favorite array to find same id
+  // array.some -- looks for certain callback 
+
   const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
   const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
   const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
@@ -24,7 +28,7 @@ function FoodTruckList() {
     loadTrucks();
     // else
     // loadFavorites();
-  }, []);
+  }, [] );
 
   function loadTrucks() {
     getTruckData().then( ( trucksFromApi ) => {
