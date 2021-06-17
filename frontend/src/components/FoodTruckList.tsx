@@ -53,7 +53,11 @@ function FoodTruckList() {
     const currentTimestamp = Math.round( new Date().getTime() / 1000 );
     let timeDiffSeconds = currentTimestamp - truckTimestamp;
     let hours = ( timeDiffSeconds / 60 ) / 60;
-    return Math.round( hours );
+    let days = Math.round( hours / 24 );
+        if ( hours > 24 ) {
+            return `${ days } days ago`;
+        }
+        return `${ hours } hours ago`;
   }
 
   const openModal = ( truck: Truck ): void => setFoodTruck( truck );
@@ -78,7 +82,7 @@ function FoodTruckList() {
             <div key={ truckInList._id } className="truck">
               <p id="name">{ truckInList.name }</p> {/* NOT WORKING */ }
               <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
-              <p id="timestamp">{ `updated ${ timeSinceLastPhoto( truckInList ) } hours ago` }</p>
+              <p id="timestamp">{ timeSinceLastPhoto( truckInList ) }</p>
               <button onClick={ () => openModal( truckInList ) }>
                 More Details
               </button>
