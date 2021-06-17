@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import FoodTruckCard from "./FoodTruckCard";
 import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
+import { getFavorites } from "../service/WtfApiService";
 
 function FoodTruckList() {
   const history = useHistory();
@@ -15,9 +16,14 @@ function FoodTruckList() {
   const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
   const [foodTrucksLoaded, setFoodTrucksLoaded] = useState(false);
   const [foodTruck, setFoodTruck] = useState<Truck | null>(null);
+  // thinking we just use setFoodTrucks to put either favs or list trucks in
+  // const [favoriteTrucks, setFavoriteTrucks] = useState<Truck[]>([]);
 
   useEffect(() => {
+    //TODO: ternary for which route user comes from?
     loadTrucks();
+    // else
+    loadFavorites();
   }, []);
 
   function loadTrucks() {
@@ -25,6 +31,16 @@ function FoodTruckList() {
       setFoodTrucks(trucksFromApi);
       setFoodTrucksLoaded(true);
     });
+  }
+
+  function loadFavorites() {
+    getFavorites().then((trucksFromFavorites) => {
+      //TODO: get type of trucksFromFavs to match trucksFromApi
+      // probably have to change the model
+      // trucksFromFav should be type Truck[]
+      setFoodTrucks(trucksFromFavorites);
+      setFoodTrucksLoaded(true);
+    })
   }
 
   function timeSinceLastPhoto(truck: Truck) {
