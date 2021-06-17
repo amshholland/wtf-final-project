@@ -21,7 +21,7 @@ export interface TruckLocation {
     lng: number;
     address: string;
     city: string;
-    caption: string;
+    caption?: string;
 }
 
 export interface CarouselPhotos {
