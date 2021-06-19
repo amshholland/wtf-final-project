@@ -18,13 +18,12 @@ function Header() {
             {!!user.photoURL && (
               <img src={user.photoURL} alt="google profile picture"></img>
             )}
+            </div>
+            )}
         {!user && (
           <button onClick={signInWithGoogle}>Sign in with Google</button>
         )}
         {user && <button onClick={signOut}>Sign out</button>}
-        
-          </div>
-        )}
       </div>
     </header>
   );
