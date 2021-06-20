@@ -41,7 +41,8 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
         <Modal.Dialog className="FoodTruckCard">
 
             <Modal.Header>
-                { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> }
+                {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
+                {/* <FavoriteButton truck={ truck } /> */ }
                 <Modal.Title><img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } /></Modal.Title>
                 <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
             </Modal.Header>

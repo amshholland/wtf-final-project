@@ -21,8 +21,8 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                 // Use trucks from DB to search 3rd party API by IG handle
                 const apiTruck = await readTruck( dbTruck.instagramHandle );
                 // Filter our results first to omit posts with no location
-                const locationHistory = apiTruck.feed.data.filter( function ( apivalue, apikey ) {
-                    if ( apivalue.location === undefined ) {
+                const locationHistory = apiTruck.feed.data.filter( function ( apiPost, apikey ) {
+                    if ( apiPost.location === undefined ) {
                         return false;
                     }
                     return true;
