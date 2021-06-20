@@ -17,14 +17,14 @@ export interface Feed {
 export interface Data {
     taken_at: number;
     carousel_media_count?: number;
-    carousel_media?: Carousel[];
+    carousel_media: Carousel[];
     location: Location;
-    caption?: Caption;
+    caption: Caption;
     image_versions2: ImageVersion;
 }
 
 export interface Caption {
-    text?: string;
+    text: string;
 }
 
 export interface Location {

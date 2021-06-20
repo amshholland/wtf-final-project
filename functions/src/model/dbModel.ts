@@ -21,9 +21,13 @@ export interface TruckLocation {
     lng: number;
     address: string;
     city: string;
-    caption?: string;
+    caption: Caption;
 }
 
 export interface CarouselPhotos {
     photo: string;
+}
+
+export interface Caption {
+    text: string;
 }

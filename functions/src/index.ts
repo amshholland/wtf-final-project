@@ -17,7 +17,7 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         const collection = client.db().collection<Truck>( 'trucks' );
         const trucksFromDb = await collection.find().toArray();
 
-        // Iterate through each truck
+        // Iterate through each truck   
         for ( let dbTruck of trucksFromDb ) {
             // Use trucks from DB to search 3rd party API by IG handle
             const apiTruck = await readTruck( dbTruck.instagramHandle );
@@ -56,35 +56,25 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                     lng: apiPost.location.lng || 0,
                     address: apiPost.location.address || '',
                     city: apiPost.location.city || '',
-                    // caption: apiPost.caption.text || undefined
+                    caption: apiPost.caption
                 };
-                // Use all data pulled from DB, update lastLocation and locationHistory(push) with truck location
-                // In the future, when locationHistory is used, consider using timestamp or post ID to determine whether to push to locationHistory
-                console.log( apiPost.location.name, postPhoto,
-                    apiPost.taken_at,
-                    apiPost.location.lat,
-                    apiPost.location.lng,
-                    apiPost.location.address,
-                    apiPost.location.city,
-                    // apiPost.caption.text 
-                );
 
                 return truckLocation;
             } );
 
-                dbTruck.iGId = apiTruck.pk;
-                dbTruck.name = apiTruck.full_name;
-                dbTruck.profilePhoto = apiTruck.profile_pic_url;
-                dbTruck.profileDescription = apiTruck.biography;
-                dbTruck.instagramHandle = dbTruck.instagramHandle;
-                dbTruck.lastRefresh = Date.now();
-                dbTruck.lastLocation = locationHistory[ 0 ];
-                dbTruck.locationHistory = locationHistory;
+            dbTruck.iGId = apiTruck.pk;
+            dbTruck.name = apiTruck.full_name;
+            dbTruck.profilePhoto = apiTruck.profile_pic_url;
+            dbTruck.profileDescription = apiTruck.biography;
+            dbTruck.instagramHandle = dbTruck.instagramHandle;
+            dbTruck.lastRefresh = Date.now();
+            dbTruck.lastLocation = locationHistory[ 0 ];
+            dbTruck.locationHistory = locationHistory;
 
             // In replaceOne: {_id: dbTruck._id} acts as a filter 
             // dbTruck acts as the replacement
-            console.log( dbTruck );
-            console.log(await collection.replaceOne( { _id: dbTruck._id }, dbTruck ));
+            // console.log( dbTruck );
+            await collection.replaceOne( { _id: dbTruck._id }, dbTruck );
         }
         res.send( "done" );
     } catch ( err ) {
