@@ -4,6 +4,8 @@ import { Button, Modal } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
+import { AuthContext } from "../context/auth-context";
+import { FavoriteButton } from "./FavoriteButton";
 import FoodTruckCard from "./FoodTruckCard";
 import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
@@ -14,6 +16,8 @@ import { getTruckData } from "../service/WtfApiService";
 
 
 function FoodTruckList() {
+  const { user } = useContext( AuthContext );
+
   const history = useHistory();
   history.push( "/list" );
 
@@ -24,7 +28,7 @@ function FoodTruckList() {
   const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
   const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
   const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
-  const [ bgImg, setBgImg ] = useState("red");
+  const [ bgImg, setBgImg ] = useState( "red" );
   // thinking we just use setFoodTrucks to put either favs or list trucks in
   // const [favoriteTrucks, setFavoriteTrucks] = useState<Truck[]>([]);
 
@@ -36,6 +40,7 @@ function FoodTruckList() {
   }, [] );
 
   function loadTrucks() {
+
     getTruckData().then( ( trucksFromApi ) => {
       setFoodTrucks( trucksFromApi );
       setFoodTrucksLoaded( true );
@@ -71,48 +76,51 @@ function FoodTruckList() {
 
   return (
     <div className="container">
-    <div className="FoodTruckList">
-      <header>
-        <h1>Food Trucks</h1>
-      </header>
-      <Link to="/">
-        <button id="mapViewTop">Map View</button>
-      </Link>
-      { !foodTrucksLoaded ? (
-        <p id="loading">Loading...</p>
-      ) : foodTrucks.length === 0 ? (
-        <p>No Food Trucks available.</p>
-      ) : (
-        <div className="listDiv">
-          { foodTrucks.sort( ( a, b ) => ( a.lastLocation.timestamp < b.lastLocation.timestamp ) ? 1 : -1 ).map( ( truckInList ) => (
-            <div key={ truckInList._id } className="truck">
-              <img src={truckInList.profilePhoto} alt="" />
-              <p id="name">{ truckInList.name }</p> 
-              <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
-              <p id="timestamp">{ `Last updated ${timeSinceLastPhoto( truckInList )}`}</p>
-              <button onClick={ () => openModal( truckInList ) }>
-                More Details
-              </button>
-            </div>
-          ) ) }
-        </div>
-      ) }
-      <Modal
-        show={ foodTruck !== null }
-        className="mymodal"
-        overlayClassName="myoverlay"
-        centered
-      >
-        { foodTruck !== null && (
-          <FoodTruckCard truck={ foodTruck } handleClose={ closeModal } />
+      <div className="FoodTruckList">
+        <header>
+          <h1>Food Trucks</h1>
+        </header>
+        <Link to="/">
+          <button id="mapViewTop">Map View</button>
+        </Link>
+        { !foodTrucksLoaded ? (
+          <p id="loading">Loading...</p>
+        ) : foodTrucks.length === 0 ? (
+          <p>No Food Trucks available.</p>
+        ) : (
+          <div className="listDiv">
+            { foodTrucks.sort( ( a, b ) => ( a.lastLocation.timestamp < b.lastLocation.timestamp ) ? 1 : -1 ).map( ( truckInList ) => (
+              <div key={ truckInList._id } className="truck">
+                <img src={ truckInList.profilePhoto } alt="" />
+                <p id="name">{ truckInList.name }</p>
+                <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
+                <p id="timestamp">{ `Last updated ${ timeSinceLastPhoto( truckInList ) }` }</p>
+                <button onClick={ () => openModal( truckInList ) }>
+                  More Details
+                </button>
+                { user &&
+                  <FavoriteButton truck={ truckInList } />
+                }
+              </div>
+            ) ) }
+          </div>
         ) }
-      </Modal>
-      <Link to="/">
-        <button id="mapViewBottom">Back</button>
-      </Link>
-      
-    </div>
-    <button id="scrollToTop"><a href="/list"><i className="material-icons">arrow_upward</i></a></button>
+        <Modal
+          show={ foodTruck !== null }
+          className="mymodal"
+          overlayClassName="myoverlay"
+          centered
+        >
+          { foodTruck !== null && (
+            <FoodTruckCard truck={ foodTruck } handleClose={ closeModal } />
+          ) }
+        </Modal>
+        <Link to="/">
+          <button id="mapViewBottom">Back</button>
+        </Link>
+
+      </div>
+      <button id="scrollToTop"><a href="/list"><i className="material-icons">arrow_upward</i></a></button>
     </div>
   );
 }

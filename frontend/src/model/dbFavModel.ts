@@ -1,5 +1,5 @@
 export interface Favorites {
-    _id: string;
-    userId: string;
+    _id?: string;
+    userId?: string;
     truckId: string;
 }
