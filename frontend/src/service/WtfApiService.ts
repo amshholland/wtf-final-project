@@ -1,3 +1,4 @@
+import { AuthContext } from './../context/auth-context';
 import { Favorite } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
 import axios from "axios";
@@ -21,6 +22,8 @@ export function postFavorite( favorite: Favorite ): Promise<Favorite> {
     return axios.post( baseUrl ).then( res => res.data );
 }
 
-export function getFavorites(): Promise<Favorite[]> {
-    return axios.get( baseUrl ).then( res => res.data );
+export function getUserFavorites( gId: string ): Promise<Favorite[]> {
+    return axios.get( baseUrl, {
+        params: { AuthContext: AuthContext. }
+    } ).then( res => res.data );
 }
