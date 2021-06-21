@@ -2,7 +2,6 @@ import "./App.css";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import FoodTruckCard from "./components/FoodTruckCard";
 import FoodTruckList from "./components/FoodTruckList";
 import Header from "./components/Header";
 import WrappedMap from "./components/MapComponent";

@@ -24,7 +24,6 @@ function FoodTruckList() {
   const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
   const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
   const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
-  const [ bgImg, setBgImg ] = useState("red");
   // thinking we just use setFoodTrucks to put either favs or list trucks in
   // const [favoriteTrucks, setFavoriteTrucks] = useState<Truck[]>([]);
 

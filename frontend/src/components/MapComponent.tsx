@@ -7,12 +7,13 @@ import {
   withScriptjs,
 } from "react-google-maps";
 import { ReactElement, useEffect, useState } from "react";
-import { Truck, TruckLocation } from "../model/dbModel";
+import { Truck } from "../model/dbModel";
 
 import { Link } from "react-router-dom";
 import Marker from "react-google-maps/lib/components/Marker";
 import { getTruckData } from "../service/WtfApiService";
-import mapStyles from './snazzy-map-style';
+
+declare var google: any;
 
 interface Props {
   googleMapURL: string;
@@ -42,6 +43,7 @@ function MapComponent( {
 
   const [ selectedTruckPin, setSelectedTruckPin ] = useState<any>( undefined );
   const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
+  const [ animation, setAnimation ] = useState<any>(null);
 
 
   useEffect( () => {
@@ -62,7 +64,6 @@ function MapComponent( {
       <GoogleMap
         defaultZoom={ 10 }
         defaultCenter={ { lat: 42.3314, lng: -83.0458 } }
-        defaultOptions={ { styles: mapStyles } }
       >
         { foodTrucks.map( ( truck ) => (
           <div className="marker">
@@ -72,11 +73,16 @@ function MapComponent( {
                 lat: truck.lastLocation.lat,
                 lng: truck.lastLocation.lng,
               } }
+              animation={ {
+                animation
+              } }
               onClick={ () => {
                 setSelectedTruckPin( truck );
+                setAnimation( google.maps.Animation.BOUNCE );
               } }
               icon={ {
-                url: truck.profilePhoto
+                url: truck.profilePhoto,
+                scaledSize: new google.maps.Size(75, 75)
               } }
             />
           </div>

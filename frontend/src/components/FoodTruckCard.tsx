@@ -69,7 +69,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                             <p>{ post.address }</p>
                             <p>{ post.city }</p>
                             <div className="cardImg">
-                                <img className="postImg" src={ post.photo } />
+                                <img className="postImg" src={ post.photo } alt='' />
                             </div>
                             <p>{ post.caption }</p>
                         </div>
@@ -78,7 +78,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
             </Modal.Body>
             <Modal.Footer>
-                <a href="#">View on map</a>
+                <a href="https://wtf-truck.web.app/">View on map</a>
                 <FavoriteButton truck={ truck } />
                 <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>

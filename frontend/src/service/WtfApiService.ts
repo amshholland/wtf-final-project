@@ -1,4 +1,3 @@
-import { AuthContext } from './../context/auth-context';
 import { Favorites } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
 import axios from "axios";

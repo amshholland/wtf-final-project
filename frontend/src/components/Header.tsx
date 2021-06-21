@@ -16,7 +16,7 @@ function Header() {
             {!!user.photoURL && (
               <img
                 src={user.photoURL}
-                alt="google profile picture"
+                alt="google avatar"
                 id="profilePic"
               />
             )}
