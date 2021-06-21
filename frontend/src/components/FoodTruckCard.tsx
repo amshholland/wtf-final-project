@@ -4,9 +4,12 @@ import { Button, Modal } from 'react-bootstrap';
 
 import { Favorite } from '../model/dbFavModel';
 import { FavoriteButton } from './FavoriteButton';
-import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
 import { useContext } from 'react';
+
+// import { FavoriteContext } from "../context/favorite-context.txt";
+
+
 
 interface Props {
     truck: Truck;
@@ -15,7 +18,7 @@ interface Props {
 
 function FoodTruckCard( { truck, handleClose }: Props ) {
 
-    const { favorites } = useContext( FavoriteContext );
+    // const { favorites } = useContext( FavoriteContext );
     // For each truck, search through favorite array to find same id
     // array.some -- looks for certain callback 
 
@@ -30,12 +33,12 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
         return `${ hours } hours ago`;
     }
     // Filter our results first to omit posts with no location
-    const favorited = favorites.filter( function ( fav ) {
-        if ( fav.truckId === truck._id ) {
-            return true;
-        }
-        return false;
-    } );
+    // const favorited = favorites.filter( function ( fav ) {
+    //     if ( fav.truckId === truck._id ) {
+    //         return true;
+    //     }
+    //     return false;
+    // } );
 
     return (
         <Modal.Dialog className="FoodTruckCard">

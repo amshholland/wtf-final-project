@@ -1,31 +1,36 @@
-import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import React, { ReactNode, createContext, useContext, useEffect, useState } from "react";
+
+import { createUser } from "../service/WtfApiService";
 import firebase from '../firebaseConfig';
 
 export interface AuthContextModel {
-    user: firebase.User | null;
+  user: firebase.User | null;
 }
 
 const defaultValue: AuthContextModel = {
-    user: null
+  user: null
 };
 
-export const AuthContext = createContext(defaultValue);
+export const AuthContext = createContext( defaultValue );
 
-export function AuthContextProvider({children}: {children: ReactNode}) {
-    const [ user, setUser ] = useState<firebase.User|null>(null);
-  
-    // Remember useEffect makes sure this code only runs once.
-    useEffect(() => {
-      // The return here passes the unsubscribe function back to useEffect which
-      // will call it when this component is unmounted.
-      return firebase.auth().onAuthStateChanged(newUser => {
-        setUser(newUser);
-      });
-    }, []);
-  
-    return (
-      <AuthContext.Provider value={{ user }}>
-        {children}
-      </AuthContext.Provider>
-    );
+export function AuthContextProvider( { children }: { children: ReactNode; } ) {
+  const [ user, setUser ] = useState<firebase.User | null>( null );
+
+  // Remember useEffect makes sure this code only runs once.
+  useEffect( () => {
+    // The return here passes the unsubscribe function back to useEffect which
+    // will call it when this component is unmounted.
+    return firebase.auth().onAuthStateChanged( newUser => {
+      if ( newUser ) {
+        createUser( newUser?.uid );
+      }
+      setUser( newUser );
+    } );
+  }, [] );
+
+  return (
+    <AuthContext.Provider value={ { user } }>
+      { children }
+    </AuthContext.Provider>
+  );
 };

@@ -4,17 +4,20 @@ import { Button, Modal } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
-import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
 import { Truck } from "../model/dbModel";
-import { getFavorites } from "../service/WtfApiService";
 import { getTruckData } from "../service/WtfApiService";
+
+// import { FavoriteContext } from "../context/favorite-context.txt";
+
+
+
 
 function FoodTruckList() {
   const history = useHistory();
   history.push( "/list" );
 
-  const { favorites } = useContext( FavoriteContext );
+  // const { favorites } = useContext( FavoriteContext );
   // For each truck, search through favorite array to find same id
   // array.some -- looks for certain callback 
 
@@ -54,10 +57,10 @@ function FoodTruckList() {
     let timeDiffSeconds = currentTimestamp - truckTimestamp;
     let hours = ( timeDiffSeconds / 60 ) / 60;
     let days = Math.round( hours / 24 );
-        if ( hours > 24 ) {
-            return `${ days } days ago`;
-        }
-        return `${ hours } hours ago`;
+    if ( hours > 24 ) {
+      return `${ days } days ago`;
+    }
+    return `${ hours } hours ago`;
   }
 
   const openModal = ( truck: Truck ): void => setFoodTruck( truck );

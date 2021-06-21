@@ -1,8 +1,9 @@
 import * as functions from "firebase-functions";
+
+import { Truck } from "../model/dbModel";
 import cors from "cors";
 import express from "express";
 import { getClient } from '../db';
-import { Truck } from "../model/dbModel";
 
 const app = express();
 app.use( cors() );

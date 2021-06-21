@@ -5,7 +5,7 @@ import { Truck, TruckLocation } from "./model/dbModel";
 import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
-export { default as wtf } from "./routes/wtfRoutes";
+export { default as trucks } from "./routes/wtfRoutes";
 // exports.scheduledFunction = functions.pubsub.schedule('every 30 minutes').onRun((context) => {
 exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
     // console.log( 'This will be run every 30 minutes!' );
