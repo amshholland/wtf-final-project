@@ -90,6 +90,7 @@ function FoodTruckList() {
           <div className="listDiv">
             { foodTrucks.sort( ( a, b ) => ( a.lastLocation.timestamp < b.lastLocation.timestamp ) ? 1 : -1 ).map( ( truckInList ) => (
               <div key={ truckInList._id } className="truck">
+
                 <img src={ truckInList.profilePhoto } alt="" />
                 <p id="name">{ truckInList.name }</p>
                 <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
@@ -120,7 +121,7 @@ function FoodTruckList() {
 
       </div>
       <button id="scrollToTop"><a href="/list"><i className="material-icons">arrow_upward</i></a></button>
-    </div>
+    </div >
   );
 }
 
