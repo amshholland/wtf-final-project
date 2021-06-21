@@ -24,6 +24,7 @@ function FoodTruckList() {
   const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
   const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
   const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
+  const [ bgImg, setBgImg ] = useState("red");
   // thinking we just use setFoodTrucks to put either favs or list trucks in
   // const [favoriteTrucks, setFavoriteTrucks] = useState<Truck[]>([]);
 
@@ -67,7 +68,9 @@ function FoodTruckList() {
 
   const closeModal = () => setFoodTruck( null );
 
+
   return (
+    <div className="container">
     <div className="FoodTruckList">
       <header>
         <h1>Food Trucks</h1>
@@ -83,9 +86,10 @@ function FoodTruckList() {
         <div className="listDiv">
           { foodTrucks.sort( ( a, b ) => ( a.lastLocation.timestamp < b.lastLocation.timestamp ) ? 1 : -1 ).map( ( truckInList ) => (
             <div key={ truckInList._id } className="truck">
-              <p id="name">{ truckInList.name }</p> {/* NOT WORKING */ }
+              <img src={truckInList.profilePhoto} alt="" />
+              <p id="name">{ truckInList.name }</p> 
               <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
-              <p id="timestamp">{ timeSinceLastPhoto( truckInList ) }</p>
+              <p id="timestamp">{ `Last updated ${timeSinceLastPhoto( truckInList )}`}</p>
               <button onClick={ () => openModal( truckInList ) }>
                 More Details
               </button>
@@ -106,6 +110,9 @@ function FoodTruckList() {
       <Link to="/">
         <button id="mapViewBottom">Back</button>
       </Link>
+      
+    </div>
+    <button id="scrollToTop"><a href="/list"><i className="material-icons">arrow_upward</i></a></button>
     </div>
   );
 }

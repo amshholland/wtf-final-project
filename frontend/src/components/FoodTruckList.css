@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #017684;
+    background-color: #4f6d78;
 }
 
 .FoodTruckList h1 {
@@ -35,7 +35,7 @@
     text-align: center;
 }
 
-.FoodTruckList .truck:hover { 
+.FoodTruckList .truck button:hover { 
     transition: all 200ms;
     background-color: #f0d898;
     
@@ -62,8 +62,22 @@
     font-size: .5em;
 }
 
-.FoodTruckList #mapViewTop {
-    
+.container #scrollToTop {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7dcf46;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: fixed;
+}
+
+.container #scrollToTop:active {
+    background-color: #68ac3b;
+    scroll-behavior: smooth;
 }
 
 .FoodTruckList #mapViewBottom {

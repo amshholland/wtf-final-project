@@ -11,19 +11,29 @@ function Header() {
     <header className="AppHeader">
       <div className="TitleDiv">
         <img className="logo" src="logo-placeholder-png.png" alt="" />
-      </div>
-      <div className="GoogleAuth">
         {user && (
           <div className="GoogleUserPhoto">
             {!!user.photoURL && (
-              <img src={user.photoURL} alt="google profile picture"></img>
+              <img
+                src={user.photoURL}
+                alt="google profile picture"
+                id="profilePic"
+              />
             )}
-            </div>
+            {user && (
+              <button className="signOut" onClick={signOut}>
+                Sign out
+              </button>
             )}
-        {!user && (
-          <button onClick={signInWithGoogle}>Sign in with Google</button>
+          </div>
         )}
-        {user && <button onClick={signOut}>Sign out</button>}
+      </div>
+      <div className="GoogleAuth">
+        {!user && (
+          <button className="signIn" onClick={signInWithGoogle}>
+            Sign in
+          </button>
+        )}
       </div>
     </header>
   );

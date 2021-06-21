@@ -11,12 +11,9 @@
     width: 100%;
     background-color: #4f6d78;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.GoogleAuth button {
-    display: flex;
 }
 
 .GoogleUserDetails {
@@ -34,8 +31,36 @@
 }
 
 .AppHeader .logo {
-    margin: 10px;
+    margin: 0 auto;
     height: 150px;
     box-sizing: border-box;
-    background-color: blueviolet;
+    background-color: white;
+    
+}
+
+.AppHeader #profilePic {
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.TitleDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.GoogleUserPhoto {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
+}
+.GoogleAuth {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
 }
