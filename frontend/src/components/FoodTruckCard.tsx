@@ -3,13 +3,10 @@ import './FoodTruckCard.css';
 import { Button, Modal } from 'react-bootstrap';
 
 import { FavoriteButton } from './FavoriteButton';
+import { FavoriteContext } from "../context/favorite-context";
 import { Favorites } from '../model/dbFavModel';
 import { Truck } from '../model/dbModel';
 import { useContext } from 'react';
-
-// import { FavoriteContext } from "../context/favorite-context.txt";
-
-
 
 interface Props {
     truck: Truck;
@@ -21,6 +18,8 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     // const { favorites } = useContext( FavoriteContext );
     // For each truck, search through favorite array to find same id
     // array.some -- looks for certain callback 
+
+    console.log( truck );
 
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
