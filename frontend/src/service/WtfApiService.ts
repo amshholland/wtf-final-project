@@ -1,6 +1,5 @@
-import { Favorite, User } from "../model/dbFavModel";
-
 import { AuthContext } from './../context/auth-context';
+import { Favorites } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
 import axios from "axios";
 
@@ -18,17 +17,12 @@ export function getTruckData(): Promise<Truck[]> {
     return axios.get( baseUrl ).then( res => res.data );
 }
 
-
-export function createUser( _id: string ): Promise<User> {
-    return axios.post( baseUrl ).then( res => res.data );
-}
-
 //TODO: get this collection in db and correctly call it when list is mounted FROM favorites link
-export function postFavorite( favorite: Favorite ): Promise<Favorite> {
+export function postFavorite( favorite: Favorites ): Promise<Favorites> {
     return axios.post( baseUrl ).then( res => res.data );
 }
 
-export function getUserFavorites( _id: string ): Promise<Favorite[]> | null {
+export function getUserFavorites( _id: string ): Promise<Favorites[]> | null {
     return axios.get( baseUrl, {
         params: { _id: _id }
     } ).then( res => res.data );

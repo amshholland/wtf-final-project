@@ -1,6 +1,5 @@
 import React, { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
-import { createUser } from "../service/WtfApiService";
 import firebase from '../firebaseConfig';
 
 export interface AuthContextModel {
@@ -21,9 +20,6 @@ export function AuthContextProvider( { children }: { children: ReactNode; } ) {
     // The return here passes the unsubscribe function back to useEffect which
     // will call it when this component is unmounted.
     return firebase.auth().onAuthStateChanged( newUser => {
-      if ( newUser ) {
-        createUser( newUser?.uid );
-      }
       setUser( newUser );
     } );
   }, [] );

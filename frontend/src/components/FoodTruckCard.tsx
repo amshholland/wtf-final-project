@@ -2,8 +2,8 @@ import './FoodTruckCard.css';
 
 import { Button, Modal } from 'react-bootstrap';
 
-import { Favorite } from '../model/dbFavModel';
 import { FavoriteButton } from './FavoriteButton';
+import { Favorites } from '../model/dbFavModel';
 import { Truck } from '../model/dbModel';
 import { useContext } from 'react';
 

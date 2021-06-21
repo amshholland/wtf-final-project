@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useContext, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";
 import { Button } from 'react-bootstrap';
-import { Favorite } from "../model/dbFavModel";
+import { Favorites } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
 
 // import { FavoriteContext } from "../context/favorite-context.txt";
@@ -17,6 +17,7 @@ export function FavoriteButton( { truck }: Props ) {
 
     function handleButtonClick(): void {
         let favorite = {
+
             truckId: truck._id!
         };
 
