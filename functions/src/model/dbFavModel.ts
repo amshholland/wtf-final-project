@@ -1,5 +1,7 @@
+import { ObjectId } from "mongodb";
+
 export interface Favorites {
-    _id: string;
+    _id: ObjectId;
     userId: string;
     favorites: Favorite[];
 }
