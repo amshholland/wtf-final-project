@@ -1,39 +1,41 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/auth-context";
-import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
 
+import { signInWithGoogle, signOut } from "../firebaseConfig";
+
+import { AuthContext } from "../context/auth-context";
+import { useContext } from "react";
+
 function Header() {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user } = useContext( AuthContext );
+  console.log( user );
 
   return (
     <header className="AppHeader">
       <div className="TitleDiv">
-        <img className="logo" src="logo-placeholder-png.png" alt="" />
-        {user && (
+        <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="" />
+        { user && (
           <div className="GoogleUserPhoto">
-            {!!user.photoURL && (
+            { !!user.photoURL && (
               <img
-                src={user.photoURL}
+                src={ user.photoURL }
                 alt="google avatar"
                 id="profilePic"
               />
-            )}
-            {user && (
-              <button className="signOut" onClick={signOut}>
+            ) }
+            { user && (
+              <button className="signOut" onClick={ signOut }>
                 Sign out
               </button>
-            )}
+            ) }
           </div>
-        )}
+        ) }
       </div>
       <div className="GoogleAuth">
-        {!user && (
-          <button className="signIn" onClick={signInWithGoogle}>
+        { !user && (
+          <button className="signIn" onClick={ signInWithGoogle }>
             Sign in
           </button>
-        )}
+        ) }
       </div>
     </header>
   );
