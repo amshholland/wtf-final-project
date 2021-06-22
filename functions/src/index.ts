@@ -17,7 +17,7 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
         const trucksFromDb = await collection.find().toArray();
         // Iterate through each truck
         for ( let dbTruck of trucksFromDb ) {
-            if ( dbTruck.lastRefresh == undefined || dbTruck.lastRefresh - Date.now() > 3600000 ) {
+            if ( dbTruck.lastRefresh == undefined || Date.now() - dbTruck.lastRefresh > 3600000 ) {
                 // Use trucks from DB to search 3rd party API by IG handle
                 const apiTruck = await readTruck( dbTruck.instagramHandle );
                 // Filter our results first to omit posts with no location
@@ -67,8 +67,7 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
 
                 // In replaceOne: {_id: dbTruck._id} acts as a filter 
                 // dbTruck acts as the replacement
-                console.log( dbTruck );
-                console.log( await collection.replaceOne( { _id: dbTruck._id }, dbTruck ) );
+                await collection.replaceOne( { _id: dbTruck._id }, dbTruck );
             }
         }
         res.send( "done" );
