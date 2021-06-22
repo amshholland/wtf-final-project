@@ -7,6 +7,7 @@ import { FavoriteButton } from './FavoriteButton';
 import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
 import { useContext } from 'react';
+import getTimeDiff from '../utils/getTimeDiff';
 
 interface Props {
     truck: Truck;
@@ -21,13 +22,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
-        let timeDiffSeconds = currentTimestamp - timestamp;
-        let hours = Math.round( timeDiffSeconds / 60 ) / 60;
-        let days = Math.round( hours / 24 );
-        if ( hours > 24 ) {
-            return `${ days } days ago`;
-        }
-        return `${ hours } hours ago`;
+        return getTimeDiff(timestamp, currentTimestamp);
     }
     // Filter our results first to omit posts with no location
     // const favorited = favorites.filter( function ( fav ) {

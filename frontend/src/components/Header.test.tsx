@@ -12,5 +12,5 @@ test('does not render sign out button', () => {
 test('renders sign in button', () => {
     render(<Header />);
     const signinButton = screen.queryByRole("button", {name: "Sign In"});
-    expect(signinButton).not.toBeInTheDocument();
+    expect(signinButton).toBeInTheDocument();
 });
