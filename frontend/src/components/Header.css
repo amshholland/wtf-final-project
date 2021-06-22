@@ -15,26 +15,39 @@
     justify-content: center;
     position: fixed;
     z-index: 2;
+    top: 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.AppHeader h1 {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    font-family: Staatliches;
+    margin: 10px 0;
+    /* border-bottom: 2px solid white; */
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .GoogleUserDetails {
-  color: white;
-  font-family: Staatliches;
+    color: white;
+    font-family: Staatliches;
 }
 
 .GoogleUserPhoto img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 .Greeting {
-  text-align: center;
+    text-align: center;
 }
 
-/* .AppHeader .logo {
+.AppHeader .logo {
     margin: 0 auto;
-    height: 150px;
+    height: 100px;
     box-sizing: border-box;
 }
 
@@ -48,46 +61,51 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
+  margin: auto 0;
 }
 
+
+
 .GoogleUserPhoto {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  position: absolute;
-  right: 0;
-  top: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
+
 .GoogleUserPhoto img {
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
   border: 3px solid #efc058;
   margin-top: 12px;
   margin-right: 15px;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    border: 3px solid #efc058;
 }
 
 .GoogleAuth {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  position: absolute;
-  right: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
 }
 
 .AppHeader .signIn,
 .AppHeader .signOut {
-  font-size: 1em;
-  text-align: center;
-  border: none;
-  height: 2.2em;
-  border-radius: 4px;
-  background-color: #7dcf46;
-  color: white;
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    height: 2.2em;
+    border-radius: 4px;
+    background-color: #7dcf46;
+    color: white;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .AppHeader .signIn {
-  margin: 10px;
+    margin: 10px;
 }
 
 .AppHeader .logo {
@@ -107,6 +125,19 @@
     height: 100px;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
   }
+
+
+
+    .TitleDiv {
+        position: relative;
+        background-color: white;
+        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    }
+    .AppHeader .logo {
+        margin: 0 auto;
+        height: 100px;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto
+    }
 }
-
-
