@@ -40,7 +40,7 @@ function FoodTruckList() {
 
   function loadTrucks() {
 
-    getTruckData().th  en( ( trucksFromApi ) => {
+    getTruckData().then( ( trucksFromApi ) => {
       setFoodTrucks( trucksFromApi );
       setFoodTrucksLoaded( true );
     } );
