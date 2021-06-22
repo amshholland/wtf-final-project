@@ -98,9 +98,9 @@ function FoodTruckList() {
                 <button onClick={ () => openModal( truckInList ) }>
                   More Details
                 </button>
-                { user &&
-                  <FavoriteButton truck={ truckInList } />
-                }
+                {/* { user &&
+                  <FavoriteButton truckId={ truckInList.iGId } />
+                } */}
               </div>
             ) ) }
           </div>

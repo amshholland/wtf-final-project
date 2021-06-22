@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Favorites } from "../model/dbFavModel";
-import { getUserFavorites } from "../service/WtfApiService";
+import { Favorite } from "../model/dbFavModel";
 import { useParams } from "react-router-dom";
 
 interface User {
@@ -11,7 +10,7 @@ interface User {
 function FavoritesList() {
     const _id: string = useParams<User>()._id;
 
-    const [ userFavorites, setUserFavorites ] = useState<Favorites[]>( [] );
+    const [ userFavorites, setUserFavorites ] = useState<Favorite[]>( [] );
     const [ userFavoritesLoaded, setUserFavoritesLoaded ] = useState( false );
 
     useEffect( () => {

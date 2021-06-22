@@ -2,9 +2,9 @@ import './FoodTruckCard.css';
 
 import { Button, Modal } from 'react-bootstrap';
 
+import { Favorite } from '../model/dbFavModel';
 import { FavoriteButton } from './FavoriteButton';
 import { FavoriteContext } from "../context/favorite-context";
-import { Favorites } from '../model/dbFavModel';
 import { Truck } from '../model/dbModel';
 import { useContext } from 'react';
 
@@ -18,8 +18,6 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     // const { favorites } = useContext( FavoriteContext );
     // For each truck, search through favorite array to find same id
     // array.some -- looks for certain callback 
-
-    console.log( truck );
 
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
@@ -44,7 +42,6 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
             <Modal.Header>
                 {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
-                <FavoriteButton truck={ truck } />
                 <Modal.Title><img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } /></Modal.Title>
                 <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
             </Modal.Header>
@@ -78,7 +75,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             </Modal.Body>
             <Modal.Footer>
                 <a href="https://wtf-truck.web.app/">View on map</a>
-                <FavoriteButton truck={ truck } />
+                <FavoriteButton truckId={ truck.iGId } />
                 <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>
         </Modal.Dialog >

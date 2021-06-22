@@ -1,4 +1,4 @@
-import { Favorites } from "../model/dbFavModel";
+import { Favorite } from "../model/dbFavModel";
 import { Truck } from "../model/dbModel";
 import axios from "axios";
 
@@ -17,12 +17,16 @@ export function getTruckData(): Promise<Truck[]> {
 }
 
 //TODO: get this collection in db and correctly call it when list is mounted FROM favorites link
-export function postFavorite( favorite: Favorites ): Promise<Favorites> {
-    return axios.post( baseUrl ).then( res => res.data );
+export function addFavoriteToDb( favorite: Favorite ): Promise<Favorite> {
+    return axios.post( baseUrl, favorite ).then( res => res.data );
 }
 
-export function getUserFavorites( _id: string ): Promise<Favorites[]> | null {
-    return axios.get( baseUrl, {
-        params: { _id: _id }
-    } ).then( res => res.data );
+export function removeFavoriteFromDb( favId: string ): Promise<void> {
+    return axios.delete( `${ baseUrl }/${ encodeURIComponent( favId ) }` );
 }
+
+export function getFavoritesFromDb( userId: string ): Promise<Favorite[]> {
+    return axios.get( baseUrl, {
+        params: { userId: userId }
+    } ).then( res => res.data );
+};
