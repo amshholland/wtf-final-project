@@ -29,33 +29,24 @@
 .GoogleUserPhoto img {
     height: 50px;
     width: 50px;
+    border-radius: 50%;
 }
 
 .Greeting {
     text-align: center;
 }
 
-
-/* .AppHeader .logo {
+.AppHeader .logo {
     margin: 0 auto;
-    height: 150px;
+    height: 100px;
     box-sizing: border-box;
-<<<<<<< Updated upstream
-}
-=======
-    background-color: grey;
-    
-} */
-
->>>>>>>Stashed changes .AppHeader #profilePic {
-    border-radius: 50%;
-    margin: 10px;
+    margin: auto 0;
 }
 
 .TitleDiv {
     width: 100%;
-    /* /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -102,5 +93,12 @@
         position: relative;
         background-color: white;
         filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    }
+    .AppHeader .logo {
+        margin: 0 auto;
+        height: 100px;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto
     }
 }
