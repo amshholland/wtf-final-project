@@ -1,5 +1,4 @@
 import "./MapComponent.css";
-
 import {
   GoogleMap,
   InfoWindow,
@@ -8,10 +7,10 @@ import {
 } from "react-google-maps";
 import { ReactElement, useEffect, useState } from "react";
 import { Truck } from "../model/dbModel";
-
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Marker from "react-google-maps/lib/components/Marker";
 import { getTruckData } from "../service/WtfApiService";
+import { Link } from "react-scroll";
 
 declare var google: any;
 
@@ -60,10 +59,12 @@ function MapComponent( {
   }, [] );
 
   return (
-    <div className="MapComponent">
+    <div className="MapComponent" id="MapComponent">
       <GoogleMap
         defaultZoom={ 10 }
-        defaultCenter={ { lat: 42.3314, lng: -83.0458 } }
+        defaultCenter={ { lat: 42.433075, lng: -83.097058 } }
+        defaultOptions={{mapTypeControl: false}}
+       
       >
         { foodTrucks.map( ( truck ) => (
           <div className="marker">
@@ -82,7 +83,8 @@ function MapComponent( {
               } }
               icon={ {
                 url: truck.profilePhoto,
-                scaledSize: new google.maps.Size(75, 75)
+                scaledSize: new google.maps.Size(50, 50),
+                
               } }
             />
           </div>
@@ -107,9 +109,10 @@ function MapComponent( {
             </div>
           </InfoWindow>
         ) }
+        
       </GoogleMap>
 
-      <Link to="/list"><button>List View</button></Link>
+      <Link to="list" smooth={true} duration={500}><button className="listView">LIST VIEW</button></Link>
     </div>
   );
 }

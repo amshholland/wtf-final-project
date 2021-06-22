@@ -52,13 +52,13 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                     { truck.locationHistory.slice( 0, 3 ).map( ( post ) => (
                         <div key={ post.timestamp } className="post">
                             <p id="timestamp">{ timeSinceLastPhoto( post.timestamp ) }</p>
-                            <p>{ post.locationName }</p>
-                            <p>{ post.address }</p>
-                            <p>{ post.city }</p>
+                            <p id="name">{ post.locationName }</p>
+                            <p id="address">{ post.address }</p>
+                            <p id="city">{ post.city }</p>
                             <div className="cardImg">
                                 <img className="postImg" src={ post.photo } alt='' />
                             </div>
-                            <p>{ post.caption.text }</p>
+                            <p id="caption">{ post.caption.text }</p>
                         </div>
                     ) ) }
                 </div>
