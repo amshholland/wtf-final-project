@@ -108,7 +108,7 @@ function FoodTruckList() {
                         More Details
                       </button>
                       <div className="favbtn">
-                        {user && <FavoriteButton truck={truckInList} />}
+                        {/* {user && <FavoriteButton truck={truckInList} />} */}
                       </div>
                     </div>
                   </div>
