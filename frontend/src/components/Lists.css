@@ -171,6 +171,7 @@
   .FoodTruckList .truck {
     display: inline-block;
     position: relative;
+    width: 200px;
   }
 
   .FoodTruckList h1 {

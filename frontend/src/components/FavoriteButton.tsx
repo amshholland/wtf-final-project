@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
-import "./FoodTruckList.css";
+import "./Lists.css";
 import { AuthContext } from "../context/auth-context";
 import { Button } from 'react-bootstrap';
 import { Favorite } from "../model/dbFavModel";

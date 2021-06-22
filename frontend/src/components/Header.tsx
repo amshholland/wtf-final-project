@@ -20,8 +20,9 @@ function Header() {
   return (
     <header className="AppHeader">
       <div className="TitleDiv">
-        {/* <img className="logo" src="logo-placeholder-png.png" alt="" /> */}
-        <h1>WTF</h1>
+        <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="" />
+        {/* <h1>WTF</h1> */}
+        
         {user && (
           <div className="GoogleUserPhoto">
             <div className="userPhoto" onClick={() => signOutDisplay()}>

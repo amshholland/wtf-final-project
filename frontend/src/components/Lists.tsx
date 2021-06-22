@@ -1,4 +1,4 @@
-import "./FoodTruckList.css";
+import "./Lists.css";
 
 import { Button, Modal } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
