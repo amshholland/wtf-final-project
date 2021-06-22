@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { Favorite } from "../model/dbFavModel";
 import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from "../model/dbModel";
+import { getFavoritesFromDb } from "../service/WtfApiService";
 
 interface Props {
     truckId: number;
@@ -26,9 +27,13 @@ export function FavoriteButton( { truckId }: Props ) {
     };
 
     function handleRemoveFavorite(): void {
+        const fav = {
+            truckId: truckId!
+        };
+        console.log( truckId );
         console.log( `handleremovefav: ${ truckId } ` );
         for ( let fav of favorites ) {
-            console.log( fav.truckId );
+            console.log( fav );
             if ( truckId === fav.truckId ) {
                 console.log( true );
                 removeFavorite( fav._id! );

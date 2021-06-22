@@ -24,12 +24,13 @@ export function FavoriteContextProvider( { children }: { children: ReactNode; } 
     const [ favorites, setFavorites ] = useState<Favorite[]>( [] );
     let userId: string | undefined = user?.uid;
 
+    console.log( favorites );
     useEffect( () => {
-        console.log( 'got to useEffect' );
+        console.log( 'got to fav context useEffect' );
         if ( userId ) {
-            console.log( 'logged in' );
             getFavoritesFromDb( userId ).then( favs => {
                 setFavorites( favs );
+                console.log();
             } );
         }
         else {
@@ -39,9 +40,13 @@ export function FavoriteContextProvider( { children }: { children: ReactNode; } 
     }, [ userId ] );
 
     function addFavorite( favorite: Favorite ): void {
+        console.log( 'a' );
         if ( userId ) {
+            console.log( 'b' );
             addFavoriteToDb( favorite ).then( fav => {
                 if ( userId ) {
+                    console.log( 'c' );
+
                     getFavoritesFromDb( userId ).then( favs => {
                         setFavorites( favs );
                     } );
@@ -52,8 +57,10 @@ export function FavoriteContextProvider( { children }: { children: ReactNode; } 
 
     function removeFavorite( _id: string ): void {
         if ( userId ) {
+            console.log( 'remove' );
             removeFavoriteFromDb( _id ).then( fav => {
                 if ( userId ) {
+                    console.log( 'remove fav pt 2' );
                     getFavoritesFromDb( userId ).then( favs => {
                         setFavorites( favs );
                     } );

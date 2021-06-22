@@ -30,11 +30,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
         return `${ hours } hours ago`;
     }
     // Filter our results first to omit posts with no location
-    // const favorited = favorites.filter( function ( fav ) {
-    //     if ( fav.truckId === truck._id ) {
-    //         return true;
-    //     }
-    //     return false;
+
     // } );
 
     return (
