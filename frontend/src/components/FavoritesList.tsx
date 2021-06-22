@@ -1,29 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
+import { AuthContext } from "../context/auth-context";
 import { Favorite } from "../model/dbFavModel";
+import { FavoriteContext } from "../context/favorite-context";
 import { useParams } from "react-router-dom";
-
-interface User {
-    _id: string;
-}
+import FoodTruckList from "./FoodTruckList";
 
 function FavoritesList() {
-    const _id: string = useParams<User>()._id;
+    const { user } = useContext( AuthContext );
+    console.log( `favorite Button ${ user?.uid }` );
+    const { favorites, addFavorite, removeFavorite } = useContext( FavoriteContext );
 
-    const [ userFavorites, setUserFavorites ] = useState<Favorite[]>( [] );
-    const [ userFavoritesLoaded, setUserFavoritesLoaded ] = useState( false );
+    return (
+        <>
+            <FoodTruckList
+        </>
 
-    useEffect( () => {
-        // load our initial data here.
-        // loadFavorites( _id );
-    }, [ _id ] );
-
-    // function loadFavorites( _id: string ) {
-    //     if ( user.favorites ) {
-    //         getUserFavorites( _id ).then( fav => {
-    //             setUserFavorites( fav );
-    //             setUserFavoritesLoaded( true );
-    //         } );
-    //     }
-    // }
-}
+            );
+};
