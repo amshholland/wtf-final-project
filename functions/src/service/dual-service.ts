@@ -9,6 +9,6 @@ const host = "https://instagram-bulk-profile-scrapper.p.rapidapi.com/clients/api
 export function readTruck( handle: string ): Promise<IGTruckProfile> {
   return axios.get( host, {
     params: { ig: handle, corsEnabled: "true" },
-    headers: { "X-RapidApi-Key": functions.config().RapidAPI.key }
+    headers: { "X-RapidApi-Key": functions.config().rapidapi.key }
   } ).then( res => res.data[ 0 ] );
 }

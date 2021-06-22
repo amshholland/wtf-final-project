@@ -6,18 +6,36 @@ import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
 export { default as trucks } from "./routes/wtfRoutes";
-// exports.scheduledFunction = functions.pubsub.schedule('every 30 minutes').onRun((context) => {
-exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
-    // console.log( 'This will be run every 30 minutes!' );
+exports.updateTrucksScheduled = functions.pubsub.schedule('every 30 minutes').onRun(async (context) => {
     try {
+        await updateTrucks();
+        console.log( "done" );
+    } catch ( err ) {
+        console.error( err );
+    }
+    return null;
+});
+
+exports.updateTrucksTest = functions.https.onRequest( async ( req, res ) => {
+    try {
+        await updateTrucks();
+        res.send( "done" );
+    } catch ( err ) {
+        console.log( err );
+        res.send( "failed" );
+    }
+});
+
+async function updateTrucks() {
+
+    // console.log( 'This will be run every 30 minutes!' );
         // Get trucks from database that need to be updated
         // Connecting to MongoDB
         const client = await getClient();
         const collection = client.db().collection<Truck>( 'trucks' );
-        const trucksFromDb = await collection.find().toArray();
+        const trucksFromDb = await collection.find().sort({lastRefresh: 1}).limit(10).toArray();
         // Iterate through each truck
         for ( let dbTruck of trucksFromDb ) {
-            if ( dbTruck.lastRefresh == undefined || Date.now() - dbTruck.lastRefresh > 3600000 ) {
                 // Use trucks from DB to search 3rd party API by IG handle
                 const apiTruck = await readTruck( dbTruck.instagramHandle );
                 // Filter our results first to omit posts with no location
@@ -68,11 +86,5 @@ exports.scheduledFunction = functions.https.onRequest( async ( req, res ) => {
                 // In replaceOne: {_id: dbTruck._id} acts as a filter 
                 // dbTruck acts as the replacement
                 await collection.replaceOne( { _id: dbTruck._id }, dbTruck );
-            }
         }
-        res.send( "done" );
-    } catch ( err ) {
-        console.log( err );
-        res.send( "failed" );
-    }
-} );
+} 
