@@ -1,17 +1,17 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
-import { getUserFavorites, postFavorite } from '../service/WtfApiService';
+import { addFavorite, getUserFavorites } from '../service/WtfApiService';
 
 import { AuthContext } from './auth-context';
-import { Favorites } from '../model/dbFavModel';
+import { Favorite } from '../model/dbFavModel';
 
 interface FavoriteContextValue {
-    favorites: Favorites[];
-    addFavorite: ( favorite: Favorites ) => void;
+    favorite: Favorite[];
+    addFavorite: ( favorite: Favorite ) => void;
     removeFavorite: ( id: string ) => void;
 }
 
 const defaultValue: FavoriteContextValue = {
-    favorites: [],
+    favorite: [],
     addFavorite: () => { },
     removeFavorite: () => { }
 };
@@ -21,22 +21,11 @@ export const FavoriteContext = createContext( defaultValue );
 export function FavoriteContextProvider( { children }: { children: ReactNode; } ) {
     const { user } = useContext( AuthContext );
 
-    const [ favorites, setFavorites ] = useState<Favorites[]>( [] );
+    const [ favorite, setFavorite ] = useState<Favorite[]>( [] );
     let userId: string | undefined = user?.uid;
 
-    // Add if statement to determine if user logged in
-
-    function addFavorite( favorite: Favorites ): void {
-        setFavorites( prev => [ ...prev, favorite ] );
-        postFavorite( favorite );
-    }
-
-    function removeFavorite( truckId: string ): void {
-
-    }
-
     return (
-        <FavoriteContext.Provider value={ { favorites, addFavorite, removeFavorite } }>
+        <FavoriteContext.Provider value={ { favorite, addFavorite, removeFavorite } }>
             { children }
         </FavoriteContext.Provider>
     );
