@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-.AppHeader h1 {
-    color: white;
-    font-size: 2.5em;
-    text-align: center;
-    font-family: Staatliches;
-    margin: 10px 0;
-    border-bottom: 2px solid white;
-}
-
 .AppHeader {
     width: 100%;
     display: flex;
@@ -15,48 +5,36 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-=======
-.AppHeader {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+    z-index: 2;
+    top: 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .AppHeader h1 {
-  color: white;
-  font-size: 3em;
-  text-align: center;
-  font-family: Staatliches;
-  margin: 10px 0;
-  /* border-bottom: 2px solid white; */
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
->>>>>>> Stashed changes
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    font-family: Staatliches;
+    margin: 10px 0;
+    /* border-bottom: 2px solid white; */
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .GoogleUserDetails {
-  color: white;
-  font-family: Staatliches;
+    color: white;
+    font-family: Staatliches;
 }
 
 .GoogleUserPhoto img {
-  height: 50px;
-  width: 50px;
+    height: 50px;
+    width: 50px;
 }
 
 .Greeting {
-  text-align: center;
+    text-align: center;
 }
+
 
 /* .AppHeader .logo {
     margin: 0 auto;
@@ -68,64 +46,61 @@
     background-color: grey;
     
 } */
->>>>>>> Stashed changes
 
-.AppHeader #profilePic {
-  border-radius: 50%;
-  margin: 10px;
+>>>>>>>Stashed changes .AppHeader #profilePic {
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .TitleDiv {
-  width: 100%;
-  /* /* display: flex;
+    width: 100%;
+    /* /* display: flex;
     flex-direction: row; */
-  justify-content: space-between;
-  
+    justify-content: space-between;
 }
 
 .GoogleUserPhoto {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  position: absolute;
-  right: 0;
-  top: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
+
 .GoogleUserPhoto img {
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  border: 3px solid #efc058;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    border: 3px solid #efc058;
 }
 
 .GoogleAuth {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  position: absolute;
-  right: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    position: absolute;
+    right: 0;
 }
 
 .AppHeader .signIn,
 .AppHeader .signOut {
-  font-size: 1em;
-  text-align: center;
-  border: none;
-  height: 2.2em;
-  border-radius: 4px;
-  background-color: #7dcf46;
-  color: white;
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    height: 2.2em;
+    border-radius: 4px;
+    background-color: #7dcf46;
+    color: white;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .AppHeader .signIn {
-  margin: 10px;
+    margin: 10px;
 }
 
 @media screen and (min-width: 768px) {
-  .TitleDiv {
-    position: relative;
-    background-color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  }
+    .TitleDiv {
+        position: relative;
+        background-color: white;
+        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    }
 }
-
-
