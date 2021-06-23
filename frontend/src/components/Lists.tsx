@@ -11,15 +11,16 @@ import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
 
 interface Props {
-    trucks: Truck[];
+    foodTrucks: Truck[];
 }
 
-export function Lists( { trucks }: Props ) {
+export function Lists( { foodTrucks }: Props ) {
+    console.log( `line18: ${ foodTrucks }` );
+
     const { user } = useContext( AuthContext );
     const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
     const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
-    const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
-
+    // const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
     function timeSinceLastPhoto( truck: Truck ) {
         const truckTimestamp: any = truck.lastLocation.timestamp;
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
@@ -38,34 +39,45 @@ export function Lists( { trucks }: Props ) {
     return (
         <div className="container">
             <div className="FoodTruckList">
-                <header>
-                    <h1>Food Trucks</h1>
-                </header>
-                <Link to="/">
-                    <button id="mapViewTop">Map View</button>
-                </Link>
+                { console.log( `line40: ${ foodTrucks }` ) }
                 { !foodTrucksLoaded ? (
                     <p id="loading">Loading...</p>
                 ) : foodTrucks.length === 0 ? (
                     <p>No Food Trucks available.</p>
-
                 ) : (
-                    <div className="listDiv">
-                        { foodTrucks.sort( ( a, b ) => ( a.lastLocation.timestamp < b.lastLocation.timestamp ) ? 1 : -1 ).map( ( truckInList ) => (
-                            <div key={ truckInList._id } className="truck">
-
-                                <img src={ truckInList.profilePhoto } alt="" />
-                                <p id="name">{ truckInList.name }</p>
-                                <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
-                                <p id="timestamp">{ `Last updated ${ timeSinceLastPhoto( truckInList ) }` }</p>
-                                <button onClick={ () => openModal( truckInList ) }>
-                                    More Details
-                                </button>
-                                { user &&
-                                    <FavoriteButton truckId={ truckInList.iGId } />
-                                }
-                            </div>
-                        ) ) }
+                    <div className="listContainer">
+                        <div className="listDiv">
+                            { foodTrucks
+                                .sort( ( a, b ) =>
+                                    a.lastLocation.timestamp < b.lastLocation.timestamp ? 1 : -1
+                                )
+                                .map( ( truckInList ) => (
+                                    <div key={ truckInList._id } className="truck">
+                                        { console.log( `line54: ${ truckInList }` ) }
+                                        < img
+                                            src={ truckInList.profilePhoto }
+                                            alt=""
+                                            className="imgInList"
+                                        />
+                                        <p id="name">{ truckInList.name }</p>
+                                        <p id="igHandle">{ `@${ truckInList.instagramHandle }` }</p>
+                                        <p id="timestamp">{ `Last updated ${ timeSinceLastPhoto(
+                                            truckInList
+                                        ) }` }</p>
+                                        <div className="buttons">
+                                            <button
+                                                className="details"
+                                                onClick={ () => openModal( truckInList ) }
+                                            >
+                                                More Details
+                                            </button>
+                                            <div className="favbtn">
+                                                {/* {user && <FavoriteButton truck={truckInList} />} */ }
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) ) }
+                        </div>
                     </div>
                 ) }
                 <Modal
@@ -78,12 +90,15 @@ export function Lists( { trucks }: Props ) {
                         <FoodTruckCard truck={ foodTruck } handleClose={ closeModal } />
                     ) }
                 </Modal>
-                <Link to="/">
-                    <button id="mapViewBottom">Back</button>
-                </Link>
-
+                {/* <Link to="/"> */ }
+                <button id="mapViewBottom">Back</button>
+                {/* </Link> */ }
             </div>
-            <button id="scrollToTop"><a href="/list"><i className="material-icons">arrow_upward</i></a></button>
+            <button id="scrollToTop">
+                <Link to="map">
+                    <i className="material-icons">arrow_upward</i>
+                </Link>
+            </button>
         </div >
     );
 }
