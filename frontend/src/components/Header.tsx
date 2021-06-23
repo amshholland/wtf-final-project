@@ -26,7 +26,9 @@ function Header() {
   return (
     <header className="AppHeader">
       <div className="TitleDiv">
-        <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="" />
+        <a href="/">
+          <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
+        </a>
 
         { user && (
           <div className="GoogleUserPhoto">
