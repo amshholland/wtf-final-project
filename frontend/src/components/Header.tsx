@@ -83,10 +83,7 @@ function Header() {
             </button>
           ) }
         </div>
-<<<<<<< Updated upstream
       </div>
-=======
->>>>>>> Stashed changes
     </header >
       );
 }
