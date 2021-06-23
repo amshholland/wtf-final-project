@@ -35,6 +35,14 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             </Modal.Header>
 
             <Modal.Body>
+                <div className="modalTitle">
+                    {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
+                    <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
+                    <div className="profilePicDiv">
+                        <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
+                    </div>
+
+                </div>
                 <h2>{ truck.name }</h2>
                 <p>@{ truck.instagramHandle }</p>
 
