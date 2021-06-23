@@ -36,18 +36,28 @@ function Header() {
 
         <div className="gH">
           <div className="gitHubLogo" onClick={ () => gitHubDisplay() }>
-            <img className="logo" src={ process.env.PUBLIC_URL + '/GitHub-Mark-64px.png' } alt="GitHub Links" />
-            <div className="headerBtn" style={ { display: toggle } }>
-              <a href="https://github.com/dairsmithgit">
-                <button className="headerButton">
-                  @dairsmithgit
-                </button>
-              </a>
-            </div>
+            <img className="gHLogo" src={ process.env.PUBLIC_URL + '/GitHub-Mark-64px.png' } alt="GitHub Links" />
+          </div>
+          <div className="headerBtn" style={ { display: toggle } }>
+            <a href="https://github.com/amshholland">
+              <button className="headerButton">
+                Amber Holland
+              </button>
+            </a>
+            <a href="https://github.com/dairsmithgit">
+              <button className="headerButton">
+                Dair Smith
+              </button>
+            </a>
+            <a href="https://github.com/PatrickHumphries">
+              <button className="headerButton">
+                Patrick Humphries
+              </button>
+            </a>
           </div>
         </div>
 
-        <div className="TitleDiv">
+        <div className="logoDiv">
           <a href="/">
             <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
           </a>
@@ -85,7 +95,7 @@ function Header() {
         </div>
       </div>
     </header >
-      );
+  );
 }
 
 export default Header;
