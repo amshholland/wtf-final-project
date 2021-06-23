@@ -28,13 +28,15 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     return (
         <Modal.Dialog className="FoodTruckCard">
 
-            <Modal.Header>
-                {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
-                <Modal.Title><img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } /></Modal.Title>
-                <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
-            </Modal.Header>
-
             <Modal.Body>
+                <div className="modalTitle">
+                    {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
+                    <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
+                    <div className="profilePicDiv">
+                        <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
+                    </div>
+
+                </div>
                 <h2>{ truck.name }</h2>
                 <p>@{ truck.instagramHandle }</p>
 
