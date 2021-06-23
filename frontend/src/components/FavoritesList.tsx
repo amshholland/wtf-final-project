@@ -9,7 +9,7 @@ import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
 import { useParams } from "react-router-dom";
 
-function FavoritesList() {
+export function FavoritesList() {
 
     const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
     const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
