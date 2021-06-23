@@ -1,5 +1,3 @@
-import "./Lists.css";
-
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";

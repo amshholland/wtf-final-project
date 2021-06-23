@@ -1,3 +1,5 @@
+import "./FoodTruckList.css";
+
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";

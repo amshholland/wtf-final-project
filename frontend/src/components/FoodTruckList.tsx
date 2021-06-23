@@ -1,4 +1,4 @@
-import "./Lists.css";
+import "./FoodTruckList.css";
 
 import { Button, Modal } from "react-bootstrap";
 import { useContext, useEffect, useState } from "react";
