@@ -8,12 +8,12 @@
 }
 
 .AppHeader {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   background: rgb(255, 255, 255);
@@ -59,13 +59,6 @@
   border-radius: 50%;
   margin: 10px;
 }
-.TitleDiv {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: auto 0;
-}
 
 .GoogleUserPhoto {
   display: flex;
@@ -77,8 +70,6 @@
 }
 
 .GoogleUserPhoto img {
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  border: 3px solid #efc058;
   margin-top: 12px;
   margin-right: 15px;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
@@ -93,7 +84,7 @@
   right: 0;
 }
 
-.AppHeader .signIn,
+/* .AppHeader .signIn,
 .AppHeader .signOut {
   font-size: 1em;
   text-align: center;
@@ -103,10 +94,14 @@
   background-color: #7dcf46;
   color: white;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-}
+} */
 
 .AppHeader .signIn {
-  margin: 10px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+  margin: 5px;
 }
 
 .AppHeader .headerButton {
@@ -122,20 +117,42 @@
 }
 
 .AppHeader .logo {
+  margin: 0 auto;
   height: 100px;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 .TitleDiv {
-  position: relative;
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  position: fixed;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  width: 100%;
 }
-.AppHeader .logo {
-  margin: 0 auto;
-  height: 100px;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
+
+.gH {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  margin: 5px;
+}
+
+.gHLogo {
+  border-radius: 50%;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  border: 3px solid #efc058;
+  background-color: #efc058;
+}
+
+.headerBtn {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 @media screen and (min-width: 768px) {
@@ -143,6 +160,7 @@
     position: relative;
     background-color: white;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    margin-top: 0;
   }
   .AppHeader .logo {
     height: 100px;
@@ -160,4 +178,6 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  
 }

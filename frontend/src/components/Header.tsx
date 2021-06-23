@@ -9,21 +9,22 @@ import { useHistory } from "react-router-dom";
 function Header() {
   const { user } = useContext( AuthContext );
   console.log( user );
-  const [ toggle, setToggle ] = useState( "none" );
+  const [ signOutToggle, setSignOutToggle ] = useState( "none" );
+  const [ ghToggle, setGhToggle ] = useState( "none" );
 
   function signOutDisplay() {
-    if ( toggle === "none" ) {
-      setToggle( "flex" );
-    } else if ( toggle === "flex" ) {
-      setToggle( "none" );
+    if ( signOutToggle === "none" ) {
+      setSignOutToggle( "flex" );
+    } else if ( signOutToggle === "flex" ) {
+      setSignOutToggle( "none" );
     }
   }
 
   function gitHubDisplay() {
-    if ( toggle === "none" ) {
-      setToggle( "flex" );
-    } else if ( toggle === "flex" ) {
-      setToggle( "none" );
+    if ( ghToggle === "none" ) {
+      setGhToggle( "flex" );
+    } else if ( ghToggle === "flex" ) {
+      setGhToggle( "none" );
     }
   }
 
@@ -32,13 +33,11 @@ function Header() {
 
   return (
     <header className="AppHeader" id="header">
-      <div className="TitleDiv">
-
         <div className="gH">
           <div className="gitHubLogo" onClick={ () => gitHubDisplay() }>
             <img className="gHLogo" src={ process.env.PUBLIC_URL + '/GitHub-Mark-64px.png' } alt="GitHub Links" />
           </div>
-          <div className="headerBtn" style={ { display: toggle } }>
+          <div className="headerBtn" style={ { display: ghToggle } }>
             <a href="https://github.com/amshholland">
               <button className="headerButton">
                 Amber Holland
@@ -56,7 +55,7 @@ function Header() {
             </a>
           </div>
         </div>
-
+        <div className="TitleDiv">
         <div className="logoDiv">
           <a href="/">
             <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
@@ -69,16 +68,16 @@ function Header() {
                   <img src={ user.photoURL } alt="google avatar" id="profilePic" />
                 ) }
               </div>
-              <div className="headerBtn" style={ { display: toggle } }>
+              <div className="headerBtn" style={ { display: signOutToggle } }>
                 { user && (
                   <button className="headerButton" onClick={ handleClick }>
                     Favorites
                   </button>
                 ) }
               </div>
-              <div className="headerBtn" style={ { display: toggle } }>
+              <div className="headerBtn" style={ { display: signOutToggle } }>
                 { user && (
-                  <button className="headerButton" onClick={ signOut }>
+                  <button className="headerButton" id="signOut" onClick={ signOut }>
                     Sign out
                   </button>
                 ) }

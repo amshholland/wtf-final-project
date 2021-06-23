@@ -23,101 +23,98 @@ interface Props {
 
 //TODO: how to get info about location from db to put into map marker
 
-function MapComponent( {
+function MapComponent({
   googleMapURL,
   loadingElement,
   containerElement,
   mapElement,
-}: Props ) {
-
-  useEffect( () => {
+}: Props) {
+  useEffect(() => {
     loadTrucks();
-  }, [] );
+  }, []);
 
   function loadTrucks() {
-    getTruckData().then( ( trucksFromApi ) => {
-      setFoodTrucks( trucksFromApi );
-    } );
+    getTruckData().then((trucksFromApi) => {
+      setFoodTrucks(trucksFromApi);
+    });
   }
 
-  const [ selectedTruckPin, setSelectedTruckPin ] = useState<any>( undefined );
-  const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
-  const [ animation, setAnimation ] = useState<any>(null);
+  const [selectedTruckPin, setSelectedTruckPin] = useState<any>(undefined);
+  const [foodTrucks, setFoodTrucks] = useState<Truck[]>([]);
+  const [animation, setAnimation] = useState<any>(null);
 
-
-  useEffect( () => {
-    const listener = ( e: { key: string; } ) => {
-      if ( e.key === "Escape" ) {
-        setSelectedTruckPin( undefined );
+  useEffect(() => {
+    const listener = (e: { key: string }) => {
+      if (e.key === "Escape") {
+        setSelectedTruckPin(undefined);
       }
     };
-    window.addEventListener( "keydown", listener );
+    window.addEventListener("keydown", listener);
 
     return () => {
-      window.removeEventListener( "keydown", listener );
+      window.removeEventListener("keydown", listener);
     };
-  }, [] );
+  }, []);
 
   return (
     <div className="MapComponent" id="MapComponent">
       <GoogleMap
-        defaultZoom={ 10 }
-        defaultCenter={ { lat: 42.433075, lng: -83.097058 } }
-        defaultOptions={{mapTypeControl: false}}
-       
+        defaultZoom={10}
+        defaultCenter={{ lat: 42.433075, lng: -83.097058 }}
+        defaultOptions={{ mapTypeControl: false }}
       >
-        { foodTrucks.map( ( truck ) => (
+        {foodTrucks.map((truck) => (
           <div className="marker">
             <Marker
-              key={ truck.iGId }
-              position={ {
+              key={truck.iGId}
+              position={{
                 lat: truck.lastLocation.lat,
                 lng: truck.lastLocation.lng,
-              } }
-              animation={ {
-                animation
-              } }
-              onClick={ () => {
-                setSelectedTruckPin( truck );
-                setAnimation( google.maps.Animation.BOUNCE );
-              } }
-              icon={ {
+              }}
+              animation={{
+                animation,
+              }}
+              onClick={() => {
+                setSelectedTruckPin(truck);
+                setAnimation(google.maps.Animation.BOUNCE);
+              }}
+              icon={{
                 url: truck.profilePhoto,
                 scaledSize: new google.maps.Size(50, 50),
-                
-              } }
+              }}
             />
           </div>
-        ) ) }
+        ))}
 
         {
           // unsure if this infowindow serves same purpose as our card component
         }
-        { selectedTruckPin && (
+        {selectedTruckPin && (
           <InfoWindow
-            onCloseClick={ () => {
-              setSelectedTruckPin( null );
-            } }
-            position={ {
+            onCloseClick={() => {
+              setSelectedTruckPin(null);
+            }}
+            position={{
               lat: selectedTruckPin.lastLocation.lat,
               lng: selectedTruckPin.lastLocation.lng,
-            } }
+            }}
           >
             <div>
-              <h2>{ selectedTruckPin.name }</h2>
-              <p>{ selectedTruckPin.profileDescription }</p>
+              <h2>{selectedTruckPin.name}</h2>
+              <p>{selectedTruckPin.profileDescription}</p>
             </div>
           </InfoWindow>
-        ) }
-        
+        )}
       </GoogleMap>
 
-      <Link to="list" smooth={true} duration={500}><button className="listView">LIST VIEW</button></Link>
+      <Link to="list" smooth={true} duration={500} isDynamic={true}>
+        <button className="listView">List View</button>
+      </Link>
     </div>
   );
 }
 
-const WrappedMap = withScriptjs( withGoogleMap( MapComponent ) );
+const WrappedMap = withScriptjs(withGoogleMap(MapComponent));
 
 export default WrappedMap;
 
