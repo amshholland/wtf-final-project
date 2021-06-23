@@ -3,15 +3,11 @@ import "./FoodTruckList.css";
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";
-import { Favorite } from "../model/dbFavModel";
 import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
-import FoodTruckList from "./FoodTruckList";
-import { Lists } from "./Lists";
 import { Modal } from "react-bootstrap";
 import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
-import { useParams } from "react-router-dom";
 
 export function FavoritesList() {
 
@@ -21,7 +17,7 @@ export function FavoritesList() {
 
     const { user } = useContext( AuthContext );
     console.log( `favorite Button ${ user?.uid }` );
-    const { favorites, addFavorite, removeFavorite } = useContext( FavoriteContext );
+    const { favorites } = useContext( FavoriteContext );
 
     useEffect( () => {
         loadTrucks();

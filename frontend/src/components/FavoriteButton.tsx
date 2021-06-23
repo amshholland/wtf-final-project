@@ -1,11 +1,6 @@
-import { ChangeEvent, FormEvent, useContext, useState } from "react";
-
+import { useContext } from "react";
 import { AuthContext } from "../context/auth-context";
-import { Button } from 'react-bootstrap';
-import { Favorite } from "../model/dbFavModel";
 import { FavoriteContext } from "../context/favorite-context";
-import { Truck } from "../model/dbModel";
-import { getFavoritesFromDb } from "../service/WtfApiService";
 
 interface Props {
     truckId: number;
@@ -29,10 +24,10 @@ export function FavoriteButton( { truckId }: Props ) {
     function handleRemoveFavorite(): void {
         console.log( `handleRemoveFavorite: ${ truckId }` );
         if ( user?.uid && truckId ) {
-
-            const fav = {
-                truckId: truckId!
-            };
+            // commented out for CI/CD - does 'for of' already declare fav for us?
+            // const fav = {
+            //     truckId: truckId!
+            // };
             for ( let fav of favorites ) {
                 console.log( fav );
                 if ( truckId === fav.truckId ) {

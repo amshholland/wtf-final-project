@@ -4,7 +4,6 @@ import { signInWithGoogle, signOut } from "../firebaseConfig";
 import { useContext, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";
-import { ToggleButton } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
 function Header() {

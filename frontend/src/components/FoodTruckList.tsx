@@ -1,21 +1,22 @@
 import "./FoodTruckList.css";
 
-import { Button, Modal } from "react-bootstrap";
-import { useContext, useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import { useEffect, useState } from "react"; // useContext goes back here
 
-import { AuthContext } from "../context/auth-context";
-import { FavoriteButton } from "./FavoriteButton";
+// commented out for CI/CD until favbutton is working 100%
+// import { AuthContext } from "../context/auth-context";
 import FoodTruckCard from "./FoodTruckCard";
 import { Link } from "react-scroll";
-import { Lists } from "./Lists";
 import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
+// commented out for CI/CD until favbutton is working 100%
+// import { FavoriteButton } from "./FavoriteButton";
 
 // import { FavoriteContext } from "../context/favorite-context.txt";
 
 function FoodTruckList() {
-  const { user } = useContext( AuthContext );
+  // commented out for CI/CD until favbutton is working 100%
+  // const { user } = useContext( AuthContext );
 
   // const history = useHistory();
   // history.push("/list");
@@ -110,7 +111,8 @@ function FoodTruckList() {
                         More Details
                       </button>
                       <div className="favbtn">
-                        {/* {user && <FavoriteButton truck={truckInList} />} */ }
+                        {/* commented out for CI/CD until favbutton is working 100% */}
+                        {/* {user && <FavoriteButton truck={truckInList} />} */}
                       </div>
                     </div>
                   </div>
