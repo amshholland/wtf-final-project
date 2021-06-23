@@ -20,7 +20,7 @@ function Header() {
   }
 
   return (
-    <header className="AppHeader">
+    <header className="AppHeader" id="header">
       <div className="TitleDiv">
         <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="" />
         {/* <h1>WTF</h1> */}

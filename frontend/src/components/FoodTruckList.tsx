@@ -130,11 +130,11 @@ function FoodTruckList() {
         <button id="mapViewBottom">Back</button>
         {/* </Link> */}
       </div>
-      <button id="scrollToTop">
-        <Link to="map">
+      <Link to="header">
+        <button id="scrollToTop">
           <i className="material-icons">arrow_upward</i>
-        </Link>
-      </button>
+        </button>
+      </Link>
     </div>
   );
 }
