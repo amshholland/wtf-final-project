@@ -1,5 +1,7 @@
-import { ChangeEvent, FormEvent, useContext, useState } from "react";
 import "./Lists.css";
+
+import { ChangeEvent, FormEvent, useContext, useState } from "react";
+
 import { AuthContext } from "../context/auth-context";
 import { Button } from 'react-bootstrap';
 import { Favorite } from "../model/dbFavModel";
@@ -27,16 +29,18 @@ export function FavoriteButton( { truckId }: Props ) {
     };
 
     function handleRemoveFavorite(): void {
-        const fav = {
-            truckId: truckId!
-        };
-        console.log( truckId );
-        console.log( `handleremovefav: ${ truckId } ` );
-        for ( let fav of favorites ) {
-            console.log( fav );
-            if ( truckId === fav.truckId ) {
-                console.log( true );
-                removeFavorite( fav._id! );
+        console.log( `handleRemoveFavorite: ${ truckId }` );
+        if ( user?.uid && truckId ) {
+
+            const fav = {
+                truckId: truckId!
+            };
+            for ( let fav of favorites ) {
+                console.log( fav );
+                if ( truckId === fav.truckId ) {
+                    console.log( true );
+                    removeFavorite( fav._id! );
+                }
             }
         }
     }
