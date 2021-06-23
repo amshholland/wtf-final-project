@@ -20,46 +20,70 @@ function Header() {
     }
   }
 
+  function gitHubDisplay() {
+    if ( toggle === "none" ) {
+      setToggle( "flex" );
+    } else if ( toggle === "flex" ) {
+      setToggle( "none" );
+    }
+  }
+
   const history = useHistory();
   const handleClick = () => history.push( '/favorites' );
 
   return (
     <header className="AppHeader" id="header">
       <div className="TitleDiv">
-        <a href="/">
-          <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
-        </a>
 
-        { user && (
-          <div className="GoogleUserPhoto">
-            <div className="userPhoto" onClick={ () => signOutDisplay() }>
-              { !!user.photoURL && (
-                <img src={ user.photoURL } alt="google avatar" id="profilePic" />
-              ) }
-            </div>
+        <div className="gH">
+          <div className="gitHubLogo" onClick={ () => gitHubDisplay() }>
+            <img className="logo" src={ process.env.PUBLIC_URL + '/GitHub-Mark-64px.png' } alt="GitHub Links" />
             <div className="headerBtn" style={ { display: toggle } }>
-              { user && (
-                <button className="headerButton" onClick={ handleClick }>
-                  Favorites
+              <a href="https://github.com/dairsmithgit">
+                <button className="headerButton">
+                  @dairsmithgit
                 </button>
-              ) }
-            </div>
-            <div className="headerBtn" style={ { display: toggle } }>
-              { user && (
-                <button className="headerButton" onClick={ signOut }>
-                  Sign out
-                </button>
-              ) }
+              </a>
             </div>
           </div>
-        ) }
-      </div>
-      <div className="GoogleAuth">
-        { !user && (
-          <button className="headerButton" onClick={ signInWithGoogle }>
-            Sign in
-          </button>
-        ) }
+        </div>
+
+        <div className="TitleDiv">
+          <a href="/">
+            <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
+          </a>
+
+          { user && (
+            <div className="GoogleUserPhoto">
+              <div className="userPhoto" onClick={ () => signOutDisplay() }>
+                { !!user.photoURL && (
+                  <img src={ user.photoURL } alt="google avatar" id="profilePic" />
+                ) }
+              </div>
+              <div className="headerBtn" style={ { display: toggle } }>
+                { user && (
+                  <button className="headerButton" onClick={ handleClick }>
+                    Favorites
+                  </button>
+                ) }
+              </div>
+              <div className="headerBtn" style={ { display: toggle } }>
+                { user && (
+                  <button className="headerButton" onClick={ signOut }>
+                    Sign out
+                  </button>
+                ) }
+              </div>
+            </div>
+          ) }
+        </div>
+        <div className="GoogleAuth">
+          { !user && (
+            <button className="headerButton" onClick={ signInWithGoogle }>
+              Sign in
+            </button>
+          ) }
+        </div>
       </div>
     </header>
   );

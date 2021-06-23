@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { FavoriteContextProvider } from "./context/favorite-context";
 import { FavoritesList } from './components/FavoritesList';
 import FoodTruckList from "./components/FoodTruckList";
+import { Footer } from './components/Footer';
 import Header from "./components/Header";
 import WrappedMap from "./components/MapComponent";
 
@@ -32,6 +33,7 @@ function App() {
                 <FoodTruckList />
               </Route>
             </Switch>
+            <Footer />
           </FavoriteContextProvider>
         </Router>
       </div>
