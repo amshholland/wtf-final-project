@@ -26,47 +26,53 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     // } );
 
     return (
-        <Modal.Dialog className="FoodTruckCard">
+        <div className="FoodTruckCard">
 
-            <Modal.Body>
-                <div className="modalTitle">
-                    {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
-                    <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
-                    <div className="profilePicDiv">
-                        <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
-                    </div>
-
+            <div className="modalTitle">
+                {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
+                <div className="profilePicDiv">
+                    <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
                 </div>
-                <h2>{ truck.name }</h2>
-                <p>@{ truck.instagramHandle }</p>
+                <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
 
-                <section>
-                    { truck.profileDescription }
-                </section>
 
-                <h3>Last Seen:</h3>
-                {/* Display last 3 posts */ }
-                <div className="iGPosts">
+            </div>
+            <h2>{ truck.name }</h2>
+            <p>@{ truck.instagramHandle }</p>
 
-                    { truck.locationHistory.slice( 0, 3 ).map( ( post ) => (
-                        <div key={ post.timestamp } className="post">
-                            <p id="timestamp">{ timeSinceLastPhoto( post.timestamp ) }</p>
-                            <p id="name">{ post.locationName }</p>
-                            <p id="address">{ post.address }</p>
-                            <p id="city">{ post.city }</p>
-                            <div className="cardImg">
-                                <img className="postImg" src={ post.photo } alt='' />
+            <section>
+                { truck.profileDescription }
+            </section>
+
+            <h3>Last Seen:</h3>
+            {/* Display last 3 posts */ }
+            <div className="iGPosts">
+
+                { truck.locationHistory.slice( 0, 3 ).map( ( post ) => (
+                    <div key={ post.timestamp } className="post">
+                        <p id="timestamp">{ timeSinceLastPhoto( post.timestamp ) }</p>
+                        <div className="location">
+                            <div className="locIcon">
+                                <img className="locationIcon" src={ process.env.PUBLIC_URL + '/Location_Icon.png' } alt="Location Icon" />
                             </div>
-                            <p id="caption">{ post.caption.text }</p>
+                            <div className="locationDetails">
+                                <p id="name">{ post.locationName }</p>
+                                <p id="address">{ post.address }</p>
+                                <p id="city">{ post.city }</p>
+                            </div>
                         </div>
-                    ) ) }
-                </div>
+                        <div className="cardImg">
+                            <img className="postImg" src={ post.photo } alt='' />
+                        </div>
+                        <p id="caption">{ post.caption.text }</p>
+                    </div>
+                ) ) }
+            </div>
 
-            </Modal.Body>
             <Modal.Footer>
                 <FavoriteButton truckId={ truck.iGId } />
             </Modal.Footer>
-        </Modal.Dialog >
+        </div >
     );
 }
 

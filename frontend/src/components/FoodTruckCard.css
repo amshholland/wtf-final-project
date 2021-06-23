@@ -1,6 +1,7 @@
                     .FoodTruckCard {
                         display: flex;
                         flex-direction: column;
+                        justify-content: center;
                         text-align: center;
                         width: 100%;
                     }
@@ -62,11 +63,9 @@
                     
                     .modal-body {
                         display: flex;
+                        justify-content: center;
                         flex-direction: column;
                     }
-                    /* .cardImg {
-  height: 25%;
-} */
                     
                     .iGPosts {
                         display: flex;
@@ -112,6 +111,14 @@
                         .mymodal {
                             width: 75%;
                         }
+                        .mymodal h3 {
+                            margin: 5px;
+                        }
+                        .modal-dialog .FoodTruckCard {
+                            display: flex;
+                            justify-content: center;
+                            padding: 0;
+                        }
                         .modalTitle button {
                             height: 25px;
                         }
@@ -124,8 +131,33 @@
                             filter: drop-shadow(0 0 3px rgb(0, 0, 0));
                             flex: 2;
                         }
-                        #timestamp {
-                            font-size: 20px;
+                        .location {
+                            font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+                            display: flex;
+                            align-items: center;
+                            height: 10%;
+                        }
+                        .locationIcon {
+                            height: 40px;
+                        }
+                        .post #caption {
+                            font-size: 12px;
+                        }
+                        .post #timestamp {
+                            padding-bottom: 5px;
+                            margin: 0;
+                            border-bottom: 1px solid#7dcf46;
+                        }
+                        .post #name {
+                            font-size: 15px;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        .post #address,
+                        .post #city {
+                            font-size: 10px;
+                            padding: 0;
+                            margin: 0;
                         }
                         .postImg {
                             margin: 5px;
@@ -133,11 +165,16 @@
                         .iGPosts {
                             flex-direction: row;
                             justify-content: space-between;
-                            align-items: center;
+                            align-items: flex-start;
                             align-self: center;
                             justify-self: center;
+                            border: 1px solid#7dcf46;
+                            margin: 4px;
                         }
                         .post {
                             width: 30%;
+                        }
+                        .favoriteButton {
+                            align-items: center;
                         }
                     }
