@@ -20,7 +20,6 @@ export const FavoriteContext = createContext( defaultValue );
 
 export function FavoriteContextProvider( { children }: { children: ReactNode; } ) {
     const { user } = useContext( AuthContext );
-    console.log( user );
     const [ favorites, setFavorites ] = useState<Favorite[]>( [] );
     let userId: string | undefined = user?.uid;
 

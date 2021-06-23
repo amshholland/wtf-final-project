@@ -26,7 +26,7 @@ export function removeFavoriteFromDb( favId: string ): Promise<void> {
 }
 
 export function getFavoritesFromDb( userId: string ): Promise<Favorite[]> {
-    return axios.get( baseUrl, {
+    return axios.get( `${ baseUrl }/favorites`, {
         params: { userId: userId }
     } ).then( res => res.data );
 };

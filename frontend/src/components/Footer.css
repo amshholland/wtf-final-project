@@ -1,0 +1,32 @@
+.Footer {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.GHLogo {
+    height: 20px;
+    margin-right: 3px;
+    margin-top: 3px;
+}
+
+h4 {
+    margin: 0;
+    padding: 8px;
+    flex: 3;
+    text-align: left;
+}
+
+.contributor {
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.link {
+    text-decoration: none;
+    justify-self: baseline;
+}

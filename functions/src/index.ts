@@ -6,7 +6,7 @@ import { getClient } from "./db";
 import { readTruck } from "./service/dual-service";
 
 export { default as trucks } from "./routes/wtfRoutes";
-exports.updateTrucksScheduled = functions.pubsub.schedule('every 30 minutes').onRun(async (context) => {
+exports.updateTrucksScheduled = functions.pubsub.schedule('every 120 minutes').onRun(async (context) => {
     try {
         await updateTrucks();
         console.log( "done" );

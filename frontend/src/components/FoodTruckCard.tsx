@@ -6,8 +6,8 @@ import { Favorite } from '../model/dbFavModel';
 import { FavoriteButton } from './FavoriteButton';
 import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
-import { useContext } from 'react';
 import getTimeDiff from '../utils/getTimeDiff';
+import { useContext } from 'react';
 
 interface Props {
     truck: Truck;
@@ -22,7 +22,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
-        return getTimeDiff(timestamp, currentTimestamp);
+        return getTimeDiff( timestamp, currentTimestamp );
     }
     // Filter our results first to omit posts with no location
 
@@ -65,9 +65,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
             </Modal.Body>
             <Modal.Footer>
-                <a href="https://wtf-truck.web.app/">View on map</a>
                 <FavoriteButton truckId={ truck.iGId } />
-                <Button onClick={ handleClose }>Close</Button>
             </Modal.Footer>
         </Modal.Dialog >
     );
