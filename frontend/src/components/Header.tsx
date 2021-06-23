@@ -84,9 +84,12 @@ function Header() {
             </button>
           ) }
         </div>
+<<<<<<< Updated upstream
       </div>
-    </header>
-  );
+=======
+>>>>>>> Stashed changes
+    </header >
+      );
 }
 
 export default Header;
