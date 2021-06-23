@@ -53,6 +53,11 @@
                     .modalTitle {
                         display: flex;
                         align-content: flex-end;
+                        align-items: center;
+                    }
+                    
+                    .modal-header button {
+                        height: 25px;
                         justify-content: space-between;
                     }
                     

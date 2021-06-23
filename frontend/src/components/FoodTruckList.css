@@ -1,9 +1,10 @@
 .FoodTruckList {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  overflow: hidden;
 }
 
 .FoodTruckList h1 {
@@ -21,24 +22,18 @@
 }
 
 .FoodTruckList .truck {
-    color: white;
-    /* background: rgb(63, 94, 251);
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
-  ); */
-    /* background-color: #efc058; */
-    background-color: #fbab7e;
-    background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-    font-weight: bold;
-    list-style-type: none;
-    border: none;
-    border-radius: 4px;
-    margin: 15px 5px;
-    padding: 15px;
-    text-align: center;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  color: white;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  font-weight: bold;
+  /* font-size: 1em; */
+  list-style-type: none;
+  border: none;
+  border-radius: 4px;
+  margin: 15px 5px;
+  padding: 15px;
+  text-align: center;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList ul {
@@ -66,17 +61,19 @@
 }
 
 .container #scrollToTop {
-    text-decoration: none;
-    right: 25px;
-    bottom: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ffffff;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-    cursor: pointer;
-    position: fixed;
+  text-decoration: none;
+  right: 25px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  color: black;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  cursor: pointer;
+  position: fixed;
+  z-index: 4;
 }
 
 .container #scrollToTop:active {
@@ -86,8 +83,7 @@
 }
 
 .container #scrollToTop:visited {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
 }
 
 .FoodTruckList #mapViewBottom {
@@ -149,14 +145,24 @@
 }
 
 .FoodTruckList .listDiv {
-    /* margin: 70px auto 0px auto; */
-    margin-top: 70px;
+  width: auto;
+  margin-top: 70px;
+  padding: 0;
 }
 
 .container {
-    margin: 0;
-    padding: 0;
+  width: 100vw;
+  margin: auto;
+  padding: 0;
 }
+
+.FoodTruckList .listContainer {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+} 
+
+
 
 @media screen and (min-width: 768px) {
     .FoodTruckList {
@@ -167,7 +173,7 @@
         display: flex;
         flex-wrap: wrap;
         /* flex-direction: column; */
-        margin: 5px;
+        margin-top: 100px;
         justify-content: space-around;
         align-items: center;
         width: 100%;
