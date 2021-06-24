@@ -164,7 +164,8 @@
 
 @media screen and (min-width: 768px) {
     .FoodTruckList {
-        align-items: flex-end;
+        flex-direction: row;
+        align-items: center;
         flex-wrap: wrap;
     }
     .FoodTruckList .listDiv {
