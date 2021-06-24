@@ -106,8 +106,7 @@ function MapComponent({
           </InfoWindow>
         )}
       </GoogleMap>
-
-      <Link to="list" smooth={true} duration={500} isDynamic={true}>
+      <Link to="list" smooth={true} duration={1000} isDynamic={true}>
         <button className="listView">List View</button>
       </Link>
     </div>

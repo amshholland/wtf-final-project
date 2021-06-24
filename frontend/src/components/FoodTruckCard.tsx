@@ -27,27 +27,21 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
 
     return (
         <div className="FoodTruckCard">
-
             <div className="modalTitle">
                 {/* { favorited && <img className="star" src={ process.env.PUBLIC_URL + '/favorited.png' } /> } */ }
                 <div className="profilePicDiv">
                     <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
                 </div>
                 <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
-
-
             </div>
             <h2>{ truck.name }</h2>
             <p>@{ truck.instagramHandle }</p>
-
             <section>
                 { truck.profileDescription }
             </section>
-
             <h3>Last Seen:</h3>
             {/* Display last 3 posts */ }
             <div className="iGPosts">
-
                 { truck.locationHistory.slice( 0, 3 ).map( ( post ) => (
                     <div key={ post.timestamp } className="post">
                         <p id="timestamp">{ timeSinceLastPhoto( post.timestamp ) }</p>
@@ -68,7 +62,6 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                     </div>
                 ) ) }
             </div>
-
             <Modal.Footer>
                 <FavoriteButton truckId={ truck.iGId } />
             </Modal.Footer>

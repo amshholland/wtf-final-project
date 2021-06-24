@@ -1,13 +1,12 @@
 import "./FoodTruckList.css";
-
 import { useContext, useEffect, useState } from "react";
-
 import { AuthContext } from "../context/auth-context";
 import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
 import { Modal } from "react-bootstrap";
 import { Truck } from "../model/dbModel";
 import { getTruckData } from "../service/WtfApiService";
+import { animateScroll as scroll } from "react-scroll";
 
 export function FavoritesList() {
 
@@ -61,7 +60,7 @@ export function FavoritesList() {
                     <p>No Food Trucks available.</p>
                 ) : (
                     <div className="listContainer">
-                        <div className="listDiv">
+                        <div className="favListDiv">
                             <header>
                                 <h1>Favorite Trucks</h1>
                             </header>
@@ -70,7 +69,7 @@ export function FavoritesList() {
                                     a.lastLocation.timestamp < b.lastLocation.timestamp ? 1 : -1
                                 )
                                 .map( ( truckInList ) => (
-                                    <div key={ truckInList._id } className="truck">
+                                    <div key={ truckInList._id } className="favTruck">
                                         <img
                                             src={ truckInList.profilePhoto }
                                             alt=""
@@ -107,15 +106,8 @@ export function FavoritesList() {
                         <FoodTruckCard truck={ foodTruck } handleClose={ closeModal } />
                     ) }
                 </Modal>
-                {/* <Link to="/"> */ }
-                <button id="mapViewBottom">Back</button>
-                {/* </Link> */ }
             </div>
-            <button id="scrollToTop">
-                {/* <Link to="map"> */ }
-                <i className="material-icons">arrow_upward</i>
-                {/* </Link> */ }
-            </button>
+           
         </div>
     );
 }

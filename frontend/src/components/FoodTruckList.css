@@ -3,22 +3,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   overflow: hidden;
+  /* position: relative; */
 }
 
 .FoodTruckList h1 {
-    color: white;
-    font-size: 2.5em;
-    text-align: center;
-    font-family: Staatliches;
-    margin: 10px 0;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-    display: none;
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+  font-family: Staatliches;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  display: flex;
+  justify-content: center;
 }
 
 .FoodTruckList header {
-    width: 100%;
+  width: 100%;
 }
 
 .FoodTruckList .truck {
@@ -31,33 +33,33 @@
   border: none;
   border-radius: 4px;
   margin: 15px 5px;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList ul {
-    padding: 0;
-    position: relative;
+  padding: 0;
+  position: relative;
 }
 
 .FoodTruckList #name {
-    font-size: 1.1em;
-    margin: 5px;
-    text-align: center;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  font-size: 1.1em;
+  margin: 5px;
+  text-align: center;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList #igHandle {
-    margin: 5px;
-    font-size: 0.75em;
-    text-align: center;
-    font-size: 0.8em;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  margin: 5px;
+  font-size: 0.75em;
+  text-align: center;
+  font-size: 0.8em;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList #loading {
-    color: black;
+  color: black;
 }
 
 .container #scrollToTop {
@@ -77,71 +79,46 @@
 }
 
 .container #scrollToTop:active {
-    background-color: #bdbdbd;
-    scroll-behavior: smooth;
-    text-decoration: none;
+  background-color: #bdbdbd;
+  scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 .container #scrollToTop:visited {
   text-decoration: none;
 }
 
-.FoodTruckList #mapViewBottom {
-    margin: 15px 0;
-    font-size: 1em;
-    text-align: center;
-    width: 90vw;
-    border: none;
-    height: 2.2em;
-    border-radius: 4px;
-    background-color: #7dcf46;
-    color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-}
-
-.FoodTruckList #mapViewTop {
-    margin: 15px 0;
-    font-size: 1em;
-    text-align: center;
-    width: 90vw;
-    border: none;
-    height: 2.2em;
-    border-radius: 4px;
-    background-color: #7dcf46;
-    color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-}
 
 .FoodTruckList #timestamp {
-    font-size: 0.5em;
-    color: white;
-    font-style: italic;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  font-size: 0.5em;
+  color: white;
+  font-style: italic;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList .imgInList {
-    border: solid 1px white;
-    border-radius: 4px;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  border: solid 1px white;
+  border-radius: 4px;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList .buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.FoodTruckList .details,
-.Favorite {
-    border: none;
-    border-radius: 4px;
-    color: white;
-    background-color: #7dcf46;
-    height: 25px;
-    width: 120px;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+.FoodTruckList .details {
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #7dcf46;
+  height: 25px;
+  width: 120px;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  margin: 0 auto;
 }
 
 .FoodTruckList .listDiv {
@@ -150,60 +127,103 @@
   padding: 0;
 }
 
-.container {
-  width: 100vw;
+.container, #list {
+  width: 100vw;;
   margin: auto;
   padding: 0;
 }
 
 .FoodTruckList .listContainer {
- display: flex;
- flex-direction: column;
- justify-content: center;
-} 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.FoodTruckList .favTruck {
+  color: white;
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  font-weight: bold;
+  /* font-size: 1em; */
+  list-style-type: none;
+  border: none;
+  border-radius: 4px;
+  margin: 15px 5px;
+  padding: 5px;
+  text-align: center;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+.FoodTruckList .listView {
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: center;
+  width: 90vw;
+  border: none;
+  height: 2.2em;
+  border-radius: 4px;
+  background-color: #7dcf46;
+  color: white;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  z-index: 5;
+  cursor: pointer;
+}
 
 
 @media screen and (min-width: 768px) {
-    .FoodTruckList {
-        align-items: flex-end;
-        flex-wrap: wrap;
-    }
-    .FoodTruckList .listDiv {
-        display: flex;
-        flex-wrap: wrap;
-        /* flex-direction: column; */
-        margin-top: 100px;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        /* position: relative; */
-    }
-    .FoodTruckList .truck {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 200px;
-        height: 331px;
-    }
-    .FoodTruckList h1 {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-    }
-    .FoodTruckList #mapViewBottom {
-        display: none;
-    }
-    .FoodTruckList .buttons {
-        display: flex;
-        justify-content: space-around;
-        align-items: baseline;
-        margin: 0;
-        padding: 0;
-    }
-    .FoodTruckList .details,
-    .Favorite {
-        width: 120px;
-        margin: 10px;
-    }
+  .FoodTruckList {
+    align-items: flex-end;
+    flex-wrap: wrap;
+    z-index: 0;
+  }
+  .FoodTruckList .listContainer .listDiv {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* margin-top: 100px; */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+     position: relative; 
+  }
+  .FoodTruckList .truck {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 331px;
+  }
+ 
+  .FoodTruckList #mapViewBottom {
+    display: none;
+  }
+  .FoodTruckList .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+  }
+  .FoodTruckList .details,
+  .Favorite {
+    width: 120px;
+    margin: 10px;
+  }
+  .FoodTruckList .favTruck {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 331px;
+  }
+  .FoodTruckList .favListDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
 }

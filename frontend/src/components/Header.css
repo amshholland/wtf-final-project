@@ -159,17 +159,12 @@
   .TitleDiv {
     position: relative;
     background-color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    /* filter: drop-shadow(0 0 3px rgb(0, 0, 0)); */
     margin-top: 0;
   }
   .AppHeader .logo {
     height: 100px;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  }
-  .TitleDiv {
-    position: relative;
-    background-color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0)); 
   }
   .AppHeader .logo {
     margin: 0 auto;

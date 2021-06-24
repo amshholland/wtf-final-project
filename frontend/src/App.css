@@ -1,7 +1,7 @@
 .App {
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
+    
 }
 
 .App .map {
@@ -26,15 +26,22 @@
 
 .App .landing {
     height: 100vh;
+    padding: 15px;
 }
 
-button {
+/* button {
     border-radius: 4px;
     background-color: #7dcf46;
     margin: 3px;
     color: white;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+} */
+
+.App .landingPage > * {
+    display: block;
+    
 }
+
 
 @media screen and (min-width: 768px) {
     .App {
@@ -42,10 +49,8 @@ button {
         flex-direction: column;
     }
     .App .map {
-        position: relative;
         height: 90vh;
         width: 100%;
-        /* filter: drop-shadow(0 0 3px rgb(0, 0, 0)); */
     }
     .FoodTruckList {
         right: 0;
@@ -57,4 +62,5 @@ button {
     .FoodTruckList #scrollToTop {
         display: none;
     }
+    
 }
