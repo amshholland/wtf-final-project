@@ -94,11 +94,11 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
             <Modal.Footer>
                 <div className="FavoriteButton">
                     <button className="add" onClick={ () => handleAddFavorite() } >
-                        Add to Favorites
+                        Add to F'ing Favs!
                     </button>
 
                     <button className="delete" onClick={ () => handleRemoveFavorite() }>
-                        Remove from Favorite
+                        F'in remove it!
                     </button>
                 </div>
             </Modal.Footer>
@@ -106,4 +106,4 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
     );
 }
 
-export default FoodTruckCard;;;
+export default FoodTruckCard;

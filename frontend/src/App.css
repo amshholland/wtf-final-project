@@ -7,7 +7,7 @@
 
 .App .map {
     position: relative;
-    /* border: solid 3px black; */
+ 
     height: 90vh;
     width: 100vw;
     margin: 0;
@@ -37,7 +37,7 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 } */
 
-.App .landingPage > * {
+ .App .landingPage > * {
     display: block;
     
 }
@@ -52,13 +52,7 @@
         height: 90vh;
         width: 100%;
     }
-    .FoodTruckList {
-        right: 0;
-        margin-top: 0;
-        position: absolute;
-        width: 100%;
-        justify-content: flex-end;
-    }
+
     .FoodTruckList #scrollToTop {
         display: none;
     }

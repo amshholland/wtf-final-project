@@ -1,285 +1,279 @@
-                    .FoodTruckCard {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        text-align: center;
-                        width: 100%;
-                    }
-                    
-                    .FoodTruckCard .post {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        border: 1px solid#7dcf46;
-                        border-radius: 4px;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .post .cardImg {
-                        width: 100%;
-                        padding: 2px;
-                        display: flex;
-                        justify-content: center;
-                    }
-                    
-                    .cardImg .postImg {
-                        width: 97%;
-                        margin: 0;
-                        margin-right: 3px;
-                    }
-                    
-                    .post .caption {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                    
-                    .post #name {
-                        font-size: 1.5em;
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    .post #address {
-                        font-size: 1em;
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    .post #city {
-                        font-size: 1em;
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    .modal-content {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-content: space-between;
-                        align-items: center;
-                        height: 100%;
-                        width: 90%;
-                        /* border: 2px #133840 solid; */
-                        border-radius: 2px;
-                        /* padding-bottom: 0; */
-                        margin: 10px;
-                    }
-                    
-                    .FoodTruckCard p {
-                        margin-top: 0;
-                        margin-bottom: 2px;
-                    }
-                    
-                    .modal-dialog {
-                        padding: 0;
-                        margin: 0;
-                        align-self: center;
-                    }
-                    
-                    .modalTitle {
-                        display: flex;
-                        align-content: flex-end;
-                        justify-content: center;
-                    }
-                    
-                    .FoodTruckCard .close {
-                        height: 25px;
-                        position: absolute;
-                        z-index: 2;
-                        left: 275px;
-                        bottom: 410px;
-                        filter: drop-shadow(0 0 2px rgb(0, 0, 0));
-                    }
-                    
-                    .profilePic {
-                        border-radius: 50%;
-                        height: 150px;
-                    }
-                    
-                    .modal-body {
-                        display: flex;
-                        justify-content: center;
-                        flex-direction: column;
-                    }
-                    
-                    .iGPosts {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .postImg {
-                        width: 100%;
-                    }
-                    
-                    .modal-footer {
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-                    
-                    .mymodal {
-                        position: fixed;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        border: 1px solid #ccc;
-                        background: #fff;
-                        overflow: auto;
-                        border-radius: 4px;
-                        outline: none;
-                        padding: 20px;
-                        width: 300px;
-                        height: 425px;
-                        border: 2px solid rgb(255, 255, 255);
-                        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-                        z-index: 3;
-                    }
-                    
-                    .FoodTruckCard button {
-                        border-radius: 4px;
-                        background-color: #7dcf46;
-                        margin: 3px;
-                        color: white;
-                        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-                    }
-                    
-                    .FoodTruckCard .location {
-                        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        height: 10%;
-                    }
-                    
-                    .FoodTruckCard h3,
-                    h2 {
-                        margin-bottom: 5px;
-                    }
-                    
-                    .FoodTruckCard h2 {
-                        margin-top: 0;
-                    }
-                    
-                    .FoodTruckCard .locationIcon {
-                        height: 30px;
-                    }
-                    
-                    .FoodTruckCard .profilePic {
-                        height: 50px;
-                        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-                    }
-                    
-                    .FoodTruckCard .cardImg {
-                        display: flex;
-                        justify-content: center;
-                        filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-                    }
-                    
-                    .post #caption {
-                        font-size: 12px;
-                    }
-                    
-                    .post #timestamp {
-                        padding-bottom: 5px;
-                        margin: 0;
-                        border-bottom: 1px solid#7dcf46;
-                    }
-                    
-                    .post #name {
-                        font-size: 15px;
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    .post #address,
-                    .post #city {
-                        font-size: 10px;
-                        padding: 0;
-                        margin: 0;
-                    }
-                    
-                    .postImg {
-                        margin: 5px;
-                    }
-                    
-                    @media screen and (min-width: 768px) {
-                        .mymodal {
-                            width: 75%;
-                        }
-                        .mymodal h3 {
-                            margin: 5px;
-                        }
-                        .modal-dialog .FoodTruckCard {
-                            display: flex;
-                            justify-content: center;
-                            padding: 0;
-                        }
-                        .FoodTruckCard .close {
-                            height: 35px;
-                            width: 35px;
-                            position: absolute;
-                            z-index: 2;
-                            left: 1100px;
-                            bottom: 390px;
-                            filter: drop-shadow(0 0 2px rgb(0, 0, 0));
-                        }
-                        .FoodTruckCard button {
-                            height: 35px;
-                        }
-                        .FoodTruckCard .profilePicDiv {
-                            flex: 2;
-                        }
-                        .FoodTruckCard .profilePic {
-                            border-radius: 50%;
-                            height: 100px;
-                            filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-                            flex: 2;
-                        }
-                        .FoodTruckCard .location {
-                            font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-                            display: flex;
-                            align-items: center;
-                            height: 10%;
-                        }
-                        .FoodTruckCard .locationIcon {
-                            height: 40px;
-                        }
-                        .post #caption {
-                            font-size: 12px;
-                        }
-                        .post #timestamp {
-                            padding-bottom: 5px;
-                            margin: 0;
-                            border-bottom: 1px solid#7dcf46;
-                        }
-                        .post #name {
-                            font-size: 15px;
-                            padding: 0;
-                            margin: 0;
-                        }
-                        .post #address,
-                        .post #city {
-                            font-size: 10px;
-                            padding: 0;
-                            margin: 0;
-                        }
-                        .postImg {
-                            margin: 5px;
-                        }
-                        .iGPosts {
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: flex-start;
-                            align-self: center;
-                            justify-self: center;
-                            border: 1px solid#7dcf46;
-                            margin: 4px;
-                        }
-                        .FoodTruckCard .post {
-                            width: 30%;
-                            border: none;
-                        }
-                        .favoriteButton {
-                            align-items: center;
-                        }
-                    }
+.FoodTruckCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.FoodTruckCard .post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid#7dcf46;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.post .cardImg {
+  width: 100%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardImg .postImg {
+  width: 97%;
+  margin: 0;
+  margin-right: 3px;
+}
+
+.post .caption {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post #name {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+.post #address {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.post #city {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  /* border: 2px #133840 solid; */
+  border-radius: 2px;
+  /* padding-bottom: 0; */
+  margin: 10px;
+}
+
+.FoodTruckCard p {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.modalTitle {
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+}
+
+.FoodTruckCard .close {
+  height: 25px;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+}
+
+.profilePic {
+  border-radius: 50%;
+  height: 150px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.iGPosts {
+  display: flex;
+  flex-direction: column;
+}
+
+.postImg {
+  width: 100%;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mymodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 0;
+  width: 300px;
+  height: 425px;
+  border: 2px solid rgb(255, 255, 255);
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  z-index: 3;
+}
+
+.FoodTruckCard button {
+  border-radius: 4px;
+  background-color: #7dcf46;
+  margin: 3px;
+  color: white;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+.FoodTruckCard .location {
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+}
+
+.FoodTruckCard h3,
+h2 {
+  margin-bottom: 5px;
+}
+
+.FoodTruckCard h2 {
+  margin-top: 0;
+}
+
+.FoodTruckCard .locationIcon {
+  height: 30px;
+}
+
+.FoodTruckCard .profilePic {
+  height: 50px;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+.FoodTruckCard .cardImg {
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+.post #caption {
+  font-size: 12px;
+}
+
+.post #timestamp {
+  padding-bottom: 5px;
+  margin: 0;
+  border-bottom: 1px solid#7dcf46;
+}
+
+.post #name {
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.post #address,
+.post #city {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.postImg {
+  margin: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .mymodal {
+    width: 75%;
+  }
+  .mymodal h3 {
+    margin: 5px;
+  }
+  .modal-dialog .FoodTruckCard {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .FoodTruckCard button {
+    height: 35px;
+  }
+  .FoodTruckCard .profilePicDiv {
+    flex: 2;
+  }
+  .FoodTruckCard .profilePic {
+    border-radius: 50%;
+    height: 100px;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    flex: 2;
+  }
+  .FoodTruckCard .location {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    display: flex;
+    align-items: center;
+    height: 10%;
+  }
+  .FoodTruckCard .locationIcon {
+    height: 40px;
+  }
+  .post #caption {
+    font-size: 12px;
+  }
+  .post #timestamp {
+    padding-bottom: 5px;
+    margin: 0;
+    border-bottom: 1px solid#7dcf46;
+  }
+  .post #name {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  .post #address,
+  .post #city {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  .postImg {
+    margin: 5px;
+  }
+  .iGPosts {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid#7dcf46;
+    margin: 4px;
+  }
+  .FoodTruckCard .post {
+    width: 30%;
+    border: none;
+  }
+  .favoriteButton {
+    align-items: center;
+  }
+}

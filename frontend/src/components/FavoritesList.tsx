@@ -61,7 +61,7 @@ export function FavoritesList() {
 
     return (
         <div className="container">
-            <div className="FoodTruckList" id="list">
+            <div className="FavoritesList" id="list">
                 { !favTrucksLoaded ? (
                     <p id="loading">Loading...</p>
                 ) : favTrucks.length === 0 ? (

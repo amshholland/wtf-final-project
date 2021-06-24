@@ -46,11 +46,11 @@ export function FavoriteButton( { truckId}: Props ) {
     return (
         <div className="FavoriteButton">
             <button className="add" onClick={ () => handleAddFavorite() } >
-                Add to Favorites
+                Add to F'ing Favs!
             </button>
 
             <button className="delete" onClick={ () => handleRemoveFavorite() }>
-                Remove from Favorite
+                F'ing Remove it!
             </button>
         </div>
     );

@@ -1,4 +1,4 @@
-.FoodTruckList {
+.FavoritesList {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.FoodTruckList h1 {
+.FavoritesList h1 {
     color: white;
     font-size: 2.5em;
     text-align: center;
@@ -17,11 +17,11 @@
     display: none;
 }
 
-.FoodTruckList header {
+.FavoritesList header {
     width: 100%;
 }
 
-.FoodTruckList .truck {
+.FavoritesList .truck {
     color: white;
     background-color: #fbab7e;
     background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
@@ -36,19 +36,19 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList ul {
+.FavoritesList ul {
     padding: 0;
     position: relative;
 }
 
-.FoodTruckList #name {
+.FavoritesList #name {
     font-size: 1.1em;
     margin: 5px;
     text-align: center;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList #igHandle {
+.FavoritesList #igHandle {
     margin: 5px;
     font-size: 0.75em;
     text-align: center;
@@ -56,7 +56,7 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList #loading {
+.FavoritesList #loading {
     color: black;
 }
 
@@ -86,7 +86,7 @@
     text-decoration: none;
 }
 
-.FoodTruckList #mapViewBottom {
+.FavoritesList #mapViewBottom {
     margin: 15px 0;
     font-size: 1em;
     text-align: center;
@@ -99,7 +99,7 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList #mapViewTop {
+.FavoritesList #mapViewTop {
     margin: 15px 0;
     font-size: 1em;
     text-align: center;
@@ -112,20 +112,20 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList #timestamp {
+.FavoritesList #timestamp {
     font-size: 0.5em;
     color: white;
     font-style: italic;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList .imgInList {
+.FavoritesList .imgInList {
     border: solid 1px white;
     border-radius: 4px;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList .buttons {
+.FavoritesList .buttons {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -133,7 +133,7 @@
     padding: 0;
 }
 
-.FoodTruckList .details,
+.FavoritesList .details,
 .Favorite {
     border: none;
     border-radius: 4px;
@@ -144,7 +144,7 @@
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
-.FoodTruckList .listDiv {
+.FavoritesList .listDiv {
     width: auto;
     margin-top: 70px;
     padding: 0;
@@ -156,51 +156,49 @@
     padding: 0;
 }
 
-.FoodTruckList .listContainer {
+.FavoritesList .listContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
-    .FoodTruckList {
+    .FavoritesList {
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
     }
-    .FoodTruckList .listDiv {
+    .FavoritesList .listDiv {
         display: flex;
         flex-wrap: wrap;
-        /* flex-direction: column; */
         margin-top: 100px;
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        /* position: relative; */
     }
-    .FoodTruckList .truck {
+    .FavoritesList .truck {
         display: flex;
         flex-direction: column;
         position: relative;
         width: 200px;
         height: 331px;
     }
-    .FoodTruckList h1 {
+    .FavoritesList h1 {
         display: flex;
         justify-content: center;
         margin-top: 15px;
     }
-    .FoodTruckList #mapViewBottom {
+    .FavoritesList #mapViewBottom {
         display: none;
     }
-    .FoodTruckList .buttons {
+    .FavoritesList .buttons {
         display: flex;
         justify-content: space-around;
         align-items: baseline;
         margin: 0;
         padding: 0;
     }
-    .FoodTruckList .details,
+    .FavoritesList .details,
     .Favorite {
         width: 120px;
         margin: 10px;
