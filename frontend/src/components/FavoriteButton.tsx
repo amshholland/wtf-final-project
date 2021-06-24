@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { AuthContext } from "../context/auth-context";
 import { FavoriteContext } from "../context/favorite-context";
+import { useContext } from "react";
 
 interface Props {
     truckId: number;
@@ -37,6 +37,7 @@ export function FavoriteButton( { truckId }: Props ) {
             }
         }
     }
+
 
 
     return (

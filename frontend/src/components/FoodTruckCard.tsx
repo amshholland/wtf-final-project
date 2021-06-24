@@ -3,8 +3,10 @@ import './FoodTruckCard.css';
 import { Button, Modal } from 'react-bootstrap';
 
 import { FavoriteButton } from './FavoriteButton';
+import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
 import getTimeDiff from '../utils/getTimeDiff';
+import { useContext } from 'react';
 
 interface Props {
     truck: Truck;

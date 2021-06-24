@@ -1,5 +1,7 @@
 import "./FoodTruckList.css";
+
 import { useContext, useEffect, useState } from "react";
+
 import { AuthContext } from "../context/auth-context";
 import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
@@ -51,9 +53,6 @@ export function FavoritesList() {
     return (
         <div className="container">
             <div className="FoodTruckList" id="list">
-                {/* <Link to="/"> */ }
-                {/* <button id="mapViewTop">Map View</button> */ }
-                {/* </Link> */ }
                 { !foodTrucksLoaded ? (
                     <p id="loading">Loading...</p>
                 ) : foodTrucks.length === 0 ? (
@@ -107,7 +106,7 @@ export function FavoritesList() {
                     ) }
                 </Modal>
             </div>
-           
+
         </div>
     );
 }
