@@ -12,28 +12,37 @@ import { animateScroll as scroll } from "react-scroll";
 
 export function FavoritesList() {
 
-    const [ foodTrucks, setFoodTrucks ] = useState<Truck[]>( [] );
-    const [ foodTrucksLoaded, setFoodTrucksLoaded ] = useState( false );
-    const [ foodTruck, setFoodTruck ] = useState<Truck | null>( null );
+    const [ favTrucks, setFavTrucks ] = useState<Truck[]>( [] );
+    const [ favTrucksLoaded, setFavTrucksLoaded ] = useState( false );
+    const [ favTruck, setFavTruck ] = useState<Truck | null>( null );
+    const [ trucks, setTrucks ] = useState<Truck[]>( [] );
 
     const { user } = useContext( AuthContext );
     console.log( `favorite Button ${ user?.uid }` );
     const { favorites } = useContext( FavoriteContext );
 
     useEffect( () => {
+        console.log( 'useeffect' );
         loadTrucks();
     }, [] );
 
     function loadTrucks() {
+        console.log( 'loadtrucks' );
         getTruckData().then( ( trucksFromApi ) => {
-            setFoodTrucks( trucksFromApi );
-            setFoodTrucksLoaded( true );
+            setTrucks( trucksFromApi );
         } );
+        let favs: Truck[] = [];
+        for ( let truck of trucks ) {
+            for ( let fav of favorites ) {
+                if ( truck.iGId === fav.truckId ) {
+                    favs.push( truck );
+                }
+            }
+        }
+        console.log( favs );
+        setFavTrucks( favs );
+        setFavTrucksLoaded( true );
     }
-
-    let favs: Truck[] = [];
-
-    favorites.forEach( fav => favs = foodTrucks.filter( truckId => truckId.iGId === fav.truckId ) );
 
     function timeSinceLastPhoto( truck: Truck ) {
         const truckTimestamp: any = truck.lastLocation.timestamp;
@@ -47,15 +56,15 @@ export function FavoritesList() {
         return `${ Math.round( hours ) } hours ago`;
     }
 
-    const openModal = ( truck: Truck ): void => setFoodTruck( truck );
-    const closeModal = () => setFoodTruck( null );
+    const openModal = ( truck: Truck ): void => setFavTruck( truck );
+    const closeModal = () => setFavTruck( null );
 
     return (
         <div className="container">
             <div className="FoodTruckList" id="list">
-                { !foodTrucksLoaded ? (
+                { !favTrucksLoaded ? (
                     <p id="loading">Loading...</p>
-                ) : foodTrucks.length === 0 ? (
+                ) : favTrucks.length === 0 ? (
                     <p>No Food Trucks available.</p>
                 ) : (
                     <div className="listContainer">
@@ -63,7 +72,7 @@ export function FavoritesList() {
                             <header>
                                 <h1>Favorite Trucks</h1>
                             </header>
-                            { favs
+                            { favTrucks
                                 .sort( ( a, b ) =>
                                     a.lastLocation.timestamp < b.lastLocation.timestamp ? 1 : -1
                                 )
@@ -96,13 +105,13 @@ export function FavoritesList() {
                     </div>
                 ) }
                 <Modal
-                    show={ foodTruck !== null }
+                    show={ favTruck !== null }
                     className="mymodal"
                     overlayClassName="myoverlay"
                     centered
                 >
-                    { foodTruck !== null && (
-                        <FoodTruckCard truck={ foodTruck } handleClose={ closeModal } />
+                    { favTruck !== null && (
+                        <FoodTruckCard truck={ favTruck } handleClose={ closeModal } />
                     ) }
                 </Modal>
             </div>

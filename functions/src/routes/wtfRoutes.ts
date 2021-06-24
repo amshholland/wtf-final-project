@@ -24,7 +24,8 @@ app.get( "/", async ( req, res ) => {
 } );
 
 // List favorites
-app.get( "/favorites", async ( req, res ) => {
+app.get( "/:id", async ( req, res ) => {
+    const id = req.params.id;
     try {
         const client = await getClient();
         const results = await client.db().collection<Favorites>( 'favorites' ).find().toArray();
