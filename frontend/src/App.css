@@ -7,7 +7,6 @@
 
 .App .map {
     position: relative;
- 
     height: 90vh;
     width: 100vw;
     margin: 0;
@@ -42,16 +41,37 @@
     
 }
 
+.App .listView {
+    margin-top: 15px;
+    font-size: 1em;
+    text-align: center;
+    width: 90vw;
+    border: none;
+    height: 2.2em;
+    border-radius: 4px;
+    background-color: #7dcf46;
+    color: white;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+    z-index: 2;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .App .listBtnContainer {
+      display: flex;
+      justify-content: center;
+  }
+
 
 @media screen and (min-width: 768px) {
     .App {
         display: flex;
         flex-direction: column;
     }
-    .App .map {
+    /* .App .map {
         height: 90vh;
         width: 100%;
-    }
+    } */
 
     .FoodTruckList #scrollToTop {
         display: none;

@@ -39,12 +39,6 @@
   text-align: center;
 }
 
-.TitleDiv .logoDiv .logo {
-  margin: 0 auto;
-  height: 100px;
-  box-sizing: border-box;
-}
-
 .AppHeader #profilePic {
   border-radius: 50%;
   margin: 10px;
@@ -107,8 +101,7 @@
 }
 
 .AppHeader .logo {
-  margin: 0 auto;
-  height: 100px;
+  height: 100PX;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 .TitleDiv {
