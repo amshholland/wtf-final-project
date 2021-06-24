@@ -3,6 +3,7 @@ import "./FoodTruckList.css";
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../context/auth-context";
+import { FavoriteButton } from "./FavoriteButton";
 import { FavoriteContext } from "../context/favorite-context";
 import FoodTruckCard from "./FoodTruckCard";
 import { Modal } from "react-bootstrap";
@@ -113,6 +114,7 @@ export function FavoritesList() {
                     { favTruck !== null && (
                         <FoodTruckCard truck={ favTruck } handleClose={ closeModal } />
                     ) }
+                    <FavoriteButton truckId={ favTruck!.iGId! } />
                 </Modal>
             </div>
 
