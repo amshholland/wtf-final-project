@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 120px;
   overflow: hidden;
   /* position: relative; */
 }
@@ -76,12 +76,17 @@
   cursor: pointer;
   position: fixed;
   z-index: 4;
+  transform: translateY(100px);
+  transition: all .5s ease;
+  opacity: 1;
+  transform: translateY(0)
 }
 
 .container #scrollToTop:active {
   background-color: #bdbdbd;
   scroll-behavior: smooth;
   text-decoration: none;
+  
 }
 
 .container #scrollToTop:visited {
@@ -153,22 +158,6 @@
   text-align: center;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
-
-.FoodTruckList .listView {
-  margin-top: 15px;
-  font-size: 1em;
-  text-align: center;
-  width: 90vw;
-  border: none;
-  height: 2.2em;
-  border-radius: 4px;
-  background-color: #7dcf46;
-  color: white;
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  z-index: 5;
-  cursor: pointer;
-}
-
 
 @media screen and (min-width: 768px) {
   .FoodTruckList {

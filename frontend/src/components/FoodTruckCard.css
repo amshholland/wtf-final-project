@@ -101,6 +101,7 @@
   height: 425px;
   border: 2px solid rgb(255, 255, 255);
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  z-index: 3;
 }
 
 .FoodTruckCard .profilePic {

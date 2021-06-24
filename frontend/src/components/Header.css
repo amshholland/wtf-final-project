@@ -39,7 +39,7 @@
   text-align: center;
 }
 
-.AppHeader .logo {
+.TitleDiv .logoDiv .logo {
   margin: 0 auto;
   height: 100px;
   box-sizing: border-box;
@@ -116,7 +116,7 @@
   justify-content: center;
   margin-top: 100px;
   position: fixed;
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  /* filter: drop-shadow(0 0 3px rgb(0, 0, 0)); */
   width: 100%;
 }
 
@@ -148,8 +148,9 @@
 @media screen and (min-width: 768px) {
   .TitleDiv {
     position: relative;
-    background-color: white;
+    /* background-color: rgba(255, 255, 255, 1); */
     margin-top: 0;
+    
   }
   .AppHeader .logo {
     height: 100px;
@@ -162,6 +163,5 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   
 }
