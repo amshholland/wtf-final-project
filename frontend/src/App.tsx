@@ -27,7 +27,9 @@ function App() {
                   containerElement={ <div style={ { height: "100%" } } /> }
                   mapElement={ <div style={ { height: "100%" } } /> }
                 />
+                <div className="fade"></div>
               </div>
+              <FoodTruckList />
             </Route>
           </Switch>
         </FavoriteContextProvider>
