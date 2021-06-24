@@ -4,12 +4,15 @@ import { FavoriteContext } from "../context/favorite-context";
 
 interface Props {
     truckId: number;
+    closeModal: () => void;
 }
 
-export function FavoriteButton( { truckId }: Props ) {
+export function FavoriteButton( { truckId}: Props ) {
     const { user } = useContext( AuthContext );
     console.log( `favorite Button ${ user?.uid }` );
     const { favorites, addFavorite, removeFavorite } = useContext( FavoriteContext );
+
+
 
     function handleAddFavorite(): void {
         if ( user?.uid && truckId ) {

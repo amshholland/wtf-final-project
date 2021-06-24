@@ -60,7 +60,7 @@ export function FavoritesList() {
                     <p>No Food Trucks available.</p>
                 ) : (
                     <div className="listContainer">
-                        <div className="favListDiv">
+                        <div className="listDiv">
                             <header>
                                 <h1>Favorite Trucks</h1>
                             </header>
@@ -69,7 +69,7 @@ export function FavoritesList() {
                                     a.lastLocation.timestamp < b.lastLocation.timestamp ? 1 : -1
                                 )
                                 .map( ( truckInList ) => (
-                                    <div key={ truckInList._id } className="favTruck">
+                                    <div key={ truckInList._id } className="truck">
                                         <img
                                             src={ truckInList.profilePhoto }
                                             alt=""

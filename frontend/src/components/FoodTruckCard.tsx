@@ -63,7 +63,7 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                 ) ) }
             </div>
             <Modal.Footer>
-                <FavoriteButton truckId={ truck.iGId } />
+                <FavoriteButton truckId={ truck.iGId } closeModal={handleClose} />
             </Modal.Footer>
         </div >
     );
