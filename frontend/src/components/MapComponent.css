@@ -6,34 +6,33 @@
     width: 25px;
 } */
 
-.MapComponent  {
-    font-size: 1em;
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.MapComponent {
+  font-size: 1em;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .MapComponent .listView {
-    margin-top: 15px;
-    font-size: 1em;
-    text-align: center;
-    width: 90vw;
-    border: none;
-    height: 2.2em;
-    border-radius: 4px;
-    background-color: #7dcf46;
-    color: white;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-    z-index: 5;
-    cursor: pointer;
-    position: relative;
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: center;
+  width: 90vw;
+  border: none;
+  height: 2.2em;
+  border-radius: 4px;
+  background-color: #7dcf46;
+  color: white;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
-    .MapComponent .listView {
-        margin: 20px;
-    }
+  .MapComponent .listView {
+    margin: 20px;
+  }
 }
-

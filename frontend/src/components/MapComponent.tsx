@@ -11,6 +11,7 @@ import { Truck } from "../model/dbModel";
 import Marker from "react-google-maps/lib/components/Marker";
 import { getTruckData } from "../service/WtfApiService";
 import { Link } from "react-scroll";
+import * as Scroll from 'react-scroll';
 
 declare var google: any;
 
@@ -106,7 +107,7 @@ function MapComponent({
           </InfoWindow>
         )}
       </GoogleMap>
-      <Link to="list" smooth={true} duration={1000} isDynamic={true}>
+      <Link to="list" smooth={true} duration={500} isDynamic={true}>
         <button className="listView">List View</button>
       </Link>
     </div>

@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   background: rgb(255, 255, 255);
   background: linear-gradient(
@@ -22,16 +22,6 @@
     rgba(255, 255, 255, 0.8) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-}
-
-.AppHeader h1 {
-  color: white;
-  font-size: 3em;
-  text-align: center;
-  font-family: Staatliches;
-  margin: 10px 0;
-  /* border-bottom: 2px solid white; */
-  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .GoogleUserDetails {
@@ -159,7 +149,6 @@
   .TitleDiv {
     position: relative;
     background-color: white;
-    /* filter: drop-shadow(0 0 3px rgb(0, 0, 0)); */
     margin-top: 0;
   }
   .AppHeader .logo {

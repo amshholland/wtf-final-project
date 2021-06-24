@@ -60,7 +60,7 @@ function Header() {
           <a href="/">
             <img className="logo" src={ process.env.PUBLIC_URL + '/WTF_Truck_Logo.png' } alt="WTF Truck Logo" />
           </a>
-
+          </div>
           { user && (
             <div className="GoogleUserPhoto">
               <div className="userPhoto" onClick={ () => signOutDisplay() }>
@@ -84,7 +84,7 @@ function Header() {
               </div>
             </div>
           ) }
-        </div>
+        
         <div className="GoogleAuth">
           { !user && (
             <button className="headerButton" onClick={ signInWithGoogle }>

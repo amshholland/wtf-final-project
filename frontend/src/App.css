@@ -1,13 +1,14 @@
 .App {
     overflow-x: hidden;
     margin: 0;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .App .map {
     position: relative;
     /* border: solid 3px black; */
-    height: 89vh;
+    height: 90vh;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -26,7 +27,6 @@
 
 .App .landing {
     height: 100vh;
-    padding: 15px;
 }
 
 /* button {

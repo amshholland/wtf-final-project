@@ -71,9 +71,8 @@ function FoodTruckList() {
   const closeModal = () => setFoodTruck(null);
 
   return (
-    <div className="container" id="list">
-      <div className="FoodTruckList" >
-      
+    <div className="container" >
+      <div className="FoodTruckList">
         {/* <Link to="/"> */}
         {/* <button id="mapViewTop">Map View</button> */}
         {/* </Link> */}
@@ -82,11 +81,11 @@ function FoodTruckList() {
         ) : foodTrucks.length === 0 ? (
           <p>No Food Trucks available.</p>
         ) : (
-          <div className="listContainer">
-            <header>
-              <h1>Food Trucks</h1>
-            </header>
+          <div className="listContainer" id="list">
             <div className="listDiv">
+              <header>
+                <h1>Food Trucks</h1>
+              </header>
               {foodTrucks
                 .sort((a, b) =>
                   a.lastLocation.timestamp < b.lastLocation.timestamp ? 1 : -1
