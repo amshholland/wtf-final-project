@@ -3,9 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 70px;
     overflow: hidden;
-    /* position: relative; */
 }
 
 .FoodTruckList h1 {
@@ -15,8 +14,7 @@
     font-family: Staatliches;
     margin: 10px 0;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .FoodTruckList header {
@@ -33,7 +31,7 @@
     border: none;
     border-radius: 4px;
     margin: 15px 5px;
-    padding: 5px;
+    padding: 15px;
     text-align: center;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
@@ -62,15 +60,6 @@
     color: black;
 }
 
-.FoodTruckList .favIcon {
-    height: 70px;
-    position: absolute;
-    z-index: 2;
-    right: 215px;
-    bottom: 195px;
-    filter: drop-shadow(0 0 2px rgb(0, 0, 0));
-}
-
 .container #scrollToTop {
     text-decoration: none;
     right: 25px;
@@ -85,10 +74,6 @@
     cursor: pointer;
     position: fixed;
     z-index: 4;
-    transform: translateY(100px);
-    transition: all .5s ease;
-    opacity: 1;
-    transform: translateY(0)
 }
 
 .container #scrollToTop:active {
@@ -99,6 +84,32 @@
 
 .container #scrollToTop:visited {
     text-decoration: none;
+}
+
+.FoodTruckList #mapViewBottom {
+    margin: 15px 0;
+    font-size: 1em;
+    text-align: center;
+    width: 90vw;
+    border: none;
+    height: 2.2em;
+    border-radius: 4px;
+    background-color: #7dcf46;
+    color: white;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+}
+
+.FoodTruckList #mapViewTop {
+    margin: 15px 0;
+    font-size: 1em;
+    text-align: center;
+    width: 90vw;
+    border: none;
+    height: 2.2em;
+    border-radius: 4px;
+    background-color: #7dcf46;
+    color: white;
+    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
 }
 
 .FoodTruckList #timestamp {
@@ -116,13 +127,14 @@
 
 .FoodTruckList .buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: baseline;
     margin: 0;
     padding: 0;
 }
 
-.FoodTruckList .details {
+.FoodTruckList .details,
+.Favorite {
     border: none;
     border-radius: 4px;
     color: white;
@@ -130,7 +142,6 @@
     height: 25px;
     width: 120px;
     filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-    margin: 0 auto;
 }
 
 .FoodTruckList .listDiv {
@@ -139,9 +150,8 @@
     padding: 0;
 }
 
-.container,
-#list {
-    /* width: 100vw; */
+.container {
+    width: 100vw;
     margin: auto;
     padding: 0;
 }
@@ -152,44 +162,33 @@
     justify-content: center;
 }
 
-.FoodTruckList .favTruck {
-    color: white;
-    background-color: #fbab7e;
-    background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-    font-weight: bold;
-    /* font-size: 1em; */
-    list-style-type: none;
-    border: none;
-    border-radius: 4px;
-    margin: 15px 5px;
-    padding: 5px;
-    text-align: center;
-    filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-}
-
 @media screen and (min-width: 768px) {
     .FoodTruckList {
-        align-items: flex-end;
+        flex-direction: row;
+        align-items: center;
         flex-wrap: wrap;
-        z-index: 0;
     }
-    .FoodTruckList .listContainer .listDiv {
+    .FoodTruckList .listDiv {
         display: flex;
         flex-wrap: wrap;
+        /* flex-direction: column; */
         margin-top: 100px;
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        position: relative;
+        /* position: relative; */
     }
     .FoodTruckList .truck {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         position: relative;
         width: 200px;
         height: 331px;
+    }
+    .FoodTruckList h1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
     }
     .FoodTruckList #mapViewBottom {
         display: none;
@@ -205,28 +204,5 @@
     .Favorite {
         width: 120px;
         margin: 10px;
-    }
-    .FoodTruckList .favTruck {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 200px;
-        height: 331px;
-    }
-    .FoodTruckList .favListDiv {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .FoodTruckList .favIcon {
-        height: 70px;
-        position: absolute;
-        z-index: 2;
-        right: 136px;
-        bottom: 269px;
-        filter: drop-shadow(0 0 2px rgb(0, 0, 0));
     }
 }

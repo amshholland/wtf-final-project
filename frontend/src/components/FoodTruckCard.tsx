@@ -2,9 +2,12 @@ import './FoodTruckCard.css';
 
 import { Button, Modal } from 'react-bootstrap';
 
+import { AuthContext } from '../context/auth-context';
 import { FavoriteButton } from './FavoriteButton';
+import { FavoriteContext } from "../context/favorite-context";
 import { Truck } from '../model/dbModel';
 import getTimeDiff from '../utils/getTimeDiff';
+import { useContext } from 'react';
 
 interface Props {
     truck: Truck;
@@ -12,18 +15,42 @@ interface Props {
 }
 
 function FoodTruckCard( { truck, handleClose }: Props ) {
-
-    // const { favorites } = useContext( FavoriteContext );
-    // For each truck, search through favorite array to find same id
-    // array.some -- looks for certain callback 
+    const { user } = useContext( AuthContext );
+    const { favorites, addFavorite, removeFavorite } = useContext( FavoriteContext );
 
     function timeSinceLastPhoto( timestamp: number ) {
         const currentTimestamp = Math.round( new Date().getTime() / 1000 );
-        return getTimeDiff( timestamp, currentTimestamp );
+        let timeDiffSeconds = currentTimestamp - timestamp;
+        let hours = timeDiffSeconds / 60 / 60;
+        let days = Math.round( hours / 24 );
+        if ( hours > 24 ) {
+            return `${ Math.round( days ) } days ago`;
+        }
+        return `${ Math.round( hours ) } hours ago`;
     }
-    // Filter our results first to omit posts with no location
 
-    // } );
+    function handleAddFavorite(): void {
+        if ( user?.uid && truck.iGId ) {
+            const fav = {
+                userId: user.uid,
+                truckId: truck.iGId!
+            };
+            addFavorite( fav );
+        }
+    };
+
+    function handleRemoveFavorite(): void {
+        if ( user?.uid && truck.iGId ) {
+
+            for ( let fav of favorites ) {
+                console.log( fav );
+                if ( truck.iGId === fav.truckId ) {
+                    console.log( true );
+                    removeFavorite( fav._id! );
+                }
+            }
+        }
+    }
 
     return (
         <div className="FoodTruckCard">
@@ -32,8 +59,9 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                 <div className="profilePicDiv">
                     <img className="profilePic" src={ truck.profilePhoto } alt={ truck.profileDescription } />
                 </div>
-                <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
             </div>
+            <Button type="button" className="close" data-dismiss="modal" onClick={ handleClose }> X </Button>
+
             <h2>{ truck.name }</h2>
             <p>@{ truck.instagramHandle }</p>
             <section>
@@ -58,15 +86,24 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                         <div className="cardImg">
                             <img className="postImg" src={ post.photo } alt='' />
                         </div>
-                        <p id="caption">{ post.caption.text }</p>
+                        { post.caption.text &&
+                            <p id="caption">{ post.caption.text }</p> }
                     </div>
                 ) ) }
             </div>
             <Modal.Footer>
-                <FavoriteButton truckId={ truck.iGId } closeModal={handleClose} />
+                <div className="FavoriteButton">
+                    <button className="add" onClick={ () => handleAddFavorite() } >
+                        Add to Favorites
+                    </button>
+
+                    <button className="delete" onClick={ () => handleRemoveFavorite() }>
+                        Remove from Favorite
+                    </button>
+                </div>
             </Modal.Footer>
         </div >
     );
 }
 
-export default FoodTruckCard;
+export default FoodTruckCard;;;
