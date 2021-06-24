@@ -60,7 +60,8 @@ function FoodTruckCard( { truck, handleClose }: Props ) {
                         <div className="cardImg">
                             <img className="postImg" src={ post.photo } alt='' />
                         </div>
-                        <p id="caption">{ post.caption.text }</p>
+                        { post.caption.text &&
+                            <p id="caption">{ post.caption.text }</p> }
                     </div>
                 ) ) }
             </div>

@@ -66,8 +66,8 @@
     height: 70px;
     position: absolute;
     z-index: 2;
-    right: 136px;
-    bottom: 269px;
+    right: 215px;
+    bottom: 195px;
     filter: drop-shadow(0 0 2px rgb(0, 0, 0));
 }
 
@@ -220,5 +220,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .FoodTruckList .favIcon {
+        height: 70px;
+        position: absolute;
+        z-index: 2;
+        right: 136px;
+        bottom: 269px;
+        filter: drop-shadow(0 0 2px rgb(0, 0, 0));
     }
 }
