@@ -26,11 +26,9 @@ export function FavoritesList() {
         loadTrucks();
     }, [] );
 
-    function loadTrucks() {
-        console.log( 'loadtrucks' );
-        getTruckData().then( ( trucksFromApi ) => {
-            setTrucks( trucksFromApi );
-        } );
+    useEffect(() => {
+        console.log(trucks);
+        console.log(favorites);
         let favs: Truck[] = [];
         for ( let truck of trucks ) {
             for ( let fav of favorites ) {
@@ -42,6 +40,13 @@ export function FavoritesList() {
         console.log( favs );
         setFavTrucks( favs );
         setFavTrucksLoaded( true );
+    }, [favorites, trucks]);
+
+    function loadTrucks() {
+        console.log( 'loadtrucks' );
+        getTruckData().then( ( trucksFromApi ) => {
+            setTrucks( trucksFromApi );
+        } );
     }
 
     function timeSinceLastPhoto( truck: Truck ) {

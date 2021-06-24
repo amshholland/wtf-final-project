@@ -28,7 +28,7 @@ app.get( "/:id", async ( req, res ) => {
     const id = req.params.id;
     try {
         const client = await getClient();
-        const results = await client.db().collection<Favorites>( 'favorites' ).find().toArray();
+        const results = await client.db().collection<Favorites>( 'favorites' ).find({ _id: new ObjectId( id ) }).toArray();
         console.log( results );
         res.json( results );
     } catch ( err ) {
