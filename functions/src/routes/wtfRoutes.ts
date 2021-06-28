@@ -24,12 +24,13 @@ app.get( "/", async ( req, res ) => {
 } );
 
 // List favorites
-app.get( "/:id", async ( req, res ) => {
-    const id = req.params.id;
+app.get( "/favorites", async ( req, res ) => {
+    const userId = String( req.query.userId || '' );
+    console.log( 'HI' );
+    console.log( userId );
     try {
         const client = await getClient();
-        const results = await client.db().collection<Favorites>( 'favorites' ).find({ _id: new ObjectId( id ) }).toArray();
-        console.log( results );
+        const results = await client.db().collection<Favorites>( 'favorites' ).find( { userId: userId } ).toArray();
         res.json( results );
     } catch ( err ) {
         console.error( "FAIL", err );

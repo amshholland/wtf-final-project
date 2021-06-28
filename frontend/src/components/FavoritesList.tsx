@@ -26,13 +26,12 @@ export function FavoritesList() {
         loadTrucks();
     }, [] );
 
-    useEffect(() => {
-        console.log(trucks);
-        console.log(favorites);
+    useEffect( () => {
         let favs: Truck[] = [];
         for ( let truck of trucks ) {
             for ( let fav of favorites ) {
                 if ( truck.iGId === fav.truckId ) {
+                    console.log( fav.userId, fav.truckId );
                     favs.push( truck );
                 }
             }
@@ -40,7 +39,7 @@ export function FavoritesList() {
         console.log( favs );
         setFavTrucks( favs );
         setFavTrucksLoaded( true );
-    }, [favorites, trucks]);
+    }, [ favorites, trucks ] );
 
     function loadTrucks() {
         console.log( 'loadtrucks' );

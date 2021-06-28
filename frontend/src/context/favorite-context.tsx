@@ -25,11 +25,9 @@ export function FavoriteContextProvider( { children }: { children: ReactNode; } 
 
     console.log( favorites );
     useEffect( () => {
-        console.log( 'got to fav context useEffect' );
         if ( userId ) {
             getFavoritesFromDb( userId ).then( favs => {
                 setFavorites( favs );
-                console.log();
             } );
         }
         else {
