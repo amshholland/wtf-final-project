@@ -81,7 +81,7 @@ function MapComponent({
               }}
               icon={{
                 url: truck.profilePhoto,
-                scaledSize: new google.maps.Size(50, 50),
+                scaledSize: new google.maps.Size(50, 50)
               }}
             />
           </div>
