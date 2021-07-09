@@ -84,7 +84,7 @@ export function FavoritesList() {
                                     <div key={ truckInList._id } className="truck">
                                         <img
                                             src={ truckInList.profilePhoto }
-                                            alt=""
+                                            alt="Food Truck Instagram Profile Image"
                                             className="imgInList"
                                         />
                                         <p id="name">{ truckInList.name }</p>

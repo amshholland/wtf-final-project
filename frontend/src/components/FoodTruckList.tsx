@@ -99,7 +99,7 @@ function FoodTruckList() {
                     { favorites.some( fav => fav.truckId === truckInList.iGId ) && <img className="favIcon" src={ process.env.PUBLIC_URL + '/Fav_Icon.png' } /> }
                     <img
                       src={ truckInList.profilePhoto }
-                      alt=""
+                      alt="Food Truck Instagram Profile Image"
                       className="imgInList"
                     />
                     <p id="name">{ truckInList.name }</p>
